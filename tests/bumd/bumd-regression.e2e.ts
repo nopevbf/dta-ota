@@ -5,6 +5,7 @@ import {
   fillTab1,
   fillTab2,
   fillTab3,
+  submitWizardForm,
   takeEvidenceScreenshot,
 } from './support.ts';
 
@@ -61,15 +62,15 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
 
     // 1. CREATE
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
-    await fillTab1(browser, regCompanyName);
+    await fillTab1(browser, regCompanyName, regUnique);
     await browser.locator('#tab-perusahaan .next-tab').click();
-    await fillTab2(browser);
+    await fillTab2(browser, regUnique);
     await browser.locator('#tab-pj .next-tab').click();
-    await fillTab3(browser);
+    await fillTab3(browser, regUnique);
     await browser.locator('#tab-pimpinan .next-tab').click();
     await browser.locator('input[name="fee_management"]').fill('15');
     await browser.locator('input[name="fee_bumd"]').fill('10');
-    await browser.locator('#tab-fee button[type="submit"]').click();
+    await submitWizardForm(browser);
 
     // Tunggu redirect & verifikasi di tabel
     await browser.waitForURL(/.*\/partner\/finance\/bumd$/, { timeout: 30000 });
@@ -103,8 +104,7 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
       await updateFeeBumd.fill('12');
     }
 
-    const updateSubmitBtn = browser.locator('button[type="submit"]:has-text("Simpan"), button[type="submit"]:has-text("Update"), #tab-fee button[type="submit"]').first();
-    await updateSubmitBtn.click();
+    await submitWizardForm(browser);
     await browser.waitForURL(/.*\/partner\/finance\/bumd$/, { timeout: 30000 });
 
     // Verifikasi pembaruan di tabel

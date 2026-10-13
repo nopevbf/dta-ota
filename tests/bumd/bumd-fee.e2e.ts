@@ -28,14 +28,17 @@ test.describe('Fitur Tambahan: Fee BUMD Tests', () => {
     // 1. Isi Tab 1
     await fillTab1(browser, 'PT BUMD Makmur Jaya');
     await browser.locator('#tab-perusahaan .next-tab').click();
+    await expect(browser.locator('#tab-pj')).toBeVisible();
 
     // 2. Isi Tab 2
     await fillTab2(browser);
     await browser.locator('#tab-pj .next-tab').click();
+    await expect(browser.locator('#tab-pimpinan')).toBeVisible();
 
     // 3. Isi Tab 3
     await fillTab3(browser);
     await browser.locator('#tab-pimpinan .next-tab').click();
+    await expect(browser.locator('#tab-fee')).toBeVisible();
 
     // 4. Verifikasi berada di Tab 4: Fee BUMD
     const feeMgmtInput = browser.locator('input[name="fee_management"]');
@@ -66,14 +69,17 @@ test.describe('Fitur Tambahan: Fee BUMD Tests', () => {
     // Isi Tab 1
     await fillTab1(browser, 'PT BVA Test BUMD');
     await browser.locator('#tab-perusahaan .next-tab').click();
+    await expect(browser.locator('#tab-pj')).toBeVisible();
 
     // Isi Tab 2
     await fillTab2(browser);
     await browser.locator('#tab-pj .next-tab').click();
+    await expect(browser.locator('#tab-pimpinan')).toBeVisible();
 
     // Isi Tab 3
     await fillTab3(browser);
     await browser.locator('#tab-pimpinan .next-tab').click();
+    await expect(browser.locator('#tab-fee')).toBeVisible();
 
     // Tab 4: Uji Boundary 0% dan 100%
     const feeMgmtInput = browser.locator('input[name="fee_management"]');

@@ -5,6 +5,7 @@ import {
   fillTab1,
   fillTab2,
   fillTab3,
+  submitWizardForm,
   takeEvidenceScreenshot,
 } from './support.ts';
 
@@ -19,15 +20,15 @@ test.describe('Bank Data BUMD: End-to-End CRUD Lifecycle with Visual Evidence', 
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
 
     // Tab 1: Identitas Perusahaan
-    await fillTab1(browser, testCompanyName);
+    await fillTab1(browser, testCompanyName, uniqueId);
     await browser.locator('#tab-perusahaan .next-tab').click();
 
     // Tab 2: Identitas Penanggungjawab
-    await fillTab2(browser);
+    await fillTab2(browser, uniqueId);
     await browser.locator('#tab-pj .next-tab').click();
 
     // Tab 3: Identitas Pimpinan
-    await fillTab3(browser);
+    await fillTab3(browser, uniqueId);
     await browser.locator('#tab-pimpinan .next-tab').click();
 
     // Tab 4: Fee BUMD
@@ -40,10 +41,9 @@ test.describe('Bank Data BUMD: End-to-End CRUD Lifecycle with Visual Evidence', 
     await takeEvidenceScreenshot(app, '01-create-wizard-tab4-filled', '01-create-wizard-tab4-filled.png');
 
     // Submit Form Tambah BUMD
-    const submitBtn = browser.locator('#tab-fee button[type="submit"]');
-    await submitBtn.click();
+    await submitWizardForm(browser);
 
-    // Tunggu redirect kembali ke halaman tabel BUMD
+    // Tunggu redirect kembali ke halaman tabel BUMD (timeout 30s)
     await browser.waitForURL(/.*\/partner\/finance\/bumd$/, { timeout: 30000 });
     const feeMgmtHeader = browser.locator('th:has-text("Fee Management")');
     await expect(feeMgmtHeader).toBeVisible();

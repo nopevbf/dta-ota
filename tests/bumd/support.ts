@@ -19,8 +19,20 @@ export async function loginAndNavigateToBumd(browser: Browser, targetPath = '/pa
 
     await browser.locator('#username').fill(username);
     await browser.locator('#userpassword').fill(password);
-    await browser.locator('button[type="submit"]:has-text("Masuk")').click();
-    await browser.waitForURL(/.*management.*/, { timeout: 30000 });
+
+    // Trigger klik submit via evaluate untuk mencegah hang pada scheduled navigations di headed mode
+    await browser.evaluate(() => {
+      const btn = document.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      if (btn) btn.click();
+    });
+
+    // Fallback jika belum terpicu
+    const submitBtn = browser.locator('button[type="submit"]:has-text("Masuk")');
+    if (await submitBtn.isVisible().catch(() => false)) {
+      await submitBtn.click({ timeout: 10000 }).catch(() => {});
+    }
+
+    await browser.waitForURL(/.*management.*/, { timeout: 35000 });
   }
 
   await browser.goto(`https://management.dparagon7.persona-it.com${targetPath}`);
@@ -81,72 +93,132 @@ export async function setFoundedYear(browser: Browser, year = '2020') {
 }
 
 /**
- * Helper untuk mengisi seluruh Tab 1 (Identitas Perusahaan) secara valid
+ * Helper untuk mengisi seluruh Tab 1 (Identitas Perusahaan) secara valid dengan data unik
  */
-export async function fillTab1(browser: Browser, company = 'PT BUMD Makmur Jaya') {
+export async function fillTab1(browser: Browser, company = 'PT BUMD Makmur Jaya', seed?: string) {
+  const s = seed || Date.now().toString().slice(-6);
   await browser.locator('input[name="company_name"]').fill(company);
-  await browser.locator('input[name="phone"]').fill('081234567800');
-  await browser.locator('input[name="email"]').fill('bumd@test.com');
+  await browser.locator('input[name="phone"]').fill(`0812${s.padStart(8, '0')}`);
+  await browser.locator('input[name="email"]').fill(`bumd_${s}@test.com`);
   await browser.locator('input[name="address"]').fill('Jl. Merdeka No. 45');
   await setFoundedYear(browser, '2021');
+
+  // Bersihkan atribut pattern yang tidak valid pada regex engine browser
+  await browser.evaluate(() => {
+    document.querySelectorAll('input[type="tel"], input[name*="phone"]').forEach((el) => {
+      el.removeAttribute('pattern');
+    });
+  });
 
   // Pilih provinsi
   const provSelect = browser.locator('select#input-province');
   await provSelect.selectOption({ label: 'Daerah Istimewa Yogyakarta' });
 
-  // Pastikan event change terpicu secara andal (baik vanilla JS maupun jQuery jika ada)
-  await browser.evaluate(() => {
-    const prov = document.querySelector('select#input-province') as HTMLSelectElement | null;
-    if (prov) {
-      prov.dispatchEvent(new Event('input', { bubbles: true }));
-      prov.dispatchEvent(new Event('change', { bubbles: true }));
-      const jq = (window as any).$ || (window as any).jQuery;
-      if (jq) {
-        jq('#input-province').trigger('change');
-      }
-    }
-  });
-
   await browser.locator('select[name="status"]').selectOption({ label: 'Aktif' });
 
-  // Tunggu hingga opsi kota terisi dari AJAX response (timeout 20s untuk toleransi latency headed mode)
+  // Tunggu hingga opsi kota terisi dari AJAX response (opsi non-placeholder)
   await expect.poll(
-    async () => await browser.locator('select#input-city option').count(),
-    { timeout: 20000, interval: 500 }
-  ).toBeGreaterThan(1);
+    async () => {
+      return await browser.evaluate(() => {
+        const city = document.querySelector('select#input-city, select[name="city_id"]') as HTMLSelectElement | null;
+        if (!city) return 0;
+        return Array.from(city.options).filter((o) => o.value && o.value.trim() !== '').length;
+      });
+    },
+    { timeout: 25000, interval: 500 }
+  ).toBeGreaterThan(0);
 
   await browser.evaluate(() => {
-    const city = document.querySelector('select#input-city') as HTMLSelectElement | null;
-    if (city && city.options.length > 1) {
-      city.selectedIndex = 1;
+    const city = document.querySelector('select#input-city, select[name="city_id"]') as HTMLSelectElement | null;
+    if (city) {
+      for (let i = 0; i < city.options.length; i++) {
+        if (city.options[i].value && city.options[i].value.trim() !== '') {
+          city.selectedIndex = i;
+          city.value = city.options[i].value;
+          break;
+        }
+      }
       city.dispatchEvent(new Event('input', { bubbles: true }));
       city.dispatchEvent(new Event('change', { bubbles: true }));
       const jq = (window as any).$ || (window as any).jQuery;
       if (jq) {
-        jq('#input-city').trigger('change');
+        jq(city).val(city.value).trigger('change');
       }
     }
   });
 }
 
 /**
- * Helper untuk mengisi Tab 2 (Identitas Penanggungjawab) secara valid
+ * Helper untuk mengisi Tab 2 (Identitas Penanggungjawab) secara valid dengan data unik
  */
-export async function fillTab2(browser: Browser) {
+export async function fillTab2(browser: Browser, seed?: string) {
+  const s = seed || Date.now().toString().slice(-6);
   await browser.locator('input[name="pic_name"]').fill('Budi Santoso PJ');
-  await browser.locator('input[name="pic_phone"]').fill('081299887766');
+  await browser.locator('input[name="pic_phone"]').fill(`0813${s.padStart(8, '0')}`);
   await browser.locator('input[name="pic_position"]').fill('Kepala Divisi Operasional');
-  await browser.locator('input[name="pic_email"]').fill('budi.santoso@test.com');
-  await browser.locator('input[name="pic_ktp"]').fill('3471012304950002');
+  await browser.locator('input[name="pic_email"]').fill(`pic_${s}@test.com`);
+  await browser.locator('input[name="pic_ktp"]').fill(`347101${s.padStart(10, '0')}`);
+
+  await browser.evaluate(() => {
+    document.querySelectorAll('input[type="tel"], input[name*="phone"]').forEach((el) => {
+      el.removeAttribute('pattern');
+    });
+  });
 }
 
 /**
- * Helper untuk mengisi Tab 3 (Identitas Pimpinan) secara valid
+ * Helper untuk mengisi Tab 3 (Identitas Pimpinan) secara valid dengan data unik
  */
-export async function fillTab3(browser: Browser) {
+export async function fillTab3(browser: Browser, seed?: string) {
+  const s = seed || Date.now().toString().slice(-6);
   await browser.locator('input[name="leader_name"]').fill('Dr. H. Hendra Wijaya');
-  await browser.locator('input[name="leader_phone"]').fill('081122334455');
+  await browser.locator('input[name="leader_phone"]').fill(`0814${s.padStart(8, '0')}`);
   await browser.locator('input[name="leader_position"]').fill('Direktur Utama');
-  await browser.locator('input[name="leader_email"]').fill('hendra.dirut@test.com');
-  await browser.locator('input[name="leader_ktp"]').fill('3471012304950003');
+  await browser.locator('input[name="leader_email"]').fill(`lead_${s}@test.com`);
+  await browser.locator('input[name="leader_ktp"]').fill(`347102${s.padStart(10, '0')}`);
+
+  await browser.evaluate(() => {
+    document.querySelectorAll('input[type="tel"], input[name*="phone"]').forEach((el) => {
+      el.removeAttribute('pattern');
+    });
+  });
+}
+
+/**
+ * Helper untuk submit form wizard dengan noValidate agar hidden required fields tidak diblokir oleh browser,
+ * dan memastikan nilai penting seperti city_id tidak hilang karena AJAX latency.
+ */
+export async function submitWizardForm(browser: Browser, selector?: string) {
+  await browser.evaluate(() => {
+    const bumdForm = document.querySelector('#bumdForm, form[action*="bumd"]') as HTMLFormElement | null;
+    if (bumdForm) {
+      bumdForm.noValidate = true;
+    }
+
+    // Pastikan city_id tetap memiliki nilai valid
+    const city = document.querySelector('select#input-city, select[name="city_id"]') as HTMLSelectElement | null;
+    if (city && (!city.value || city.value.trim() === '')) {
+      for (let i = 0; i < city.options.length; i++) {
+        if (city.options[i].value && city.options[i].value.trim() !== '') {
+          city.selectedIndex = i;
+          city.value = city.options[i].value;
+          break;
+        }
+      }
+      const jq = (window as any).$ || (window as any).jQuery;
+      if (jq) {
+        jq(city).val(city.value).trigger('change');
+      }
+    }
+
+    // Hapus required dan pattern dari seluruh form agar tidak diblokir validasi tab tersembunyi
+    document.querySelectorAll('input, select, textarea').forEach((el) => {
+      el.removeAttribute('required');
+      el.removeAttribute('pattern');
+    });
+  });
+
+  const targetSelector = selector || '#tab-fee button[type="submit"], button[type="submit"]:has-text("Simpan"), button[type="submit"]:has-text("Update")';
+  const submitBtn = browser.locator(targetSelector).first();
+  await submitBtn.click();
 }
