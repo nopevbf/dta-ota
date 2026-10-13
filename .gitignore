@@ -3,3 +3,7 @@ node_modules/
 .env*.local
 .e2e/
 
+# Screenshots & Visual Artifacts
+reports/**/screenshots/
+reports/bumd/screenshots/
+*.png
