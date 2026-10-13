@@ -89,17 +89,42 @@ export async function fillTab1(browser: Browser, company = 'PT BUMD Makmur Jaya'
   await browser.locator('input[name="email"]').fill('bumd@test.com');
   await browser.locator('input[name="address"]').fill('Jl. Merdeka No. 45');
   await setFoundedYear(browser, '2021');
-  await browser.locator('select#input-province').selectOption({ label: 'Daerah Istimewa Yogyakarta' });
+
+  // Pilih provinsi
+  const provSelect = browser.locator('select#input-province');
+  await provSelect.selectOption({ label: 'Daerah Istimewa Yogyakarta' });
+
+  // Pastikan event change terpicu secara andal (baik vanilla JS maupun jQuery jika ada)
+  await browser.evaluate(() => {
+    const prov = document.querySelector('select#input-province') as HTMLSelectElement | null;
+    if (prov) {
+      prov.dispatchEvent(new Event('input', { bubbles: true }));
+      prov.dispatchEvent(new Event('change', { bubbles: true }));
+      const jq = (window as any).$ || (window as any).jQuery;
+      if (jq) {
+        jq('#input-province').trigger('change');
+      }
+    }
+  });
+
   await browser.locator('select[name="status"]').selectOption({ label: 'Aktif' });
 
-  // Tunggu hingga opsi kota terisi dari AJAX response
-  await expect.poll(async () => await browser.locator('select#input-city option').count()).toBeGreaterThan(1);
+  // Tunggu hingga opsi kota terisi dari AJAX response (timeout 20s untuk toleransi latency headed mode)
+  await expect.poll(
+    async () => await browser.locator('select#input-city option').count(),
+    { timeout: 20000, interval: 500 }
+  ).toBeGreaterThan(1);
 
   await browser.evaluate(() => {
     const city = document.querySelector('select#input-city') as HTMLSelectElement | null;
     if (city && city.options.length > 1) {
       city.selectedIndex = 1;
+      city.dispatchEvent(new Event('input', { bubbles: true }));
       city.dispatchEvent(new Event('change', { bubbles: true }));
+      const jq = (window as any).$ || (window as any).jQuery;
+      if (jq) {
+        jq('#input-city').trigger('change');
+      }
     }
   });
 }

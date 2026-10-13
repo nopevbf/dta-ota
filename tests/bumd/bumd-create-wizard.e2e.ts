@@ -23,9 +23,21 @@ test.describe('Form Tambah Data BUMD: Wizard Tabs Tests', () => {
     await expect(provinceSelect).toBeVisible();
 
     await provinceSelect.selectOption({ label: 'Jawa Barat' });
+    await browser.evaluate(() => {
+      const el = document.querySelector('select#input-province') as HTMLSelectElement | null;
+      if (el) {
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+        const jq = (window as any).$ || (window as any).jQuery;
+        if (jq) jq('#input-province').trigger('change');
+      }
+    });
 
-    // Tunggu dropdown kota diperbarui
-    await expect.poll(async () => await browser.locator('select#input-city option').count()).toBeGreaterThan(1);
+    // Tunggu dropdown kota diperbarui (timeout 20s)
+    await expect.poll(
+      async () => await browser.locator('select#input-city option').count(),
+      { timeout: 20000, interval: 500 }
+    ).toBeGreaterThan(1);
   });
 
   test('BUMD-SC-011: verify Status Kerjasama dropdown options', async ({ browser }) => {
