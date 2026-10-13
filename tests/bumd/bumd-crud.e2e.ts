@@ -5,6 +5,7 @@ import {
   fillTab1,
   fillTab2,
   fillTab3,
+  navigateToTab4,
   submitWizardForm,
   takeEvidenceScreenshot,
 } from './support.ts';
@@ -75,19 +76,8 @@ test.describe('Bank Data BUMD: End-to-End CRUD Lifecycle with Visual Evidence', 
     const updatedPhone = '081299998888';
     await browser.locator('input[name="phone"]').fill(updatedPhone);
 
-    // Navigasi ke Tab 4 Fee BUMD untuk memodifikasi Fee
-    const next1 = browser.locator('#tab-perusahaan .next-tab');
-    if (await next1.isVisible().catch(() => false)) {
-      await next1.click();
-      const next2 = browser.locator('#tab-pj .next-tab');
-      if (await next2.isVisible().catch(() => false)) {
-        await next2.click();
-        const next3 = browser.locator('#tab-pimpinan .next-tab');
-        if (await next3.isVisible().catch(() => false)) {
-          await next3.click();
-        }
-      }
-    }
+    // Navigasi deterministik ke Tab 4 Fee BUMD untuk memodifikasi Fee
+    await navigateToTab4(browser);
 
     // Perbarui nilai Fee BUMD menjadi 12% jika input fee tersedia
     const updateFeeBumd = browser.locator('input[name="fee_bumd"]');
@@ -96,8 +86,7 @@ test.describe('Bank Data BUMD: End-to-End CRUD Lifecycle with Visual Evidence', 
     }
 
     // Simpan pembaruan data edit
-    const updateSubmitBtn = browser.locator('button[type="submit"]:has-text("Simpan"), button[type="submit"]:has-text("Update"), #tab-fee button[type="submit"]').first();
-    await updateSubmitBtn.click();
+    await submitWizardForm(browser);
 
     // Tunggu redirect kembali ke list BUMD
     await browser.waitForURL(/.*\/partner\/finance\/bumd$/, { timeout: 30000 });

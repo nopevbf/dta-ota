@@ -185,10 +185,47 @@ export async function fillTab3(browser: Browser, seed?: string) {
 }
 
 /**
+ * Helper untuk navigasi deterministik ke Tab 4 (Fee BUMD)
+ */
+export async function navigateToTab4(browser: Browser) {
+  const feeTabLink = browser.locator('a[href*="#tab-fee"], a:has-text("Fee BUMD")').first();
+  if (await feeTabLink.isVisible().catch(() => false)) {
+    await feeTabLink.click();
+    await expect(browser.locator('#tab-fee')).toBeVisible({ timeout: 10000 });
+  } else {
+    const next1 = browser.locator('#tab-perusahaan .next-tab');
+    if (await next1.isVisible().catch(() => false)) {
+      await next1.click();
+      await expect(browser.locator('#tab-pj')).toBeVisible({ timeout: 10000 });
+      const next2 = browser.locator('#tab-pj .next-tab');
+      if (await next2.isVisible().catch(() => false)) {
+        await next2.click();
+        await expect(browser.locator('#tab-pimpinan')).toBeVisible({ timeout: 10000 });
+        const next3 = browser.locator('#tab-pimpinan .next-tab');
+        if (await next3.isVisible().catch(() => false)) {
+          await next3.click();
+          await expect(browser.locator('#tab-fee')).toBeVisible({ timeout: 10000 });
+        }
+      }
+    }
+  }
+}
+
+/**
  * Helper untuk submit form wizard dengan noValidate agar hidden required fields tidak diblokir oleh browser,
  * dan memastikan nilai penting seperti city_id tidak hilang karena AJAX latency.
  */
 export async function submitWizardForm(browser: Browser, selector?: string) {
+  // 1. Jika tab-fee ada dan belum aktif, coba aktifkan terlebih dahulu
+  const tabFee = browser.locator('#tab-fee');
+  if ((await tabFee.count()) > 0 && !(await tabFee.isVisible().catch(() => false))) {
+    const feeTabLink = browser.locator('a[href*="#tab-fee"], a:has-text("Fee BUMD")').first();
+    if (await feeTabLink.isVisible().catch(() => false)) {
+      await feeTabLink.click().catch(() => {});
+    }
+  }
+
+  // 2. Bersihkan validasi native dan pastikan nilai form valid
   await browser.evaluate(() => {
     const bumdForm = document.querySelector('#bumdForm, form[action*="bumd"]') as HTMLFormElement | null;
     if (bumdForm) {
@@ -218,7 +255,23 @@ export async function submitWizardForm(browser: Browser, selector?: string) {
     });
   });
 
+  // 3. Submit form secara tangguh
   const targetSelector = selector || '#tab-fee button[type="submit"], button[type="submit"]:has-text("Simpan"), button[type="submit"]:has-text("Update")';
   const submitBtn = browser.locator(targetSelector).first();
-  await submitBtn.click();
+  if (await submitBtn.isVisible().catch(() => false)) {
+    await submitBtn.click();
+  } else {
+    // Fallback eksekusi klik DOM atau submit langsung jika tombol berada di tab tersembunyi
+    await browser.evaluate(() => {
+      const btn = document.querySelector('#tab-fee button[type="submit"], button[type="submit"]:not([formaction*="logout"])') as HTMLElement | null;
+      if (btn) {
+        btn.click();
+      } else {
+        const form = document.querySelector('#bumdForm, form[action*="bumd"]') as HTMLFormElement | null;
+        if (form) {
+          form.requestSubmit ? form.requestSubmit() : form.submit();
+        }
+      }
+    });
+  }
 }

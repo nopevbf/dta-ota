@@ -5,6 +5,7 @@ import {
   fillTab1,
   fillTab2,
   fillTab3,
+  navigateToTab4,
   submitWizardForm,
   takeEvidenceScreenshot,
 } from './support.ts';
@@ -86,19 +87,9 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
     const regUpdatedPhone = '081288887777';
     await browser.locator('input[name="phone"]').fill(regUpdatedPhone);
 
-    // Navigasi ke Tab 4 Fee & Update
-    const next1 = browser.locator('#tab-perusahaan .next-tab');
-    if (await next1.isVisible().catch(() => false)) {
-      await next1.click();
-      const next2 = browser.locator('#tab-pj .next-tab');
-      if (await next2.isVisible().catch(() => false)) {
-        await next2.click();
-        const next3 = browser.locator('#tab-pimpinan .next-tab');
-        if (await next3.isVisible().catch(() => false)) {
-          await next3.click();
-        }
-      }
-    }
+    // Navigasi deterministik ke Tab 4 Fee & Update
+    await navigateToTab4(browser);
+
     const updateFeeBumd = browser.locator('input[name="fee_bumd"]');
     if (await updateFeeBumd.isVisible().catch(() => false)) {
       await updateFeeBumd.fill('12');
