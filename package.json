@@ -13,6 +13,10 @@
     "test:e2e": "e2e run",
     "test:bumd": "e2e run tests/bumd/",
     "test:bumd:crud": "e2e run tests/bumd/bumd-crud.e2e.ts",
-    "test:bumd:regression": "e2e run tests/bumd/bumd-regression.e2e.ts"
+    "test:bumd:regression": "e2e run tests/bumd/bumd-regression.e2e.ts",
+    "test:mitra": "e2e run tests/mitra/",
+    "test:mitra:onprogress": "e2e run tests/mitra/mitra-onprogress.e2e.ts",
+    "test:mitra:list": "e2e run tests/mitra/mitra-list-filter.e2e.ts",
+    "test:mitra:crud": "e2e run tests/mitra/mitra-modal-crud.e2e.ts"
   }
 }
