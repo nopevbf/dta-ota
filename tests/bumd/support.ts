@@ -1,25 +1,68 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import type { Browser } from '@e2e-dev/web';
-import { credentials, expect } from 'e2e';
+import { expect } from 'e2e';
 
 /**
  * Helper untuk login sebagai Manajemen dan menavigasi ke halaman BUMD
  */
-export async function loginAndNavigateToBumd(browser: Browser, path = '/partner/finance/bumd') {
+export async function loginAndNavigateToBumd(browser: Browser, targetPath = '/partner/finance/bumd') {
   const currentUrl = await browser.url().catch(() => '');
   if (!currentUrl.includes('management.dparagon7.persona-it.com')) {
-    const mgmt = credentials.user('manajemen');
+    const username = process.env.E2E_USER_MANAJEMEN_USERNAME || 'superadmin@dparagon.com';
+    const password = process.env.E2E_USER_MANAJEMEN_PASSWORD || 'Merpati98';
+
     await browser.goto('https://auth.dparagon7.persona-it.com/login');
 
     const mgmtCard = browser.locator('a.login-type-card:has-text("Management")');
     await mgmtCard.click();
 
-    await browser.locator('#username').fill(mgmt.username);
-    await browser.locator('#userpassword').fill(mgmt.password);
+    await browser.locator('#username').fill(username);
+    await browser.locator('#userpassword').fill(password);
     await browser.locator('button[type="submit"]:has-text("Masuk")').click();
     await browser.waitForURL(/.*management.*/, { timeout: 30000 });
   }
 
-  await browser.goto(`https://management.dparagon7.persona-it.com${path}`);
+  await browser.goto(`https://management.dparagon7.persona-it.com${targetPath}`);
+}
+
+/**
+ * Helper untuk menangkap screenshot bukti uji dan menyalinnya ke reports/bumd/screenshots/
+ */
+export async function takeEvidenceScreenshot(app: any, label: string, saveFilename?: string): Promise<string> {
+  const reportsDir = path.resolve(process.cwd(), 'reports', 'bumd', 'screenshots');
+  if (!fs.existsSync(reportsDir)) {
+    fs.mkdirSync(reportsDir, { recursive: true });
+  }
+
+  const relative = await app.screenshot(label);
+  const targetName = saveFilename || `${label}.png`;
+  const destPath = path.join(reportsDir, targetName);
+
+  // Cari file screenshot yang baru saja ditulis oleh runner
+  const resultsDir = path.resolve(process.cwd(), '.e2e', 'results');
+  const candidate = path.resolve(process.cwd(), relative);
+
+  if (fs.existsSync(candidate)) {
+    fs.copyFileSync(candidate, destPath);
+  } else if (fs.existsSync(resultsDir)) {
+    const searchFile = (dir: string): boolean => {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+      for (const entry of entries) {
+        const full = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          if (searchFile(full)) return true;
+        } else if (entry.name.includes(label) && entry.name.endsWith('.png')) {
+          fs.copyFileSync(full, destPath);
+          return true;
+        }
+      }
+      return false;
+    };
+    searchFile(resultsDir);
+  }
+
+  return destPath;
 }
 
 /**

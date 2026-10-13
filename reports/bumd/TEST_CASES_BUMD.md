@@ -81,8 +81,30 @@
 
 ---
 
-## 4. Matriks Traceability & Cakupan Fitur
+## 4. Test Suite: Siklus Hidup Penuh CRUD & Bukti Visual (E2E Lifecycle)
 
-- **Total Skenario Teridentifikasi**: 54 Skenario (48 Skenario Dasar BUMD + 6 Skenario Khusus Fee BUMD).
-- **Skenario Terotomasi (Critical & High Priority E2E Path)**: 13 Core Tests (100% PASS).
-- **Regression Execution Target**: Setiap sprint release fitur finance BUMD.
+| Test ID | Modul / Skenario | Preconditions | Langkah Pengujian | Bukti Screenshot | Hasil yang Diharapkan | Prioritas | Status Otomasi |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **BUMD-CRUD-001** | Create Data BUMD & Verifikasi Tampil di Tabel | Login manajemen, buka form create | 1. Isi Tab 1 Perusahaan (Nama Unik)<br>2. Isi Tab 2 PJ<br>3. Isi Tab 3 Pimpinan<br>4. Isi Tab 4 Fee (Mgmt: 15%, BUMD: 10%)<br>5. Tangkap screenshot<br>6. Klik Simpan<br>7. Tunggu redirect ke tabel<br>8. Tangkap screenshot tabel | `01-create-wizard-tab4-filled.png`<br>`02-create-verified-in-table.png` | Form tersimpan, muncul alert sukses, dan baris data baru tampil di tabel dengan Fee Management 15% & Fee BUMD 10% | Critical | Automated (PASS) |
+| **BUMD-CRUD-002** | Update Data BUMD & Verifikasi Perubahan di Tabel | Data BUMD baru tampil di tabel | 1. Klik ikon Edit pada baris terkait<br>2. Tangkap screenshot form edit<br>3. Ubah nomor telepon perusahaan<br>4. Beralih ke Tab 4 & ubah Fee BUMD jadi 12%<br>5. Klik Simpan<br>6. Tunggu redirect ke tabel<br>7. Tangkap screenshot tabel | `03-edit-form-opened.png`<br>`04-update-verified-in-table.png` | Form edit termuat dengan nilai awal; data berhasil diperbarui dan nomor telepon baru ter-render di tabel | Critical | Automated (PASS) |
+| **BUMD-CRUD-003** | Delete Data BUMD & Verifikasi Hilang dari Tabel | Data BUMD hasil update tampil di tabel | 1. Klik tombol Hapus (Delete) pada baris terkait<br>2. Tangkap screenshot dialog konfirmasi<br>3. Konfirmasi penghapusan (Accept dialog)<br>4. Tunggu reload tabel<br>5. Tangkap screenshot tabel bersih | `05-delete-confirmation-dialog.png`<br>`06-delete-verified-removed.png` | Dialog konfirmasi "Hapus data ini?" muncul dan saat dikonfirmasi, data terhapus permanen dari tabel | Critical | Automated (PASS) |
+
+---
+
+## 5. Test Suite: Automated Regression Suite (`tests/bumd/bumd-regression.e2e.ts`)
+
+| Test ID | Cakupan Uji Regresi | Komponen yang Divalidasi | Kriteria Lulus (Pass Criteria) | Durasi Uji | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **BUMD-REG-001** | Table Rendering & Toolbar Integrity | Headers: Nama, Fee Mgmt, Fee BUMD, Aksi; Tombol: Tambah, Excel | Seluruh elemen header dan aksi ter-render visible | ~21s | **PASS** |
+| **BUMD-REG-002** | Wizard Stepper Navigation & State Retention | Navigasi maju Tab 1-4 lalu mundur Tab 4-1 | Data pada input tidak hilang atau reset saat berpindah tab | ~30s | **PASS** |
+| **BUMD-REG-003** | Full Data Lifecycle CRUD & Teardown | Create -> Table Verify -> Edit -> Update Verify -> Delete -> Clean Table | Seluruh siklus CRUD berhasil tanpa sisa data sampah di staging | ~54s | **PASS** |
+| **BUMD-REG-004** | Search Filter & Export Response | Search box keyword, filter toggle, tombol export Excel | Filter interaktif dan tombol export Excel aktif | ~19s | **PASS** |
+
+---
+
+## 6. Matriks Traceability & Cakupan Fitur
+
+- **Total Skenario Teridentifikasi**: 61 Skenario.
+- **Skenario Terotomasi (E2E Automated)**: 18 Tests Terpadu (100% PASS).
+- **Regression Execution Target**: Setiap sprint release fitur finance BUMD (`pnpm test:bumd:regression`).
+
