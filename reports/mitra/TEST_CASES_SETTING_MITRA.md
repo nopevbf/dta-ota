@@ -27,6 +27,24 @@
 
 ---
 
+## 1.1 Penyelarasan Terhadap Arsitektur e2e Framework (@e2e-dev/web)
+
+Untuk standardisasi pengujian E2E otomatis, seluruh skenario Setting Mitra telah diselaraskan dengan **e2e framework**:
+1. **Automated Test Suites**:
+   - `tests/mitra/mitra-list-filter.e2e.ts` (6 tests - List & Filter)
+   - `tests/mitra/mitra-modal-crud.e2e.ts` (4 tests - Modal Tambah & Ubah)
+   - `tests/mitra/mitra-detail.e2e.ts` (4 tests - Detail & Breadcrumb)
+   - `tests/mitra/mitra-onprogress.e2e.ts` (3 tests - On Progress verification)
+2. **Kredensial & Autentikasi**:
+   - Menggunakan `credentials.user('manajemen')` dari `e2e` config.
+3. **Command CLI**:
+   ```bash
+   pnpm test:mitra
+   ```
+   *Hasil verifikasi*: 17/17 tests Passed (100% Pass Rate).
+
+---
+
 ## 2. Test Suite 1: Halaman "Daftar Mitra Terdaftar" (List, Tab & Filter) — 19 Test Cases
 
 | Test Case ID | Ref ID | Test Objective / Skenario | Preconditions | Langkah Pengujian (Test Steps) | Test Data | Hasil yang Diharapkan (Expected Result) | Teknik ISTQB | Prioritas | Severity | Status |

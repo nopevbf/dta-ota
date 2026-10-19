@@ -22,6 +22,7 @@ function resolveModel() {
 
 export default {
   workers: 1,
+  timeout: 600000,
   agents: {
     default: {
       model: resolveModel(),

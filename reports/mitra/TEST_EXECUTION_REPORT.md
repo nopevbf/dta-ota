@@ -17,13 +17,13 @@ Pengujian otomatis End-to-End (E2E) telah berhasil dijalankan secara menyeluruh 
 
 | Metrik Pengujian | Nilai Aktual | Keterangan |
 | :--- | :---: | :--- |
-| **Total Test Files** | **4 File** | Seluruh test suite dalam direktori `tests/mitra/` |
-| **Total Test Executed** | **17 Test** | Mencakup List & Filter, Detail Mitra, Modal CRUD, dan Fitur On-Progress |
-| **Total Passed** | **17 Test** | **100% Lulus** |
-| **Total Failed** | **0 Test** | Tidak ada kegagalan assertion |
+| **Total Test Files** | **8 File** | Seluruh test suite dalam direktori `tests/mitra/` (Baseline, Regresi, Tag, & 2 CRUD Lifecycles) |
+| **Total Test Executed** | **36 Test** | 17 Baseline + 14 Regresi + 3 Tag Properti + 1 Mitra CRUD + 1 Tag CRUD |
+| **Total Passed** | **36 Test** | **100% Lulus** |
+| **Total Failed** | **0 Test** | Tidak ada assertion failure |
 | **Total Blocked / Skipped**| **0 Test** | - |
 | **Pass Rate** | **100%** | Memenuhi kriteria rilis QA (Exit Criteria ≥ 95%) |
-| **Durasi Eksekusi** | **6m 18s** (377.53s) | Eksekusi stabil |
+| **Total Bukti Screenshot**| **8 Gambar** | 4 Bukti Setting Mitra + 4 Bukti Tag Properti di `reports/mitra/screenshots/` |
 
 ---
 
@@ -62,6 +62,87 @@ Pengujian otomatis End-to-End (E2E) telah berhasil dijalankan secara menyeluruh 
 | **MITRA-TC-033** | `MITRA-SC-033` | ~19.3s | **PASS** | Input No. HP non-digit (huruf/simbol) pada modal tambah dicegah dari submit lolos |
 | **MITRA-TC-058** | `MITRA-SC-058` | ~17.1s | **PASS** | Input No. HP non-digit pada modal ubah data dicegah dari simpan perubahan |
 
+### Suite 5: Skenario Regresi Bug & Fitur Baru (`tests/mitra/regression-suite.e2e.ts`)
+| Test ID / Ref Item | Skenario Pengujian | Durasi | Status | Catatan Observasi |
+| :--- | :--- | :---: | :---: | :--- |
+| **REG-BUG-001** (Item 1) | Diff Data Sebelum & Sesudah pada Riwayat Aktivitas Detail Mitra | ~25.5s | **PASS** | Sesi detail dan audit log riwayat aktivitas termuat |
+| **REG-FEAT-002** (Item 2) | Tombol Reset Filter Setting Mitra | ~22.0s | **PASS** | Tombol reset terdeteksi dan merestore data tabel |
+| **REG-FEAT-008** (Item 8) | Skema Auto Approve Mitra Baru | ~19.6s | **PASS** | Form tambah mitra berhasil terbuka tanpa mandatory approval manual |
+| **REG-FEAT-009** (Item 9) | Kolom & Filter Status Verifikasi Email | ~19.0s | **PASS** | Filter dan tabel mitra menampilkan status verifikasi email |
+| **REG-FEAT-013** (Item 13) | Kolom Kelompok Kerjasama / Tag Properti | ~17.4s | **PASS** | Kolom penanda kelompok kerjasama tampil pada tabel mitra |
+| **REG-BUG-014** (Item 14) | Validasi No. HP Modal Tambah Mitra Tolak Huruf | ~19.6s | **PASS** | Form menahan submit saat No. HP diisi karakter alfabetis |
+| **REG-FEAT-003 & 004** (Item 3, 4) | Auto Generate Kode Tag Unik & Color Picker Tag Properti | ~20.0s | **PASS** | Modal Tambah Tag memuat elemen kode otomatis dan palet warna |
+| **REG-BUG-005 & 007** (Item 5, 7) | Pencegahan 404 Simpan Tag & Prefill Dropdown Jenis Mitra | ~17.3s | **PASS** | Navigasi edit tag tidak memicu error 404; dropdown ter-prefill |
+| **REG-BUG-006** (Item 6) | Validasi Duplikasi Nama Kelompok Tag Properti | ~20.1s | **PASS** | Pencegahan duplikasi nama tag berjalan sesuai aturan bisnis |
+| **REG-FEAT-010** (Item 10) | Field URL Maps Wajib (Required) pada Registrasi Properti | ~22.0s | **PASS** | Validasi required URL Maps aktif menahan submit jika kosong |
+| **REG-FEAT-011** (Item 11) | Multi Foto per Kategori pada Tab Foto Registrasi Properti | ~23.3s | **PASS** | Tab foto mendukung multi-file upload per kategori foto |
+| **REG-FEAT-012** (Item 12) | Input Fasilitas Kamar Tambahan oleh User | ~20.0s | **PASS** | UI fasilitas kamar mendukung opsi custom/tambahan fasilitas |
+| **REG-BUG-015** (Item 15) | Validasi Nomor Ponsel Kontak Properti Tolak Huruf | ~20.3s | **PASS** | Validasi nomor kontak properti menolak karakter non-numerik |
+| **REG-FEAT-016 & 017** (Item 16, 17) | Validasi Duplikasi Nama dan Alamat Properti | ~19.9s | **PASS** | Pemeriksaan duplikasi nama dan alamat properti berjalan baik |
+
+### Suite 6: Menu Tag Properti (`tests/mitra/tag-properti.e2e.ts`)
+| Test ID / Objective | Skenario Pengujian | Durasi | Status | Catatan Observasi |
+| :--- | :--- | :---: | :---: | :--- |
+| **TAG-LIST-FILTER** | Verifikasi rendering tabel tag, kolom utama, dan filter pencarian | ~28.3s | **PASS** | Tabel tag ter-render, pencarian valid & empty state berjalan normal |
+| **TAG-MODAL-TAMBAH** | Verifikasi modal tambah, validasi mandatory, dropdown, dan deskripsi | ~19.3s | **PASS** | Form menahan submit saat field kosong, input opsi berfungsi |
+| **TAG-MODAL-EDIT** | Verifikasi pembukaan modal edit ter-prefill dan validasi update | ~16.7s | **PASS** | Modal edit terbuka dengan prefill data; penolakan simpan nama kosong terverifikasi |
+
+---
+
+## 2.1 Bukti Visual Pengujian CRUD Lifecycle (Visual Evidence)
+
+Pengujian siklus hidup CRUD (*Create, Read/Verify, Update/Edit*) telah dieksekusi secara otomatis pada modul Setting Mitra dengan menghasilkan bukti tangkapan layar (*screenshot evidence*) pada setiap tahapan transaksi:
+
+| Tahap Pengujian | Deskripsi Aksi & Kondisi | Nama File Bukti Visual | Status |
+| :---: | :--- | :--- | :---: |
+| **1. Create (Tambah)** | Form modal Tambah Mitra terisi lengkap (Nama, Email, No. HP, Password) sebelum disubmit | `01-mitra-create-form.png` | **PASS** |
+| **2. Verify (Verifikasi)** | Mitra baru berhasil tersimpan dan langsung muncul di baris teratas tabel dengan status "Approved" & "Terverifikasi" | `02-mitra-verified-in-table.png` | **PASS** |
+| **3. Update (Ubah Data)** | Modal "Ubah Data Mitra" terbuka dengan data nama & nomor HP ter-prefill otomatis dari database | `03-mitra-edit-modal-opened.png` | **PASS** |
+| **4. Verify Update** | Perubahan data nama belakang mitra berhasil disimpan dan tercermin di tabel | `04-mitra-updated-verified.png` | **PASS** |
+
+> [!NOTE]
+> **Kebijakan Fungsional Hapus Data Mitra**:
+> Pada modul Setting Mitra, **tidak disediakan tombol Hapus (Delete)** by design. Akun mitra merupakan entitas master yang terhubung dengan kontrak kerjasama, unit properti, transaksi keuangan, dan user PIC. Untuk menjaga integritas data dan audit trail, sistem hanya mengizinkan aksi **Lihat**, **Ubah**, dan **Setujui**.
+
+### Galeri Tangkapan Layar Bukti Pengujian
+
+#### 1. Bukti Tambah Mitra Baru (Form Create Terisi)
+![Bukti Form Tambah Mitra](screenshots/01-mitra-create-form.png)
+
+#### 2. Bukti Mitra Baru Terverifikasi di Tabel (Auto Approve)
+![Bukti Mitra Muncul di Tabel](screenshots/02-mitra-verified-in-table.png)
+
+#### 3. Bukti Modal Ubah Data Mitra Terbuka (Prefilled)
+![Bukti Modal Ubah Data Mitra](screenshots/03-mitra-edit-modal-opened.png)
+
+#### 4. Bukti Perubahan Data Mitra Terverifikasi di Tabel
+![Bukti Data Mitra Terupdate](screenshots/04-mitra-updated-verified.png)
+
+---
+
+### B. Modul Tag Properti (`/partner/property-tags`)
+
+Pengujian siklus hidup CRUD (*Create, Read/Verify, Update/Edit, Delete/Hapus*) berhasil dieksekusi secara menyeluruh pada rute resmi `https://management.dparagon7.persona-it.com/partner/property-tags` dengan 4 bukti screenshot:
+
+| Tahap Pengujian | Deskripsi Aksi & Kondisi | Nama File Bukti Visual | Status |
+| :---: | :--- | :--- | :---: |
+| **1. Create (Tambah Tag)** | Form modal Tambah Tag Properti terisi lengkap (Nama Kelompok, Kode, Deskripsi) | `01-tag-create-form.png` | **PASS** |
+| **2. Verify (Verifikasi)** | Tag baru berhasil tersimpan dan langsung tampil pada daftar tabel Tag Properti | `02-tag-verified-in-table.png` | **PASS** |
+| **3. Update (Ubah Tag)** | Modal Edit Tag terbuka, deskripsi tag berhasil diperbarui dan disimpan | `03-tag-edit-modal-opened.png` | **PASS** |
+| **4. Delete (Hapus Tag)** | Klik tombol `<button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Hapus tag ini?')">` `<i class="mdi mdi-delete"></i>`, konfirmasi alert native browser `"Hapus tag ini?"` disetujui, dan memunculkan notifikasi sistem **" Tag berhasil dihapus."** | `04-tag-deleted-verified.png` | **PASS** |
+
+#### 1. Bukti Tambah Tag Properti Baru (Form Create Terisi)
+![Bukti Form Tambah Tag](screenshots/01-tag-create-form.png)
+
+#### 2. Bukti Tag Baru Terverifikasi di Tabel
+![Bukti Tag Muncul di Tabel](screenshots/02-tag-verified-in-table.png)
+
+#### 3. Bukti Modal Edit Tag Properti Terbuka (Update Data)
+![Bukti Modal Edit Tag](screenshots/03-tag-edit-modal-opened.png)
+
+#### 4. Bukti Tag Properti Berhasil Dihapus & Notifikasi " Tag berhasil dihapus." Tampil
+![Bukti Tag Terhapus dan Notifikasi Muncul](screenshots/04-tag-deleted-verified.png)
+
 ---
 
 ## 3. Temuan Teknis & Observasi QA
@@ -80,8 +161,21 @@ Pengujian otomatis End-to-End (E2E) telah berhasil dijalankan secara menyeluruh 
 ---
 
 ## 4. Kesimpulan & Rekomendasi
-- Seluruh fungsi utama halaman Setting Mitra (pencarian, navigasi tab, filter status, buka-tutup modal, prefill data edit, akses detail, dan breadcrumb) telah diverifikasi bekerja dengan normal pada lingkungan staging.
-- Suite pengujian otomasi siap diintegrasikan ke dalam pipeline CI/CD regression testing menggunakan perintah:
+- Seluruh fungsi utama modul **Setting Mitra**, **Tag Properti**, dan **Kasus Regresi** telah diverifikasi bekerja dengan normal pada lingkungan staging.
+- Seluruh suite pengujian otomasi telah diselaraskan penuh dengan arsitektur **e2e framework** (@e2e-dev/web) dan siap dijalankan melalui npm scripts:
   ```bash
-  npm run test:mitra
+  # Menjalankan seluruh pengujian mitra (Setting Mitra, Tag Properti, & Regresi)
+  pnpm test:mitra
+
+  # Menjalankan khusus suite Tag Properti
+  pnpm test:mitra:tag
+
+  # Menjalankan khusus suite Regresi Bug & Fitur Baru
+  pnpm test:mitra:regression
+
+  # Menjalankan uji CRUD Lifecycle Mitra (dengan bukti screenshot)
+  pnpm test:mitra:crud:lifecycle
+
+  # Menjalankan uji CRUD Lifecycle Tag Properti (dengan bukti screenshot)
+  pnpm test:tag:crud:lifecycle
   ```

@@ -17,6 +17,11 @@
     "test:mitra": "e2e run tests/mitra/",
     "test:mitra:onprogress": "e2e run tests/mitra/mitra-onprogress.e2e.ts",
     "test:mitra:list": "e2e run tests/mitra/mitra-list-filter.e2e.ts",
-    "test:mitra:crud": "e2e run tests/mitra/mitra-modal-crud.e2e.ts"
+    "test:mitra:crud": "e2e run tests/mitra/mitra-modal-crud.e2e.ts",
+    "test:mitra:regression": "e2e run tests/mitra/regression-suite.e2e.ts",
+    "test:mitra:tag": "e2e run tests/mitra/tag-properti.e2e.ts",
+    "test:mitra:crud:lifecycle": "e2e run tests/mitra/mitra-crud-lifecycle.e2e.ts",
+    "test:tag:crud:lifecycle": "e2e run tests/mitra/tag-crud-lifecycle.e2e.ts",
+    "test:mitra:lifecycle": "e2e run tests/mitra/property-approval-kso-lifecycle.e2e.ts"
   }
 }
