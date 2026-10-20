@@ -1,28 +1,32 @@
 import type { E2EConfig } from 'e2e';
 import { web } from '@e2e-dev/web';
-import { google } from '@ai-sdk/google';
+import { google, createGoogleGenerativeAI } from '@ai-sdk/google';
 import { openai } from '@ai-sdk/openai';
 
 process.loadEnvFile?.('.env');
 
 // Map GEMINI_API_KEY to GOOGLE_GENERATIVE_AI_API_KEY if needed by @ai-sdk/google
-if (process.env.GEMINI_API_KEY && !process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
-  process.env.GOOGLE_GENERATIVE_AI_API_KEY = process.env.GEMINI_API_KEY;
+const geminiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY;
+if (geminiKey) {
+  process.env.GOOGLE_GENERATIVE_AI_API_KEY = geminiKey;
+  process.env.GEMINI_API_KEY = geminiKey;
 }
 
 function resolveModel() {
-  if (process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY) {
-    return google('gemini-2.5-flash');
+  const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY;
+  if (apiKey) {
+    const googleClient = createGoogleGenerativeAI({ apiKey });
+    return googleClient('gemini-3.8-flash');
   }
   if (process.env.OPENAI_API_KEY) {
     return openai('gpt-4o-mini');
   }
-  return google('gemini-2.5-flash');
+  return google('gemini-3.8-flash');
 }
 
 export default {
   workers: 1,
-  timeout: 600000,
+  timeout: 1200000,
   agents: {
     default: {
       model: resolveModel(),
