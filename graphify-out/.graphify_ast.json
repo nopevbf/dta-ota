@@ -1,0 +1,3506 @@
+{
+  "nodes": [
+    {
+      "id": "cursor_mcp",
+      "label": "mcp.json",
+      "file_type": "code",
+      "source_file": ".cursor/mcp.json",
+      "source_location": "L1",
+      "metadata": {
+        "mcp_kind": "mcp_config_file"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "cursor_mcp_mcp_server_e2e",
+      "label": "e2e",
+      "file_type": "code",
+      "source_file": ".cursor/mcp.json",
+      "source_location": "L1",
+      "metadata": {
+        "mcp_kind": "mcp_server"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "cursor_mcp_json_mcp_command_npx",
+      "label": "npx",
+      "file_type": "code",
+      "source_file": ".cursor/mcp.json",
+      "source_location": "L1",
+      "metadata": {
+        "mcp_kind": "mcp_command"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "mcp",
+      "label": ".mcp.json",
+      "file_type": "code",
+      "source_file": ".mcp.json",
+      "source_location": "L1",
+      "metadata": {
+        "mcp_kind": "mcp_config_file"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "mcp_mcp_server_e2e",
+      "label": "e2e",
+      "file_type": "code",
+      "source_file": ".mcp.json",
+      "source_location": "L1",
+      "metadata": {
+        "mcp_kind": "mcp_server"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "mcp_json_mcp_command_npx",
+      "label": "npx",
+      "file_type": "code",
+      "source_file": ".mcp.json",
+      "source_location": "L1",
+      "metadata": {
+        "mcp_kind": "mcp_command"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "e2e_config",
+      "label": "e2e.config.ts",
+      "file_type": "code",
+      "source_file": "e2e.config.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "e2e_config_resolvemodel",
+      "label": "resolveModel()",
+      "file_type": "code",
+      "source_file": "e2e.config.ts",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "package",
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_type",
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_ai_sdk_google",
+      "label": "@ai-sdk/google",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_ai_sdk_google",
+      "label": "@ai-sdk/google",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_ai_sdk_openai",
+      "label": "@ai-sdk/openai",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_ai_sdk_openai",
+      "label": "@ai-sdk/openai",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_e2e_dev_web",
+      "label": "@e2e-dev/web",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_e2e_dev_web",
+      "label": "@e2e-dev/web",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_ai",
+      "label": "ai",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_ai",
+      "label": "ai",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_e2e",
+      "label": "e2e",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_e2e",
+      "label": "e2e",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_zod",
+      "label": "zod",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_zod",
+      "label": "zod",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_e2e",
+      "label": "test:e2e",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_bumd",
+      "label": "test:bumd",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_bumd_crud",
+      "label": "test:bumd:crud",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_bumd_regression",
+      "label": "test:bumd:regression",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_mitra",
+      "label": "test:mitra",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_mitra_onprogress",
+      "label": "test:mitra:onprogress",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_mitra_list",
+      "label": "test:mitra:list",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_mitra_crud",
+      "label": "test:mitra:crud",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_mitra_regression",
+      "label": "test:mitra:regression",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_mitra_tag",
+      "label": "test:mitra:tag",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_mitra_crud_lifecycle",
+      "label": "test:mitra:crud:lifecycle",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_tag_crud_lifecycle",
+      "label": "test:tag:crud:lifecycle",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_mitra_lifecycle",
+      "label": "test:mitra:lifecycle",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_auth_roles",
+      "label": "test:auth:roles",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_auth_guest",
+      "label": "test:auth:guest",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_auth_mitra",
+      "label": "test:auth:mitra",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test_auth_all",
+      "label": "test:auth:all",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_auth_flow_e2e",
+      "label": "auth-flow.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/auth-flow.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_auth_new_login_roles_e2e",
+      "label": "auth-new-login-roles.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/auth-new-login-roles.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_auth_new_register_guest_e2e",
+      "label": "auth-new-register-guest.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_auth_new_register_mitra_e2e",
+      "label": "auth-new-register-mitra.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_bumd_create_wizard_e2e",
+      "label": "bumd-create-wizard.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/bumd/bumd-create-wizard.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_bumd_crud_e2e",
+      "label": "bumd-crud.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_bumd_fee_e2e",
+      "label": "bumd-fee.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/bumd/bumd-fee.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_bumd_list_filter_e2e",
+      "label": "bumd-list-filter.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/bumd/bumd-list-filter.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_bumd_regression_e2e",
+      "label": "bumd-regression.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_support",
+      "label": "support.ts",
+      "file_type": "code",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_support_loginandnavigatetobumd",
+      "label": "loginAndNavigateToBumd()",
+      "file_type": "code",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L9",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "url",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L10"
+          },
+          {
+            "callee": "goto",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L15"
+          },
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L17"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L24"
+          },
+          {
+            "callee": "waitForURL",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L35"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_support_takeevidencescreenshot",
+      "label": "takeEvidenceScreenshot()",
+      "file_type": "code",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L44",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_support_setfoundedyear",
+      "label": "setFoundedYear()",
+      "file_type": "code",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L83",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L84"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_support_filltab1",
+      "label": "fillTab1()",
+      "file_type": "code",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L98",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L100"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L107"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_support_filltab2",
+      "label": "fillTab2()",
+      "file_type": "code",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L154",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L156"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L162"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_support_filltab3",
+      "label": "fillTab3()",
+      "file_type": "code",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L172",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L174"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L180"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_support_navigatetotab4",
+      "label": "navigateToTab4()",
+      "file_type": "code",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L190",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L191"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_bumd_support_submitwizardform",
+      "label": "submitWizardForm()",
+      "file_type": "code",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L218",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L220"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L229"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_example_e2e",
+      "label": "example.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/example.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_mitra_crud_lifecycle_e2e",
+      "label": "mitra-crud-lifecycle.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/mitra/mitra-crud-lifecycle.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_mitra_detail_e2e",
+      "label": "mitra-detail.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/mitra/mitra-detail.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_mitra_list_filter_e2e",
+      "label": "mitra-list-filter.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/mitra/mitra-list-filter.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_mitra_modal_crud_e2e",
+      "label": "mitra-modal-crud.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/mitra/mitra-modal-crud.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_mitra_onprogress_e2e",
+      "label": "mitra-onprogress.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/mitra/mitra-onprogress.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "label": "property-approval-kso-lifecycle.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L1",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "on",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L105"
+          },
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L116"
+          },
+          {
+            "callee": "goto",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L162"
+          },
+          {
+            "callee": "reload",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L176"
+          },
+          {
+            "callee": "url",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L289"
+          },
+          {
+            "callee": "waitForURL",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L342"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L424"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_property_approval_kso_lifecycle_e2e_clickwizardsubmit",
+      "label": "clickWizardSubmit()",
+      "file_type": "code",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L16",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L17"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_property_approval_kso_lifecycle_e2e_submitandadvance",
+      "label": "submitAndAdvance()",
+      "file_type": "code",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L30",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "url",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L31"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L36"
+          },
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L50"
+          },
+          {
+            "callee": "reload",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L53"
+          },
+          {
+            "callee": "waitForURL",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L72"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_regression_suite_e2e",
+      "label": "regression-suite.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/mitra/regression-suite.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_support",
+      "label": "support.ts",
+      "file_type": "code",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_support_loginandnavigatetomitra",
+      "label": "loginAndNavigateToMitra()",
+      "file_type": "code",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L9",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "goto",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L14"
+          },
+          {
+            "callee": "url",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L17"
+          },
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L18"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L47"
+          },
+          {
+            "callee": "waitForURL",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L52"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_support_loginandnavigatetotagproperti",
+      "label": "loginAndNavigateToTagProperti()",
+      "file_type": "code",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L63",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "url",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L66"
+          },
+          {
+            "callee": "goto",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L68"
+          },
+          {
+            "callee": "waitForURL",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L69"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_support_loginandnavigatetoregistrasiproperti",
+      "label": "loginAndNavigateToRegistrasiProperti()",
+      "file_type": "code",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L76",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L79"
+          },
+          {
+            "callee": "goto",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L83"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_support_takeevidencescreenshot",
+      "label": "takeEvidenceScreenshot()",
+      "file_type": "code",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L90",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_support_takelifecyclescreenshot",
+      "label": "takeLifecycleScreenshot()",
+      "file_type": "code",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L133",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_support_loginmitradashboard",
+      "label": "loginMitraDashboard()",
+      "file_type": "code",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L180",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "goto",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L181"
+          },
+          {
+            "callee": "url",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L182"
+          },
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L188"
+          },
+          {
+            "callee": "waitForURL",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L193"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_support_logoutcurrentsession",
+      "label": "logoutCurrentSession()",
+      "file_type": "code",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L199",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L201"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L215"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_tag_crud_lifecycle_e2e",
+      "label": "tag-crud-lifecycle.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/mitra/tag-crud-lifecycle.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_mitra_tag_properti_e2e",
+      "label": "tag-properti.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/mitra/tag-properti.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_roles_auth_e2e",
+      "label": "roles-auth.e2e.ts",
+      "file_type": "code",
+      "source_file": "tests/roles-auth.e2e.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_auth_helpers",
+      "label": "auth-helpers.ts",
+      "file_type": "code",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_auth_helpers_target_url",
+      "label": "TARGET_URL",
+      "file_type": "code",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_auth_helpers_auth_logout_url",
+      "label": "AUTH_LOGOUT_URL",
+      "file_type": "code",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_auth_helpers_setupapiroutebridge",
+      "label": "setupApiRouteBridge()",
+      "file_type": "code",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L12",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "route",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L17"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_auth_helpers_takeauthscreenshot",
+      "label": "takeAuthScreenshot()",
+      "file_type": "code",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L58",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_auth_helpers_dismissinitialpromo",
+      "label": "dismissInitialPromo()",
+      "file_type": "code",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L104",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L106"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L113"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_auth_helpers_openloginmodal",
+      "label": "openLoginModal()",
+      "file_type": "code",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L131",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "locator",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L134"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L143"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_auth_helpers_logoutsession",
+      "label": "logoutSession()",
+      "file_type": "code",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L158",
+      "_callable": true,
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "goto",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L160"
+          },
+          {
+            "callee": "evaluate",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L164"
+          },
+          {
+            "callee": "reload",
+            "receiver_type": "Browser",
+            "lang": "typescript",
+            "line": "L177"
+          }
+        ]
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_temp_mail",
+      "label": "temp-mail.ts",
+      "file_type": "code",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_temp_mail_tempmailinbox",
+      "label": "TempMailInbox",
+      "file_type": "code",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L1",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_temp_mail_tempmailmessage",
+      "label": "TempMailMessage",
+      "file_type": "code",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L6",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_temp_mail_createtempinbox",
+      "label": "createTempInbox()",
+      "file_type": "code",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L19",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_temp_mail_waitforemailmessages",
+      "label": "waitForEmailMessages()",
+      "file_type": "code",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L40",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_support_temp_mail_extractverificationlinkorotp",
+      "label": "extractVerificationLinkOrOtp()",
+      "file_type": "code",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L68",
+      "_callable": true,
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "cursor_mcp",
+      "target": "cursor_mcp_mcp_server_e2e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".cursor/mcp.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "cursor_mcp_mcp_server_e2e",
+      "target": "cursor_mcp_json_mcp_command_npx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".cursor/mcp.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "context": "command",
+      "_origin": "ast"
+    },
+    {
+      "source": "mcp",
+      "target": "mcp_mcp_server_e2e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".mcp.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "mcp_mcp_server_e2e",
+      "target": "mcp_json_mcp_command_npx",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".mcp.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "context": "command",
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_config",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e.config.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_config",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e.config.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_config",
+      "target": "ref_ai_sdk_google",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e.config.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_config",
+      "target": "ref_ai_sdk_openai",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e.config.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "e2e_config",
+      "target": "e2e_config_resolvemodel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "e2e.config.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_ai_sdk_google",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_ai_sdk_google",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_ai_sdk_openai",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_ai_sdk_openai",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_e2e_dev_web",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_ai",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_ai",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_e2e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_e2e",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_zod",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_zod",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_scripts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_e2e",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_bumd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_bumd_crud",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_bumd_regression",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_mitra",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_mitra_onprogress",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_mitra_list",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_mitra_crud",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_mitra_regression",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_mitra_tag",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_mitra_crud_lifecycle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_tag_crud_lifecycle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_mitra_lifecycle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_auth_roles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_auth_guest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_auth_mitra",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test_auth_all",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_flow_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-flow.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_flow_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-flow.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_login_roles_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-login-roles.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_login_roles_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-login-roles.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_login_roles_e2e",
+      "target": "tests_support_auth_helpers",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-login-roles.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_login_roles_e2e",
+      "target": "tests_support_auth_helpers_target_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-login-roles.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_login_roles_e2e",
+      "target": "tests_support_auth_helpers_setupapiroutebridge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-login-roles.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_login_roles_e2e",
+      "target": "tests_support_auth_helpers_dismissinitialpromo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-login-roles.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_login_roles_e2e",
+      "target": "tests_support_auth_helpers_openloginmodal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-login-roles.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_login_roles_e2e",
+      "target": "tests_support_auth_helpers_logoutsession",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-login-roles.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_login_roles_e2e",
+      "target": "tests_support_auth_helpers_takeauthscreenshot",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-login-roles.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_guest_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_guest_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_guest_e2e",
+      "target": "tests_support_auth_helpers",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_guest_e2e",
+      "target": "tests_support_auth_helpers_target_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_guest_e2e",
+      "target": "tests_support_auth_helpers_setupapiroutebridge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_guest_e2e",
+      "target": "tests_support_auth_helpers_openloginmodal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_guest_e2e",
+      "target": "tests_support_auth_helpers_logoutsession",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_guest_e2e",
+      "target": "tests_support_auth_helpers_takeauthscreenshot",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_guest_e2e",
+      "target": "tests_support_temp_mail",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_guest_e2e",
+      "target": "tests_support_temp_mail_createtempinbox",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-guest.e2e.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "tests_support_auth_helpers",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "tests_support_auth_helpers_target_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "tests_support_auth_helpers_setupapiroutebridge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "tests_support_auth_helpers_openloginmodal",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "tests_support_auth_helpers_logoutsession",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "tests_support_auth_helpers_takeauthscreenshot",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "tests_support_temp_mail",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "tests_support_temp_mail_createtempinbox",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_auth_new_register_mitra_e2e",
+      "target": "tests_support_temp_mail_waitforemailmessages",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/auth-new-register-mitra.e2e.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_create_wizard_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-create-wizard.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_create_wizard_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-create-wizard.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_create_wizard_e2e",
+      "target": "tests_bumd_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-create-wizard.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_create_wizard_e2e",
+      "target": "tests_bumd_support_loginandnavigatetobumd",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-create-wizard.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_create_wizard_e2e",
+      "target": "tests_bumd_support_filltab1",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-create-wizard.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_create_wizard_e2e",
+      "target": "tests_bumd_support_filltab2",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-create-wizard.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_crud_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_crud_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_crud_e2e",
+      "target": "tests_bumd_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_crud_e2e",
+      "target": "tests_bumd_support_loginandnavigatetobumd",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_crud_e2e",
+      "target": "tests_bumd_support_filltab1",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_crud_e2e",
+      "target": "tests_bumd_support_filltab2",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_crud_e2e",
+      "target": "tests_bumd_support_filltab3",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_crud_e2e",
+      "target": "tests_bumd_support_navigatetotab4",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_crud_e2e",
+      "target": "tests_bumd_support_submitwizardform",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_crud_e2e",
+      "target": "tests_bumd_support_takeevidencescreenshot",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-crud.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_fee_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-fee.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_fee_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-fee.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_fee_e2e",
+      "target": "tests_bumd_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-fee.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_fee_e2e",
+      "target": "tests_bumd_support_loginandnavigatetobumd",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-fee.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_fee_e2e",
+      "target": "tests_bumd_support_filltab1",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-fee.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_fee_e2e",
+      "target": "tests_bumd_support_filltab2",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-fee.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_fee_e2e",
+      "target": "tests_bumd_support_filltab3",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-fee.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_list_filter_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-list-filter.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_list_filter_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-list-filter.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_list_filter_e2e",
+      "target": "tests_bumd_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-list-filter.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_list_filter_e2e",
+      "target": "tests_bumd_support_loginandnavigatetobumd",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-list-filter.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_regression_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_regression_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_regression_e2e",
+      "target": "tests_bumd_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_regression_e2e",
+      "target": "tests_bumd_support_loginandnavigatetobumd",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_regression_e2e",
+      "target": "tests_bumd_support_filltab1",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_regression_e2e",
+      "target": "tests_bumd_support_filltab2",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_regression_e2e",
+      "target": "tests_bumd_support_filltab3",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_regression_e2e",
+      "target": "tests_bumd_support_navigatetotab4",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_regression_e2e",
+      "target": "tests_bumd_support_submitwizardform",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_bumd_regression_e2e",
+      "target": "tests_bumd_support_takeevidencescreenshot",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/bumd-regression.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "ref_node_fs",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "ref_node_path",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "tests_bumd_support_loginandnavigatetobumd",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "tests_bumd_support_takeevidencescreenshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "tests_bumd_support_setfoundedyear",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "tests_bumd_support_filltab1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "tests_bumd_support_filltab2",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "tests_bumd_support_filltab3",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L172",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "tests_bumd_support_navigatetotab4",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support",
+      "target": "tests_bumd_support_submitwizardform",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L218",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_bumd_support_filltab1",
+      "target": "tests_bumd_support_setfoundedyear",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/bumd/support.ts",
+      "source_location": "L104",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_example_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/example.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_example_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/example.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_crud_lifecycle_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-crud-lifecycle.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_crud_lifecycle_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-crud-lifecycle.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_crud_lifecycle_e2e",
+      "target": "tests_mitra_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-crud-lifecycle.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_crud_lifecycle_e2e",
+      "target": "tests_mitra_support_loginandnavigatetomitra",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-crud-lifecycle.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_crud_lifecycle_e2e",
+      "target": "tests_mitra_support_takeevidencescreenshot",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-crud-lifecycle.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_detail_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-detail.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_detail_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-detail.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_detail_e2e",
+      "target": "tests_mitra_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-detail.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_detail_e2e",
+      "target": "tests_mitra_support_loginandnavigatetomitra",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-detail.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_list_filter_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-list-filter.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_list_filter_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-list-filter.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_list_filter_e2e",
+      "target": "tests_mitra_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-list-filter.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_list_filter_e2e",
+      "target": "tests_mitra_support_loginandnavigatetomitra",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-list-filter.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_modal_crud_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-modal-crud.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_modal_crud_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-modal-crud.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_modal_crud_e2e",
+      "target": "tests_mitra_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-modal-crud.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_modal_crud_e2e",
+      "target": "tests_mitra_support_loginandnavigatetomitra",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-modal-crud.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_onprogress_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-onprogress.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_onprogress_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-onprogress.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_onprogress_e2e",
+      "target": "tests_mitra_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-onprogress.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_mitra_onprogress_e2e",
+      "target": "tests_mitra_support_loginandnavigatetomitra",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/mitra-onprogress.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "ref_node_fs",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "ref_node_path",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "tests_mitra_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "tests_mitra_support_loginandnavigatetomitra",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "tests_mitra_support_takelifecyclescreenshot",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "tests_mitra_support_loginmitradashboard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "tests_mitra_support_logoutcurrentsession",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "tests_mitra_property_approval_kso_lifecycle_e2e_clickwizardsubmit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "tests_mitra_property_approval_kso_lifecycle_e2e_submitandadvance",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e_submitandadvance",
+      "target": "tests_mitra_property_approval_kso_lifecycle_e2e_clickwizardsubmit",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "tests_mitra_property_approval_kso_lifecycle_e2e_submitandadvance",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L171",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "target": "tests_mitra_property_approval_kso_lifecycle_e2e_clickwizardsubmit",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "source_location": "L284",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_regression_suite_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/regression-suite.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_regression_suite_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/regression-suite.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_regression_suite_e2e",
+      "target": "tests_mitra_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/regression-suite.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_regression_suite_e2e",
+      "target": "tests_mitra_support_loginandnavigatetomitra",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/regression-suite.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_regression_suite_e2e",
+      "target": "tests_mitra_support_loginandnavigatetotagproperti",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/regression-suite.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_regression_suite_e2e",
+      "target": "tests_mitra_support_loginandnavigatetoregistrasiproperti",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/regression-suite.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "ref_node_fs",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "ref_node_path",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "tests_mitra_support_loginandnavigatetomitra",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "tests_mitra_support_loginandnavigatetotagproperti",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "tests_mitra_support_loginandnavigatetoregistrasiproperti",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "tests_mitra_support_takeevidencescreenshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "tests_mitra_support_takelifecyclescreenshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L133",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "tests_mitra_support_loginmitradashboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L180",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support",
+      "target": "tests_mitra_support_logoutcurrentsession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support_loginandnavigatetotagproperti",
+      "target": "tests_mitra_support_loginandnavigatetomitra",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L64",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support_loginandnavigatetoregistrasiproperti",
+      "target": "tests_mitra_support_loginandnavigatetomitra",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_support_loginmitradashboard",
+      "target": "tests_mitra_support_logoutcurrentsession",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/support.ts",
+      "source_location": "L184",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_tag_crud_lifecycle_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/tag-crud-lifecycle.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_tag_crud_lifecycle_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/tag-crud-lifecycle.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_tag_crud_lifecycle_e2e",
+      "target": "tests_mitra_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/tag-crud-lifecycle.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_tag_crud_lifecycle_e2e",
+      "target": "tests_mitra_support_loginandnavigatetotagproperti",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/tag-crud-lifecycle.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_tag_crud_lifecycle_e2e",
+      "target": "tests_mitra_support_takeevidencescreenshot",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/tag-crud-lifecycle.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_tag_properti_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/tag-properti.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_tag_properti_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/tag-properti.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_tag_properti_e2e",
+      "target": "tests_mitra_support",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/tag-properti.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_tag_properti_e2e",
+      "target": "tests_mitra_support_loginandnavigatetotagproperti",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/tag-properti.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_mitra_tag_properti_e2e",
+      "target": "tests_mitra_support_takeevidencescreenshot",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/mitra/tag-properti.e2e.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_roles_auth_e2e",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/roles-auth.e2e.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_roles_auth_e2e",
+      "target": "ref_e2e",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/roles-auth.e2e.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers",
+      "target": "ref_node_fs",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers",
+      "target": "ref_node_path",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers",
+      "target": "ref_e2e_dev_web",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "type_only": true,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers",
+      "target": "tests_support_auth_helpers_target_url",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers",
+      "target": "tests_support_auth_helpers_auth_logout_url",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers",
+      "target": "tests_support_auth_helpers_setupapiroutebridge",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers",
+      "target": "tests_support_auth_helpers_takeauthscreenshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers",
+      "target": "tests_support_auth_helpers_dismissinitialpromo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L104",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers",
+      "target": "tests_support_auth_helpers_openloginmodal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L131",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers",
+      "target": "tests_support_auth_helpers_logoutsession",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L158",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers_openloginmodal",
+      "target": "tests_support_auth_helpers_dismissinitialpromo",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L132",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_auth_helpers_logoutsession",
+      "target": "tests_support_auth_helpers_dismissinitialpromo",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/auth-helpers.ts",
+      "source_location": "L179",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_temp_mail",
+      "target": "tests_support_temp_mail_tempmailinbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_temp_mail",
+      "target": "tests_support_temp_mail_tempmailmessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_temp_mail",
+      "target": "tests_support_temp_mail_createtempinbox",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_temp_mail",
+      "target": "tests_support_temp_mail_waitforemailmessages",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_support_temp_mail",
+      "target": "tests_support_temp_mail_extractverificationlinkorotp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/support/temp-mail.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "failed_sources": [],
+  "extracted_sources": [
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\.cursor\\mcp.json",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\.mcp.json",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\e2e.config.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\package.json",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\auth-flow.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\auth-new-login-roles.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\auth-new-register-guest.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\auth-new-register-mitra.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\bumd\\bumd-create-wizard.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\bumd\\bumd-crud.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\bumd\\bumd-fee.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\bumd\\bumd-list-filter.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\bumd\\bumd-regression.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\bumd\\support.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\example.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\mitra\\mitra-crud-lifecycle.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\mitra\\mitra-detail.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\mitra\\mitra-list-filter.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\mitra\\mitra-modal-crud.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\mitra\\mitra-onprogress.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\mitra\\property-approval-kso-lifecycle.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\mitra\\regression-suite.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\mitra\\support.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\mitra\\tag-crud-lifecycle.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\mitra\\tag-properti.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\roles-auth.e2e.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\support\\auth-helpers.ts",
+    "D:\\Project\\2026\\Dparagon\\DTA-OTA\\tests\\support\\temp-mail.ts"
+  ]
+}

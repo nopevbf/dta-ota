@@ -1,0 +1,212 @@
+{
+  "communities": {
+    "0": [
+      "package_scripts",
+      "package_scripts_test_auth_all",
+      "package_scripts_test_auth_guest",
+      "package_scripts_test_auth_mitra",
+      "package_scripts_test_auth_roles",
+      "package_scripts_test_bumd",
+      "package_scripts_test_bumd_crud",
+      "package_scripts_test_bumd_regression",
+      "package_scripts_test_e2e",
+      "package_scripts_test_mitra",
+      "package_scripts_test_mitra_crud",
+      "package_scripts_test_mitra_crud_lifecycle",
+      "package_scripts_test_mitra_lifecycle",
+      "package_scripts_test_mitra_list",
+      "package_scripts_test_mitra_onprogress",
+      "package_scripts_test_mitra_regression",
+      "package_scripts_test_mitra_tag",
+      "package_scripts_test_tag_crud_lifecycle"
+    ],
+    "1": [
+      "ref_e2e",
+      "ref_e2e_dev_web",
+      "tests_auth_flow_e2e",
+      "tests_example_e2e",
+      "tests_mitra_mitra_crud_lifecycle_e2e",
+      "tests_mitra_mitra_detail_e2e",
+      "tests_mitra_mitra_list_filter_e2e",
+      "tests_mitra_mitra_modal_crud_e2e",
+      "tests_mitra_mitra_onprogress_e2e",
+      "tests_mitra_regression_suite_e2e",
+      "tests_mitra_support",
+      "tests_mitra_support_loginandnavigatetomitra",
+      "tests_mitra_support_loginandnavigatetoregistrasiproperti",
+      "tests_mitra_support_loginandnavigatetotagproperti",
+      "tests_mitra_support_takeevidencescreenshot",
+      "tests_mitra_tag_crud_lifecycle_e2e",
+      "tests_mitra_tag_properti_e2e",
+      "tests_roles_auth_e2e"
+    ],
+    "2": [
+      "tests_auth_new_login_roles_e2e",
+      "tests_auth_new_register_guest_e2e",
+      "tests_auth_new_register_mitra_e2e",
+      "tests_support_auth_helpers",
+      "tests_support_auth_helpers_auth_logout_url",
+      "tests_support_auth_helpers_dismissinitialpromo",
+      "tests_support_auth_helpers_logoutsession",
+      "tests_support_auth_helpers_openloginmodal",
+      "tests_support_auth_helpers_setupapiroutebridge",
+      "tests_support_auth_helpers_takeauthscreenshot",
+      "tests_support_auth_helpers_target_url",
+      "tests_support_temp_mail",
+      "tests_support_temp_mail_createtempinbox",
+      "tests_support_temp_mail_extractverificationlinkorotp",
+      "tests_support_temp_mail_tempmailinbox",
+      "tests_support_temp_mail_tempmailmessage",
+      "tests_support_temp_mail_waitforemailmessages"
+    ],
+    "3": [
+      "e2e_config",
+      "e2e_config_resolvemodel",
+      "package",
+      "package_devdependencies",
+      "package_devdependencies_ai",
+      "package_devdependencies_ai_sdk_google",
+      "package_devdependencies_ai_sdk_openai",
+      "package_devdependencies_e2e",
+      "package_devdependencies_e2e_dev_web",
+      "package_devdependencies_zod",
+      "package_private",
+      "package_type",
+      "ref_ai",
+      "ref_ai_sdk_google",
+      "ref_ai_sdk_openai",
+      "ref_zod"
+    ],
+    "4": [
+      "tests_bumd_bumd_create_wizard_e2e",
+      "tests_bumd_bumd_crud_e2e",
+      "tests_bumd_bumd_fee_e2e",
+      "tests_bumd_bumd_list_filter_e2e",
+      "tests_bumd_bumd_regression_e2e",
+      "tests_bumd_support",
+      "tests_bumd_support_filltab1",
+      "tests_bumd_support_filltab2",
+      "tests_bumd_support_filltab3",
+      "tests_bumd_support_loginandnavigatetobumd",
+      "tests_bumd_support_navigatetotab4",
+      "tests_bumd_support_setfoundedyear",
+      "tests_bumd_support_submitwizardform",
+      "tests_bumd_support_takeevidencescreenshot"
+    ],
+    "5": [
+      "ref_node_fs",
+      "ref_node_path",
+      "tests_mitra_property_approval_kso_lifecycle_e2e",
+      "tests_mitra_property_approval_kso_lifecycle_e2e_clickwizardsubmit",
+      "tests_mitra_property_approval_kso_lifecycle_e2e_submitandadvance",
+      "tests_mitra_support_loginmitradashboard",
+      "tests_mitra_support_logoutcurrentsession",
+      "tests_mitra_support_takelifecyclescreenshot"
+    ],
+    "6": [
+      "cursor_mcp",
+      "cursor_mcp_json_mcp_command_npx",
+      "cursor_mcp_mcp_server_e2e"
+    ],
+    "7": [
+      "mcp",
+      "mcp_json_mcp_command_npx",
+      "mcp_mcp_server_e2e"
+    ]
+  },
+  "cohesion": {
+    "0": 0.1111111111111111,
+    "1": 0.3333333333333333,
+    "2": 0.27941176470588236,
+    "3": 0.13333333333333333,
+    "4": 0.3956043956043956,
+    "5": 0.32142857142857145,
+    "6": 0.6666666666666666,
+    "7": 0.6666666666666666
+  },
+  "gods": [
+    {
+      "id": "ref_e2e_dev_web",
+      "label": "@e2e-dev/web",
+      "degree": 25
+    },
+    {
+      "id": "ref_e2e",
+      "label": "e2e",
+      "degree": 24
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 18
+    },
+    {
+      "id": "tests_mitra_support_loginandnavigatetomitra",
+      "label": "loginAndNavigateToMitra()",
+      "degree": 10
+    },
+    {
+      "id": "tests_bumd_support_loginandnavigatetobumd",
+      "label": "loginAndNavigateToBumd()",
+      "degree": 6
+    },
+    {
+      "id": "tests_bumd_support_filltab1",
+      "label": "fillTab1()",
+      "degree": 6
+    },
+    {
+      "id": "tests_bumd_support_filltab2",
+      "label": "fillTab2()",
+      "degree": 5
+    },
+    {
+      "id": "tests_mitra_support_loginandnavigatetotagproperti",
+      "label": "loginAndNavigateToTagProperti()",
+      "degree": 5
+    },
+    {
+      "id": "tests_support_auth_helpers_openloginmodal",
+      "label": "openLoginModal()",
+      "degree": 5
+    },
+    {
+      "id": "tests_support_auth_helpers_logoutsession",
+      "label": "logoutSession()",
+      "degree": 5
+    }
+  ],
+  "surprises": [],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `@e2e-dev/web` connect `Community 1` to `Community 2`, `Community 3`, `Community 4`, `Community 5`?",
+      "why": "High betweenness centrality (0.336) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `npx`, `npx`, `ai` to the rest of the system?",
+      "why": "4 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `scripts` connect `Community 0` to `Community 3`?",
+      "why": "High betweenness centrality (0.302) - this node is a cross-community bridge."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 3` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `e2e` connect `Community 1` to `Community 2`, `Community 3`, `Community 4`, `Community 5`?",
+      "why": "High betweenness centrality (0.292) - this node is a cross-community bridge."
+    }
+  ]
+}

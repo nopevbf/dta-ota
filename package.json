@@ -22,6 +22,10 @@
     "test:mitra:tag": "e2e run tests/mitra/tag-properti.e2e.ts",
     "test:mitra:crud:lifecycle": "e2e run tests/mitra/mitra-crud-lifecycle.e2e.ts",
     "test:tag:crud:lifecycle": "e2e run tests/mitra/tag-crud-lifecycle.e2e.ts",
-    "test:mitra:lifecycle": "e2e run tests/mitra/property-approval-kso-lifecycle.e2e.ts"
+    "test:mitra:lifecycle": "e2e run tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+    "test:auth:roles": "e2e run tests/auth-new-login-roles.e2e.ts",
+    "test:auth:guest": "e2e run tests/auth-new-register-guest.e2e.ts",
+    "test:auth:mitra": "e2e run tests/auth-new-register-mitra.e2e.ts",
+    "test:auth:all": "e2e run tests/auth-new-login-roles.e2e.ts tests/auth-new-register-guest.e2e.ts tests/auth-new-register-mitra.e2e.ts"
   }
 }
