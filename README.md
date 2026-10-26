@@ -1,60 +1,66 @@
 # DTA-OTA (D'Paragon Test Automation) 🚀
 
-[![Test Status](https://img.shields.io/badge/Test%20Suite-100%25%20PASS-brightgreen?style=flat-square)](reports/mitra/TEST_EXECUTION_REPORT.md)
+[![Test Suite Status](https://img.shields.io/badge/Test%20Suite-100%25%20PASS%20(68%2F68)-brightgreen?style=flat-square)](reports/MASTER_TEST_SUMMARY_REPORT.md)
 [![Framework](https://img.shields.io/badge/Framework-e2e%20v0.19.0-blue?style=flat-square)](https://github.com/tester-army/e2e)
-[![Node](https://img.shields.io/badge/Node.js-%3E%3D22.0.0-green?style=flat-square)](https://nodejs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D22.12.0-green?style=flat-square)](https://nodejs.org/)
 [![Package Manager](https://img.shields.io/badge/pnpm-9.x-orange?style=flat-square)](https://pnpm.io/)
-[![Standards](https://img.shields.io/badge/QA%20Standard-ISTQB-purple?style=flat-square)](https://www.istqb.org/)
-[![AI Engine](https://img.shields.io/badge/AI%20Agent-Gemini%203.8%20Flash%20%2F%20GPT--4o--mini-informational?style=flat-square)](https://ai.google.dev/)
+[![QA Standard](https://img.shields.io/badge/QA%20Standard-ISTQB-purple?style=flat-square)](https://www.istqb.org/)
+[![Knowledge Graph](https://img.shields.io/badge/Knowledge%20Graph-297%20Nodes%20%7C%20Graphify-blueviolet?style=flat-square)](graphify-out/graph.html)
+[![AI Agent Engine](https://img.shields.io/badge/AI%20Engine-Gemini%203.8%20Flash%20%2F%20GPT--4o--mini-informational?style=flat-square)](https://ai.google.dev/)
 
-Repositori pengujian otomatis berbasis **Agentic End-to-End (E2E) Testing** untuk ekosistem portal **D'Paragon Management System & Central Authentication Portal**. Proyek ini mengintegrasikan framework pengujian `e2e` generasi baru yang didukung oleh AI SDK (Google Gemini & OpenAI), browser engine Playwright, serta berakar pada metodologi jaminan kualitas perangkat lunak internasional **ISTQB (International Software Testing Qualifications Board)**.
+Repositori pengujian otomatis berbasis **Agentic End-to-End (E2E) Testing** untuk ekosistem portal **D'Paragon Management System & Central Authentication Portal**. Proyek ini mengintegrasikan framework pengujian `e2e` generasi baru yang didukung oleh AI SDK (Google Gemini & OpenAI), browser engine Playwright, arsitektur *Knowledge Graph* Graphify, serta berakar pada standar metodologi penjaminan mutu perangkat lunak internasional **ISTQB (International Software Testing Qualifications Board)**.
 
 ---
 
 ## 📑 Daftar Isi
 
-- [Ikhtisar & Cakupan Modul](#-ikhtisar--cakupan-modul)
-  - [1. Central Authentication Portal](#1-central-authentication-portal)
+- [Ikhtisar & Cakupan Pengujian](#-ikhtisar--cakupan-pengujian)
+  - [1. Central Authentication & Registration Portal](#1-central-authentication--registration-portal)
   - [2. Modul Finance BUMD & Fee Management](#2-modul-finance-bumd--fee-management)
-  - [3. Modul Setting Mitra OTA & Tag Properti](#3-modul-setting-mitra-ota--tag-properti)
-  - [4. 35-Step Full Regression Lifecycle](#4-35-step-full-regression-lifecycle-reg-lifecycle-002)
-- [Demo & Laporan Pengujian (QA Reports)](#-demo--laporan-pengujian-qa-reports)
-  - [Ringkasan Status Eksekusi QA](#ringkasan-status-eksekusi-qa-stlc-phase-5--6)
-  - [Bukti Visual & Galeri Eksekusi](#bukti-visual--galeri-eksekusi)
+  - [3. Modul Setting Mitra OTA & Master Tag Properti](#3-modul-setting-mitra-ota--master-tag-properti)
+  - [4. 35-Step Full Regression Lifecycle (`REG-LIFECYCLE-002`)](#4-35-step-full-regression-lifecycle-reg-lifecycle-002)
+- [Demo & Laporan Hasil Pengujian (QA Reports)](#-demo--laporan-hasil-pengujian-qa-reports)
+  - [Matriks Status Eksekusi QA (STLC Phase 6 Closure)](#matriks-status-eksekusi-qa-stlc-phase-6-closure)
+  - [Galeri Bukti Visual & Tangkapan Layar](#galeri-bukti-visual--tangkapan-layar)
 - [Arsitektur & Struktur Direktori](#-arsitektur--struktur-direktori)
 - [Prasyarat (Prerequisites)](#-prasyarat-prerequisites)
 - [Instalasi](#-instalasi)
 - [Konfigurasi Lingkungan (.env)](#-konfigurasi-lingkungan-env)
 - [Cara Penggunaan (Usage)](#-cara-penggunaan-usage)
-  - [1. Menjalankan Seluruh Suite Pengujian](#1-menjalankan-seluruh-suite-pengujian)
-  - [2. Perintah Pengujian Modul Finance BUMD](#2-perintah-pengujian-modul-finance-bumd)
-  - [3. Perintah Pengujian Modul Setting Mitra OTA](#3-perintah-pengujian-modul-setting-mitra-ota)
-  - [4. Mode Interaktif (Headed Browser) & Debugging](#4-mode-interaktif-headed-browser--debugging)
+  - [1. Eksekusi Menyeluruh Suite](#1-eksekusi-menyeluruh-suite)
+  - [2. Pengujian Central Authentication & Registrasi](#2-pengujian-central-authentication--registrasi)
+  - [3. Pengujian Modul Finance BUMD](#3-pengujian-modul-finance-bumd)
+  - [4. Pengujian Modul Setting Mitra & Tag Properti](#4-pengujian-modul-setting-mitra--tag-properti)
+  - [5. Mode Interaktif (Headed Browser) & Debugging](#5-mode-interaktif-headed-browser--debugging)
+- [Knowledge Graph Arsitektur (Graphify)](#-knowledge-graph-arsitektur-graphify)
 - [Integrasi Model Context Protocol (MCP)](#-integrasi-model-context-protocol-mcp)
 - [Panduan Kontribusi (Contributing)](#-panduan-kontribusi-contributing)
 - [Lisensi & Kontak](#-lisensi--kontak)
 
 ---
 
-## 🔍 Ikhtisar & Cakupan Modul
+## 🔍 Ikhtisar & Cakupan Pengujian
 
-Proyek otomatisasi ini memvalidasi keandalan fungsionalitas, kestabilan logika bisnis, validasi boundary input (BVA), penanganan error (Equivalence Partitioning), dan ketahanan alur end-to-end lintas modul pada platform D'Paragon:
+Proyek otomatisasi ini memvalidasi keandalan fungsionalitas, kestabilan logika bisnis, validasi boundary input (*Boundary Value Analysis*), penanganan error (*Equivalence Partitioning*), dan ketahanan alur end-to-end lintas modul pada platform D'Paragon:
 
-### 1. Central Authentication Portal
-*File Uji: [`tests/auth-flow.e2e.ts`](tests/auth-flow.e2e.ts), [`tests/roles-auth.e2e.ts`](tests/roles-auth.e2e.ts)*
-- **Multi-Role Selector UI**: Verifikasi antarmuka pemilihan multi-tipe akun (*Management*, *Mitra*, *Tamu*).
-- **Form Login & Validasi Kredensial**: Validasi login sukses, penolakan kredensial salah, penanganan form kosong, dan navigasi form dinamis.
-- **Retensi Sesi & Navigasi**: Uji persistensi token autentikasi, navigasi mundur browser (*history back*), dan proteksi rute tertutup (*unauthorized redirect*).
+### 1. Central Authentication & Registration Portal
+*Direktori Uji: [`tests/auth-new-login-roles.e2e.ts`](tests/auth-new-login-roles.e2e.ts), [`tests/auth-new-register-guest.e2e.ts`](tests/auth-new-register-guest.e2e.ts), [`tests/auth-new-register-mitra.e2e.ts`](tests/auth-new-register-mitra.e2e.ts), [`tests/roles-auth.e2e.ts`](tests/roles-auth.e2e.ts), [`tests/auth-flow.e2e.ts`](tests/auth-flow.e2e.ts)*
+- **Dismiss Popup & Promo Handler**: Penanganan otomatis banner/modal promo sebelum interaksi login (`TC-AUTH-POPUP-001`).
+- **Multi-Role Login Portal**: Verifikasi autentikasi 3 peran (*Superadmin Manajemen*, *Mitra Bisnis*, dan *Tamu/Guest*) serta navigasi redirect ke dashboard masing-masing (`TC-AUTH-MGMT-001`, `TC-AUTH-MITRA-001`, `TC-AUTH-TAMU-001`).
+- **Uji Negatif Kredensial**: Deteksi dan validasi pesan galat pada kombinasi email/password yang tidak valid (`TC-AUTH-NEG-001`).
+- **Registrasi Tamu (Guest)**: Uji alur pendaftaran tamu, validasi mandatory persetujuan Syarat & Ketentuan, penolakan password mismatch, dan pembuatan akun nyata via dynamic disposable email (`TC-REG-GUEST-001` s/d `004`).
+- **Registrasi Kemitraan (Mitra)**: Pendaftaran kemitraan D'Paragon, kepatuhan batas minimum kompleksitas password, persetujuan syarat kemitraan, dan aktivasi akun (`TC-REG-MITRA-001` s/d `004`).
+- **Helper Integrasi Temp-Mail**: Pembuatan kotak surat sementara dinamis dan pengecekan inbox aktivasi secara otomatis via [`tests/support/temp-mail.ts`](tests/support/temp-mail.ts).
 
 ### 2. Modul Finance BUMD & Fee Management
 *Direktori Uji: [`tests/bumd/`](tests/bumd/)*
-- **Multi-Step Wizard Creation ([`bumd-create-wizard.e2e.ts`](tests/bumd/bumd-create-wizard.e2e.ts))**: Pengujian wizard pengisian data bertahap (Tab 1 Perusahaan $\rightarrow$ Tab 2 Penanggung Jawab $\rightarrow$ Tab 3 Pimpinan $\rightarrow$ Tab 4 Fee) beserta persistensi data form saat navigasi maju-mundur.
-- **Fee BUMD & Boundary Value Analysis ([`bumd-fee.e2e.ts`](tests/bumd/bumd-fee.e2e.ts))**: Validasi kolom Fee Management dan Fee BUMD pada data grid serta boundary value persentase fee (`0%` batas bawah, `100%` batas atas).
+- **Multi-Step Wizard Creation ([`bumd-create-wizard.e2e.ts`](tests/bumd/bumd-create-wizard.e2e.ts))**: Pengujian wizard formulir 4-langkah (Tab 1 Perusahaan $\rightarrow$ Tab 2 Penanggung Jawab $\rightarrow$ Tab 3 Pimpinan $\rightarrow$ Tab 4 Fee) beserta retensi data saat navigasi maju-mundur.
+- **Fee BUMD & Boundary Value Analysis ([`bumd-fee.e2e.ts`](tests/bumd/bumd-fee.e2e.ts))**: Validasi kolom Fee Management dan Fee BUMD pada data grid serta boundary value batas bawah (`0%`) dan batas atas (`100%`).
 - **Data Grid, Pencarian & Filter ([`bumd-list-filter.e2e.ts`](tests/bumd/bumd-list-filter.e2e.ts))**: Filter status aktif/non-aktif, pencarian real-time nama instansi/nomor rekening, dan tombol export file Excel.
 - **Full CRUD Lifecycle ([`bumd-crud.e2e.ts`](tests/bumd/bumd-crud.e2e.ts))**: Siklus hidup lengkap pembuatan BUMD, verifikasi di tabel, pembaruan data, hingga konfirmasi dialog penghapusan data dengan tangkapan layar otomatis.
 - **Automated Regression Suite ([`bumd-regression.e2e.ts`](tests/bumd/bumd-regression.e2e.ts))**: Suite regresi berkala untuk memastikan tidak ada degradasi fitur antar deployment rilis.
 
-### 3. Modul Setting Mitra OTA & Tag Properti
+### 3. Modul Setting Mitra OTA & Master Tag Properti
 *Direktori Uji: [`tests/mitra/`](tests/mitra/)*
 - **List, Tab & Filter ([`mitra-list-filter.e2e.ts`](tests/mitra/mitra-list-filter.e2e.ts))**: Rendering tabel mitra, tab penyaring *"Memiliki Minimal 1 Properti"*, pencarian nama/email, dropdown filter status (*Pending*/*Approved*), dan aksi tombol Reset filter.
 - **Modal Tambah & Ubah Mitra ([`mitra-modal-crud.e2e.ts`](tests/mitra/mitra-modal-crud.e2e.ts))**: Form modal interaktif, validasi form kosong, batas panjang password (< 7 karakter & mismatch), dan fitur prefill data saat edit.
@@ -76,34 +82,44 @@ Suite pengujian **Release-Gate Blocker** otomatis yang menghubungkan 35 tahapan 
 
 ---
 
-## 📊 Demo & Laporan Pengujian (QA Reports)
+## 📊 Demo & Laporan Hasil Pengujian (QA Reports)
 
 Setiap pengujian E2E menghasilkan artefak eksekusi yang komprehensif, mulai dari laporan status formal berstandar ISTQB hingga tangkapan layar di setiap langkah krusial.
 
-### Ringkasan Status Eksekusi QA (STLC Phase 5 & 6)
+### Matriks Status Eksekusi QA (STLC Phase 6 Closure)
 
-| Modul Pengujian | Total File | Total Skenario | Status | Pass Rate | Laporan Formal |
+Dokumen lengkap tersedia pada: [`reports/MASTER_TEST_SUMMARY_REPORT.md`](reports/MASTER_TEST_SUMMARY_REPORT.md).
+
+| Modul Pengujian | Test Files | Total Test Cases | Status | Pass Rate | Laporan Khusus |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| **Finance BUMD** | 5 File | 18 Kasus Uji | **PASS** | **100%** | [TEST_EXECUTION_REPORT.md](reports/bumd/TEST_EXECUTION_REPORT.md) |
-| **Setting Mitra & Tag** | 8 File | 36 Kasus Uji | **PASS** | **100%** | [TEST_EXECUTION_REPORT.md](reports/mitra/TEST_EXECUTION_REPORT.md) |
-| **Full Lifecycle (35 Steps)** | 1 File | 35 Tahapan E2E | **PASS** | **100%** | [TEST_CASES_REGRESSION.md](reports/mitra/TEST_CASES_REGRESSION.md) |
+| **Central Auth & Registration** | 3 File | 13 Kasus Uji | **PASS** | **100.00%** | [MASTER_TEST_SUMMARY_REPORT.md](reports/MASTER_TEST_SUMMARY_REPORT.md#21-kelompok-1-central-authentication--registration-portal) |
+| **Finance BUMD & Fee** | 5 File | 18 Kasus Uji | **PASS** | **100.00%** | [TEST_EXECUTION_REPORT.md](reports/bumd/TEST_EXECUTION_REPORT.md) |
+| **Setting Mitra & Master Tag** | 8 File | 36 Kasus Uji | **PASS** | **100.00%** | [TEST_EXECUTION_REPORT.md](reports/mitra/TEST_EXECUTION_REPORT.md) |
+| **35-Step Full Lifecycle** | 1 File | 1 Master Uji (35 Steps) | **PASS** | **100.00%** | [TEST_CASES_REGRESSION.md](reports/mitra/TEST_CASES_REGRESSION.md) |
+| **TOTAL KESELURUHAN** | **17 File** | **68 Kasus Uji (102 Operasi)** | **PASS** | **100.00%** | [MASTER_TEST_SUMMARY_REPORT.md](reports/MASTER_TEST_SUMMARY_REPORT.md) |
 
-### Bukti Visual & Galeri Eksekusi
+### Galeri Bukti Visual & Tangkapan Layar
 
-Artefak tangkapan layar tersimpan pada folder terstruktur:
-- **Finance BUMD Screenshots**: [`reports/bumd/screenshots/`](reports/bumd/screenshots/)
+Artefak visual disimpan secara terstruktur dan dapat diaudit secara langsung:
+- **Central Auth & Registrasi ([`reports/screenshots/auth/`](reports/screenshots/auth/))**:
+  - `TC-AUTH-MGMT-001-dashboard-redirect.png` (Redirect Dashboard Manajemen)
+  - `TC-AUTH-MITRA-001-dashboard-redirect.png` (Redirect Dashboard Mitra)
+  - `TC-AUTH-TAMU-001-session-active.png` (Sesi Login Tamu)
+  - `TC-REG-GUEST-004-relogin-result.png` (Hasil Registrasi Tamu Berhasil)
+  - `TC-REG-MITRA-004-relogin-result.png` (Hasil Registrasi Kemitraan Berhasil)
+- **Finance BUMD Screenshots ([`reports/bumd/screenshots/`](reports/bumd/screenshots/))**:
   - `01-create-wizard-tab4-filled.png` (Pengisian wizard tab fee)
   - `02-create-verified-in-table.png` (Verifikasi record BUMD di tabel)
   - `03-edit-form-opened.png` (Modal form edit BUMD prefilled)
   - `04-update-verified-in-table.png` (Verifikasi pembaruan data)
   - `05-delete-confirmation-dialog.png` (Dialog konfirmasi hapus data)
   - `06-delete-verified-removed.png` (Verifikasi data berhasil dihapus)
-- **Setting Mitra & Tag Screenshots**: [`reports/mitra/screenshots/`](reports/mitra/screenshots/)
+- **Setting Mitra & Tag Screenshots ([`reports/mitra/screenshots/`](reports/mitra/screenshots/))**:
   - `01-mitra-create-form.png` & `02-mitra-verified-in-table.png` (CRUD Mitra)
   - `03-mitra-edit-modal-opened.png` & `04-mitra-updated-verified.png` (Update Mitra)
   - `01-tag-create-form.png` s/d `04-tag-deleted-verified.png` (CRUD & Hapus Tag Properti)
-- **35-Step Lifecycle Screenshots**: [`.e2e/results/`](.e2e/results/)
-  - `001-step-01-buat-mitra-manajemen.png` hingga `035-step-35-halaman-kontak-terbuka.png` mencatat bukti visual lengkap per tahapan.
+- **35-Step Lifecycle Screenshots ([`reports/mitra/screenshots/lifecycle/`](reports/mitra/screenshots/lifecycle/))**:
+  - `01-buat-mitra-manajemen.png` hingga `35-halaman-kontak-terbuka.png` mencatat bukti visual lengkap per tahapan.
 
 ---
 
@@ -116,21 +132,26 @@ DTA-OTA/
 ├── .e2e/                             # Hasil output mesin e2e runner
 │   ├── results/                      # Visual trace & snapshot step-by-step
 │   └── report.json                   # Ringkasan JSON hasil eksekusi pengujian
+├── graphify-out/                     # Knowledge Graph arsitektur kode
+│   ├── graph.html                    # Visualisasi graph interaktif di browser
+│   ├── graph.json                    # Data relasi simpul & busur (nodes & edges)
+│   └── GRAPH_REPORT.md               # Laporan audit relasi & komunitas graph
 ├── reports/                          # Laporan pengujian formal (Standar ISTQB)
 │   ├── bumd/                         # Modul Finance BUMD
 │   │   ├── screenshots/              # Bukti visual eksekusi BUMD
 │   │   ├── TEST_CASES_BUMD.md        # Spesifikasi skenario uji BUMD
 │   │   └── TEST_EXECUTION_REPORT.md  # Laporan penutupan uji BUMD
-│   └── mitra/                        # Modul Setting Mitra & Tag Properti
-│       ├── screenshots/              # Bukti visual CRUD Mitra & Tag
-│       ├── TEST_CASES_REGRESSION.md  # Matriks skenario regresi & 35-step lifecycle
-│       ├── TEST_CASES_SETTING_MITRA.md # Matriks skenario setting mitra
-│       ├── TEST_CASES_TAG_PROPERTI.md  # Matriks skenario tag properti
-│       └── TEST_EXECUTION_REPORT.md  # Laporan penutupan eksekusi Mitra
+│   ├── mitra/                        # Modul Setting Mitra & Tag Properti
+│   │   ├── screenshots/              # Bukti visual CRUD Mitra, Tag & Lifecycle
+│   │   ├── TEST_CASES_REGRESSION.md  # Matriks skenario regresi & 35-step lifecycle
+│   │   ├── TEST_CASES_SETTING_MITRA.md # Matriks skenario setting mitra
+│   │   ├── TEST_CASES_TAG_PROPERTI.md  # Matriks skenario tag properti
+│   │   └── TEST_EXECUTION_REPORT.md  # Laporan penutupan eksekusi Mitra
+│   ├── screenshots/                  # Tangkapan layar umum
+│   │   └── auth/                     # Bukti visual eksekusi login & registrasi
+│   └── MASTER_TEST_SUMMARY_REPORT.md # Laporan penutupan uji induk seluruh modul
 ├── tests/                            # Test suites berbasis TypeScript & e2e
 │   ├── assets/                       # Aset dummy pengujian (image.jpg, doc.pdf)
-│   ├── auth-flow.e2e.ts              # Suite uji alur autentikasi umum
-│   ├── roles-auth.e2e.ts             # Suite uji otentikasi login multi-role
 │   ├── bumd/                         # Suite Pengujian Finance BUMD
 │   │   ├── bumd-create-wizard.e2e.ts # Wizard pengisian multi-step BUMD
 │   │   ├── bumd-crud.e2e.ts          # Siklus penuh CRUD & tangkapan layar
@@ -138,17 +159,25 @@ DTA-OTA/
 │   │   ├── bumd-list-filter.e2e.ts   # Data grid, pencarian & filter
 │   │   ├── bumd-regression.e2e.ts    # Automated regression suite BUMD
 │   │   └── support.ts                # Helper login, navigasi & form BUMD
-│   └── mitra/                        # Suite Pengujian Setting Mitra & Tag
-│       ├── mitra-crud-lifecycle.e2e.ts          # Siklus CRUD Mitra terisolasi
-│       ├── mitra-detail.e2e.ts                  # Halaman detail & riwayat aktivitas
-│       ├── mitra-list-filter.e2e.ts             # Tabel daftar mitra & tab filter
-│       ├── mitra-modal-crud.e2e.ts              # Modal tambah, validasi & ubah mitra
-│       ├── mitra-onprogress.e2e.ts              # Skenario on-progress & no HP non-digit
-│       ├── property-approval-kso-lifecycle.e2e.ts # 35-step full end-to-end lifecycle
-│       ├── regression-suite.e2e.ts              # 14 skenario regresi fitur baru mitra
-│       ├── support.ts                           # Helper navigasi, login & screenshot
-│       ├── tag-crud-lifecycle.e2e.ts            # Siklus CRUD Tag Properti lengkap
-│       └── tag-properti.e2e.ts                  # Test suite fungsional Tag Properti
+│   ├── mitra/                        # Suite Pengujian Setting Mitra & Tag
+│   │   ├── mitra-crud-lifecycle.e2e.ts          # Siklus CRUD Mitra terisolasi
+│   │   ├── mitra-detail.e2e.ts                  # Halaman detail & riwayat aktivitas
+│   │   ├── mitra-list-filter.e2e.ts             # Tabel daftar mitra & tab filter
+│   │   ├── mitra-modal-crud.e2e.ts              # Modal tambah, validasi & ubah mitra
+│   │   ├── mitra-onprogress.e2e.ts              # Skenario on-progress & no HP non-digit
+│   │   ├── property-approval-kso-lifecycle.e2e.ts # 35-step full end-to-end lifecycle
+│   │   ├── regression-suite.e2e.ts              # 14 skenario regresi fitur baru mitra
+│   │   ├── support.ts                           # Helper navigasi, login & screenshot
+│   │   ├── tag-crud-lifecycle.e2e.ts            # Siklus CRUD Tag Properti lengkap
+│   │   └── tag-properti.e2e.ts                  # Test suite fungsional Tag Properti
+│   ├── support/                      # Utilitas & helper pendukung
+│   │   ├── auth-helpers.ts           # Helper penanganan modal popup & multi-role login
+│   │   └── temp-mail.ts              # Integrasi API kotak pos dinamis (disposable email)
+│   ├── auth-flow.e2e.ts              # Suite uji alur autentikasi umum
+│   ├── auth-new-login-roles.e2e.ts   # Suite login multi-peran (Superadmin, Mitra, Tamu)
+│   ├── auth-new-register-guest.e2e.ts# Suite registrasi akun tamu & validasi
+│   ├── auth-new-register-mitra.e2e.ts# Suite registrasi akun mitra & aktivasi
+│   └── roles-auth.e2e.ts             # Suite uji autentikasi multi-role dasar
 ├── .env                              # Variabel lingkungan & kredensial rahasia
 ├── .env.example                      # Template variabel lingkungan
 ├── .gitignore                        # File & folder yang diabaikan Git
@@ -214,14 +243,14 @@ AUTH_URL=https://auth.dparagon7.persona-it.com/login
 E2E_USER_MANAJEMEN_USERNAME=superadmin@dparagon.com
 E2E_USER_MANAJEMEN_PASSWORD=RahasiaPasswordManajemen
 
-E2E_USER_MITRA_USERNAME=lodod41077@crybio.com
+E2E_USER_MITRA_USERNAME=mitra@contoh.com
 E2E_USER_MITRA_PASSWORD=RahasiaPasswordMitra
 
-E2E_USER_TAMU_USERNAME=kzodiek@gmail.com
+E2E_USER_TAMU_USERNAME=tamu@contoh.com
 E2E_USER_TAMU_PASSWORD=RahasiaPasswordTamu
 
 # AI Provider API Key (untuk instruksi evaluasi Agentic)
-GEMINI_API_KEY=AQ.Ab8RN6...
+GEMINI_API_KEY=AIzaSy...
 # OPENAI_API_KEY=sk-...
 ```
 
@@ -231,12 +260,28 @@ GEMINI_API_KEY=AQ.Ab8RN6...
 
 Proyek ini telah dilengkapi dengan script runner `pnpm` yang terbagi menurut kebutuhan modul:
 
-### 1. Menjalankan Seluruh Suite Pengujian
+### 1. Eksekusi Menyeluruh Suite
 ```bash
+# Menjalankan seluruh test suite otomatis (17 file uji)
 pnpm test:e2e
 ```
 
-### 2. Perintah Pengujian Modul Finance BUMD
+### 2. Pengujian Central Authentication & Registrasi
+```bash
+# Menjalankan uji login multi-role (Superadmin, Mitra, Tamu)
+pnpm test:auth:roles
+
+# Menjalankan uji pendaftaran akun tamu & verifikasi formulir
+pnpm test:auth:guest
+
+# Menjalankan uji pendaftaran akun mitra & verifikasi syarat kemitraan
+pnpm test:auth:mitra
+
+# Menjalankan seluruh rangkaian autentikasi & registrasi
+pnpm test:auth:all
+```
+
+### 3. Pengujian Modul Finance BUMD
 ```bash
 # Menjalankan seluruh tes modul BUMD
 pnpm test:bumd
@@ -248,7 +293,7 @@ pnpm test:bumd:crud
 pnpm test:bumd:regression
 ```
 
-### 3. Perintah Pengujian Modul Setting Mitra OTA
+### 4. Pengujian Modul Setting Mitra & Tag Properti
 ```bash
 # Menjalankan seluruh tes modul Setting Mitra
 pnpm test:mitra
@@ -274,11 +319,11 @@ pnpm test:mitra:crud:lifecycle
 # Menjalankan siklus CRUD Tag Properti lengkap (Create -> Update -> Delete)
 pnpm test:tag:crud:lifecycle
 
-# Menjalankan 35-Step Full Regression Lifecycle (Mitra -> Properti -> Approval -> KSO -> Core Link -> AI Self-Service)
+# Menjalankan 35-Step Full Regression Lifecycle (Release-Gate Blocker)
 pnpm test:mitra:lifecycle
 ```
 
-### 4. Mode Interaktif (Headed Browser) & Debugging
+### 5. Mode Interaktif (Headed Browser) & Debugging
 
 - **Tampilkan GUI Browser (Headed Mode)**:
   Tambahkan opsi `--headed` untuk mengamati aksi runner di layar secara visual:
@@ -295,6 +340,17 @@ pnpm test:mitra:lifecycle
 - **Melihat Hasil Eksekusi**:
   - Rekapitulasi status eksekusi mesin: `.e2e/report.json`
   - Visual trace dan rekaman step: `.e2e/results/<nama_skenario>/`
+
+---
+
+## 🧠 Knowledge Graph Arsitektur (Graphify)
+
+Proyek ini telah dipetakan menggunakan **Graphify Engine** untuk menganalisis hubungan dependensi, komunitas file, dan struktur arsitektur:
+- **Total Simpul (Nodes)**: 297 Entitas
+- **Total Relasi (Edges)**: 409 Koneksi
+- **Kluster Komunitas**: 20 Komunitas Terkelompok
+- **Visualisasi Interaktif**: Buka berkas [`graphify-out/graph.html`](graphify-out/graph.html) langsung di browser Anda untuk menjelajahi grafik relasi kode.
+- **Laporan Audit Arsitektur**: Baca [`graphify-out/GRAPH_REPORT.md`](graphify-out/GRAPH_REPORT.md).
 
 ---
 
