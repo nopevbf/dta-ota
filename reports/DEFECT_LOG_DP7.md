@@ -35,8 +35,8 @@
 - **Hasil Ekspektasi Otomasi**: Mengharapkan elemen `<input type="color">`.
 - **Hasil Aktual Sistem**: Aplikasi mengimplementasikan komponen kustom berupa grid 28 kotak palet warna swatch (*Color Swatch Palette Grid*) serta opsi radio "Tanpa warna".
 - **Hasil Pengujian Manual**: **LULUS (PASS)** — Berhasil diverifikasi secara langsung pada tanggal 03 November 2026. Seluruh palet warna dapat dipilih dan berfungsi normal.
-- **Bukti Screenshot Otomasi Gagal**: [`TAG-UI-002-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/TAG-UI-002-failure.png)
-- **Bukti Screenshot Manual Sukses**: [`manual-TAG-UI-002-color-palette.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-TAG-UI-002-color-palette.png)
+- **Bukti Screenshot Otomasi Gagal**: [`TAG-UI-002-failure.png`](screenshots/retest-dp7/TAG-UI-002-failure.png)
+- **Bukti Screenshot Manual Sukses**: [`manual-TAG-UI-002-color-palette.png`](screenshots/retest-dp7/manual-TAG-UI-002-color-palette.png)
 
 ---
 
@@ -52,8 +52,8 @@
 - **Hasil Ekspektasi**: Sistem menahan pengguna tetap berada di Tab 1 dan memvalidasi field wajib bertanda bintang (*).
 - **Hasil Aktual Otomasi**: Mengalami `operation timed out in browser.goto` setelah 65 detik saat runner mencoba membuka halaman.
 - **Hasil Pengujian Manual**: **LULUS (PASS)** — Berhasil diverifikasi secara langsung pada tanggal 03 November 2026. Halaman dan validasi field mandatory Tab 1 terbukti bekerja normal.
-- **Bukti Screenshot Otomasi Gagal**: [`BUMD-SC-001-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/BUMD-SC-001-failure.png)
-- **Bukti Screenshot Manual Sukses**: [`manual-BUMD-SC-001-form-validation.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-BUMD-SC-001-form-validation.png)
+- **Bukti Screenshot Otomasi Gagal**: [`BUMD-SC-001-failure.png`](screenshots/retest-dp7/BUMD-SC-001-failure.png)
+- **Bukti Screenshot Manual Sukses**: [`manual-BUMD-SC-001-form-validation.png`](screenshots/retest-dp7/manual-BUMD-SC-001-form-validation.png)
 
 ---
 
@@ -73,11 +73,11 @@
 - **Hasil Aktual Otomasi**: Transisi animasi wizard stepper terhambat sehingga elemen input `input[name="leader_name"]` belum berstatus visible saat dicoba di-fill oleh script otomasi.
 - **Hasil Pengujian Manual**: **LULUS (PASS)** — Kasus uji `BUMD-CRUD-LIFECYCLE` dan `BUMD-REG-003` berhasil diverifikasi secara langsung pada tanggal 03 November 2026. Input Identitas Pimpinan pada Tab 3 dan siklus penuh CRUD (pembuatan, verifikasi tabel, hingga penghapusan entitas BUMD) berhasil diselesaikan dengan konfirmasi notifikasi sukses "Data BUMD berhasil dihapus".
 - **Bukti Screenshot Otomasi Gagal**: 
-  - [`BUMD-CRUD-LIFECYCLE-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/BUMD-CRUD-LIFECYCLE-failure.png)
-  - [`BUMD-REG-003-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/BUMD-REG-003-failure.png)
+  - [`BUMD-CRUD-LIFECYCLE-failure.png`](screenshots/retest-dp7/BUMD-CRUD-LIFECYCLE-failure.png)
+  - [`BUMD-REG-003-failure.png`](screenshots/retest-dp7/BUMD-REG-003-failure.png)
 - **Bukti Screenshot Manual Sukses**:
-  - [`manual-BUMD-CRUD-LIFECYCLE-delete-success.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-BUMD-CRUD-LIFECYCLE-delete-success.png)
-  - [`manual-BUMD-REG-003-success.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-BUMD-REG-003-success.png)
+  - [`manual-BUMD-CRUD-LIFECYCLE-delete-success.png`](screenshots/retest-dp7/manual-BUMD-CRUD-LIFECYCLE-delete-success.png)
+  - [`manual-BUMD-REG-003-success.png`](screenshots/retest-dp7/manual-BUMD-REG-003-success.png)
 
 ---
 
@@ -96,10 +96,10 @@
   - `MITRA-TC-007` **LULUS (PASS)**: Filter "Status Verifikasi Email" (Terverifikasi / Belum Terverifikasi) terbukti berfungsi normal secara manual dan skrip telah diselaraskan.
   - `MITRA-TC-012 & 013` **OBSOLETE**: Skenario verifikasi aksi approval mitra dinyatakan sudah usang/tidak relevan karena mitra baru sekarang langsung terverifikasi secara sistem tanpa memerlukan aksi persetujuan manual lagi. Skrip pengujian telah dinonaktifkan (*commented out*).
 - **Bukti Screenshot Otomasi Gagal**:
-  - [`MITRA-TC-007-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/MITRA-TC-007-failure.png)
-  - [`MITRA-TC-012-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/MITRA-TC-012-failure.png)
+  - [`MITRA-TC-007-failure.png`](screenshots/retest-dp7/MITRA-TC-007-failure.png)
+  - [`MITRA-TC-012-failure.png`](screenshots/retest-dp7/MITRA-TC-012-failure.png)
 - **Bukti Screenshot Manual Sukses**:
-  - [`manual-MITRA-TC-007-filter-status.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-MITRA-TC-007-filter-status.png)
+  - [`manual-MITRA-TC-007-filter-status.png`](screenshots/retest-dp7/manual-MITRA-TC-007-filter-status.png)
 
 ---
 
@@ -117,8 +117,8 @@
 - **Hasil Ekspektasi**: Detail mitra ter-load lengkap beserta tabel riwayat aktivitas yang menampilkan riwayat log perubahan akun mitra.
 - **Hasil Aktual Otomasi**: Navigasi `browser.goto` timeout setelah 65 detik.
 - **Hasil Pengujian Manual**: **LULUS (PASS)** — Kasus uji `MITRA-TC-051 & 052` telah diverifikasi secara langsung pada tanggal 03 November 2026. Halaman Detail Mitra terbuka lengkap beserta tabel "Riwayat Aktivitas" yang secara presisi mencatat riwayat aksi pembuatan akun ("Ditambahkan" oleh Super Admin) dan modifikasi profil ("Diubah" dengan rincian data Sebelum & Sesudah).
-- **Bukti Screenshot Otomasi Gagal**: [`MITRA-TC-051-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/MITRA-TC-051-failure.png)
-- **Bukti Screenshot Manual Sukses**: [`manual-MITRA-TC-051-detail-activity.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-MITRA-TC-051-detail-activity.png)
+- **Bukti Screenshot Otomasi Gagal**: [`MITRA-TC-051-failure.png`](screenshots/retest-dp7/MITRA-TC-051-failure.png)
+- **Bukti Screenshot Manual Sukses**: [`manual-MITRA-TC-051-detail-activity.png`](screenshots/retest-dp7/manual-MITRA-TC-051-detail-activity.png)
 
 ---
 
@@ -137,11 +137,11 @@
 - **Hasil Ekspektasi**: Seluruh siklus hidup (Create, Read, Update, Delete) berjalan lancar dengan notifikasi konfirmasi di setiap tahapan.
 - **Hasil Aktual Otomasi**: `expect.toBeVisible failed: locator("table").first()` (match count 0) karena halaman menampilkan state kosong atau belum selesai reload saat script otomasi memeriksa tabel.
 - **Hasil Pengujian Manual**: **LULUS (PASS)** — Kasus uji `TAG-CRUD-LIFECYCLE` telah diverifikasi secara langsung pada tanggal 03 November 2026 melalui tiga tahapan siklus penuh: (1) Penambahan Tag baru sukses ("Tag berhasil ditambahkan dengan kode TAG-015"), (2) Modifikasi nama/warna label Tag sukses ("Tag berhasil diperbarui"), dan (3) Penghapusan Tag sukses ("Tag berhasil dihapus").
-- **Bukti Screenshot Otomasi Gagal**: [`TAG-CRUD-LIFECYCLE-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/TAG-CRUD-LIFECYCLE-failure.png)
+- **Bukti Screenshot Otomasi Gagal**: [`TAG-CRUD-LIFECYCLE-failure.png`](screenshots/retest-dp7/TAG-CRUD-LIFECYCLE-failure.png)
 - **Bukti Screenshot Manual Sukses**:
-  - [`manual-TAG-CRUD-01-create.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-TAG-CRUD-01-create.png)
-  - [`manual-TAG-CRUD-02-update.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-TAG-CRUD-02-update.png)
-  - [`manual-TAG-CRUD-03-delete.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-TAG-CRUD-03-delete.png)
+  - [`manual-TAG-CRUD-01-create.png`](screenshots/retest-dp7/manual-TAG-CRUD-01-create.png)
+  - [`manual-TAG-CRUD-02-update.png`](screenshots/retest-dp7/manual-TAG-CRUD-02-update.png)
+  - [`manual-TAG-CRUD-03-delete.png`](screenshots/retest-dp7/manual-TAG-CRUD-03-delete.png)
 
 ---
 
@@ -159,10 +159,10 @@
 - **Hasil Ekspektasi**: Form tersimpan normal dan modal menutup dengan alert sukses.
 - **Hasil Aktual Otomasi**: Event klik diintersepsi oleh toolbar Laravel Debugbar (`.phpdebugbar intercepts pointer events`), disusul timeout 29.7 detik saat menunggu scheduled navigation.
 - **Hasil Pengujian Manual**: **LULUS (PASS)** — Kasus uji `MITRA-CRUD-LIFECYCLE` telah diverifikasi secara langsung pada tanggal 03 November 2026 melalui dua tahapan: (1) Penambahan Mitra baru sukses ("Mitra baru berhasil ditambahkan", Kode Mitra MTR-0075 "Manual Tester"), dan (2) Modifikasi/Pembaruan profil Mitra sukses ("Data mitra berhasil diperbarui", nama diperbarui menjadi "Manuals Testers").
-- **Bukti Screenshot Otomasi Gagal**: [`MITRA-CRUD-LIFECYCLE-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/MITRA-CRUD-LIFECYCLE-failure.png)
+- **Bukti Screenshot Otomasi Gagal**: [`MITRA-CRUD-LIFECYCLE-failure.png`](screenshots/retest-dp7/MITRA-CRUD-LIFECYCLE-failure.png)
 - **Bukti Screenshot Manual Sukses**:
-  - [`manual-MITRA-CRUD-01-create.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-MITRA-CRUD-01-create.png)
-  - [`manual-MITRA-CRUD-02-update.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-MITRA-CRUD-02-update.png)
+  - [`manual-MITRA-CRUD-01-create.png`](screenshots/retest-dp7/manual-MITRA-CRUD-01-create.png)
+  - [`manual-MITRA-CRUD-02-update.png`](screenshots/retest-dp7/manual-MITRA-CRUD-02-update.png)
 
 ---
 
@@ -180,8 +180,8 @@
 - **Hasil Ekspektasi**: Muncul respon validasi error alert penolakan duplikasi nama kelompok.
 - **Hasil Aktual Otomasi**: Server staging memerlukan waktu >30 detik untuk mengembalikan respon HTTP, menyebabkan `tap timed out after its input was dispatched waiting for scheduled navigations`.
 - **Hasil Pengujian Manual**: **LULUS (PASS)** — Kasus uji `REG-BUG-006` telah diverifikasi secara langsung pada tanggal 03 November 2026. Submit form tambah tag dengan nama kelompok yang sudah terdaftar langsung memicu validasi penolakan duplikasi dengan pesan error merah *"Nama kelompok sudah digunakan. Gunakan nama lain."* baik pada header modal maupun pada banner halaman.
-- **Bukti Screenshot Otomasi Gagal**: [`REG-BUG-006-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/REG-BUG-006-failure.png)
-- **Bukti Screenshot Manual Sukses**: [`manual-REG-BUG-006-duplicate-tag.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-REG-BUG-006-duplicate-tag.png)
+- **Bukti Screenshot Otomasi Gagal**: [`REG-BUG-006-failure.png`](screenshots/retest-dp7/REG-BUG-006-failure.png)
+- **Bukti Screenshot Manual Sukses**: [`manual-REG-BUG-006-duplicate-tag.png`](screenshots/retest-dp7/manual-REG-BUG-006-duplicate-tag.png)
 
 ---
 
@@ -203,7 +203,7 @@
   4. Ekstraksi atribut link `href` dan direct `browser.goto` dengan timeout toleransi tinggi (90 detik) untuk seluruh tombol detail tabel dan card navigasi (Langkah 6, 11, 23, 32, 34).
   5. Penyesuaian batas waktu runner global menjadi 60 menit (`timeout: 3600000`) di `e2e.config.ts` guna mengakomodasi TTFB server staging.
 - **Bukti Screenshot Visual (35 File Lengkap)**:
-  - Direktori penyimpanan: [`reports/mitra/screenshots/lifecycle/`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/mitra/screenshots/lifecycle/) (file `01-buat-mitra-manajemen.png` s/d `35-halaman-kontak-terbuka.png`).
+  - Direktori penyimpanan: [`reports/mitra/screenshots/lifecycle/`](mitra/screenshots/lifecycle/) (file `01-buat-mitra-manajemen.png` s/d `35-halaman-kontak-terbuka.png`).
 
 ---
 
@@ -228,17 +228,17 @@
   - `TAG-DUP-004` **LULUS (PASS)**: Diverifikasi langsung pada tanggal 03 November 2026. Input nama kelompok tag yang sudah terdaftar ("Badan Usaha") pada modal Tambah Tag Properti secara konsisten menampilkan validasi error merah *"• Nama kelompok sudah digunakan. Gunakan nama lain."* dan mencegah penambahan tag duplikat.
   - `PORTAL-VER-005` **LULUS (PASS)**: Diverifikasi langsung pada tanggal 03 November 2026. Klik tombol "Verifikasi Email" pada form Tambah Kontak Hotel di Portal Mitra langsung memunculkan modal popup "Verifikasi Email" dengan pesan *"Link verifikasi telah dikirimkan. Segera cek inbox anda, link akan kadaluarsa dalam 15 menit."* beserta status *"Menunggu verifikasi"* secara akurat.
 - **Bukti Screenshot Otomasi Gagal**:
-  - [`BUMD-VAL-001-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/BUMD-VAL-001-failure.png)
-  - [`BUMD-VAL-003-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/BUMD-VAL-003-failure.png)
-  - [`TAG-ERR-003-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/TAG-ERR-003-failure.png)
-  - [`TAG-DUP-004-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/TAG-DUP-004-failure.png)
-  - [`PORTAL-VER-005-failure.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/PORTAL-VER-005-failure.png)
+  - [`BUMD-VAL-001-failure.png`](screenshots/retest-dp7/BUMD-VAL-001-failure.png)
+  - [`BUMD-VAL-003-failure.png`](screenshots/retest-dp7/BUMD-VAL-003-failure.png)
+  - [`TAG-ERR-003-failure.png`](screenshots/retest-dp7/TAG-ERR-003-failure.png)
+  - [`TAG-DUP-004-failure.png`](screenshots/retest-dp7/TAG-DUP-004-failure.png)
+  - [`PORTAL-VER-005-failure.png`](screenshots/retest-dp7/PORTAL-VER-005-failure.png)
 - **Bukti Screenshot Manual Sukses**:
-  - [`manual-BUMD-VAL-001-form-validation.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-BUMD-VAL-001-form-validation.png)
-  - [`manual-BUMD-VAL-003-phone-reject-alphabets.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-BUMD-VAL-003-phone-reject-alphabets.png)
-  - [`manual-TAG-ERR-003-update-no-404.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-TAG-ERR-003-update-no-404.png)
-  - [`manual-TAG-DUP-004-duplicate-tag.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-TAG-DUP-004-duplicate-tag.png)
-  - [`manual-PORTAL-VER-005-email-verification-modal.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-PORTAL-VER-005-email-verification-modal.png)
+  - [`manual-BUMD-VAL-001-form-validation.png`](screenshots/retest-dp7/manual-BUMD-VAL-001-form-validation.png)
+  - [`manual-BUMD-VAL-003-phone-reject-alphabets.png`](screenshots/retest-dp7/manual-BUMD-VAL-003-phone-reject-alphabets.png)
+  - [`manual-TAG-ERR-003-update-no-404.png`](screenshots/retest-dp7/manual-TAG-ERR-003-update-no-404.png)
+  - [`manual-TAG-DUP-004-duplicate-tag.png`](screenshots/retest-dp7/manual-TAG-DUP-004-duplicate-tag.png)
+  - [`manual-PORTAL-VER-005-email-verification-modal.png`](screenshots/retest-dp7/manual-PORTAL-VER-005-email-verification-modal.png)
 
 ---
 
@@ -255,13 +255,13 @@
 - **Hasil Ekspektasi**: Server mengautentikasi dan meredirect ke dashboard Manajemen / Dashboard Mitra / Guest Dashboard dalam < 5 detik, atau memunculkan pesan error invalid credentials bila salah.
 - **Hasil Aktual Otomasi**: Runner mendispatch klik, namun browser menunggu navigasi terjadwal melebihi 29.7 detik (`tap timed out after its input was dispatched`).
 - **Hasil Pengujian Manual**:
-  - **`AUTH-MGMT-001`**: **LULUS (PASS)** — Berhasil diverifikasi secara manual pada tanggal 03 November 2026. Login akun Manajemen (Super Admin) berhasil login dan langsung diarahkan ke Dashboard Daftar Modul tanpa kendala. Bukti: [`manual-AUTH-MGMT-001-dashboard.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-AUTH-MGMT-001-dashboard.png)
-  - **`AUTH-MITRA-001`**: **LULUS (PASS)** — Berhasil diverifikasi secara manual pada tanggal 03 November 2026. Login akun Mitra Bisnis berhasil login dan langsung diarahkan ke Dashboard Mitra (`/mitra/dashboard`) lengkap dengan 15 kartu menu mitra. Bukti: [`manual-AUTH-MITRA-001-dashboard.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-AUTH-MITRA-001-dashboard.png)
-  - **`AUTH-TAMU-001`**: **LULUS (PASS)** — Berhasil diverifikasi secara manual pada tanggal 03 November 2026. Login akun Tamu (Guest) berhasil login dan langsung diarahkan ke Dashboard Guest (`https://guest.dp7.lab.daegi.dev/`) dengan pesan selamat datang "Hello! Selamat datang di halaman Guest D'Paragon". Bukti: [`manual-AUTH-TAMU-001-dashboard.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-AUTH-TAMU-001-dashboard.png)
-  - **`AUTH-E2E-002`**: **LULUS (PASS)** — Berhasil diverifikasi secara manual pada tanggal 03 November 2026. Submit login dengan kredensial invalid (`superadmin@dparagon.com`) secara tepat menampilkan pesan validasi error merah *"These credentials do not match our records."* tepat di bawah input username. Bukti: [`manual-AUTH-E2E-002-invalid-credentials.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-AUTH-E2E-002-invalid-credentials.png)
-- **Bukti Screenshot Otomasi Gagal**: [Log Trace](file:///d:/Project/2026/Dparagon/DTA-OTA/.e2e/results/)
+  - **`AUTH-MGMT-001`**: **LULUS (PASS)** — Berhasil diverifikasi secara manual pada tanggal 03 November 2026. Login akun Manajemen (Super Admin) berhasil login dan langsung diarahkan ke Dashboard Daftar Modul tanpa kendala. Bukti: [`manual-AUTH-MGMT-001-dashboard.png`](screenshots/retest-dp7/manual-AUTH-MGMT-001-dashboard.png)
+  - **`AUTH-MITRA-001`**: **LULUS (PASS)** — Berhasil diverifikasi secara manual pada tanggal 03 November 2026. Login akun Mitra Bisnis berhasil login dan langsung diarahkan ke Dashboard Mitra (`/mitra/dashboard`) lengkap dengan 15 kartu menu mitra. Bukti: [`manual-AUTH-MITRA-001-dashboard.png`](screenshots/retest-dp7/manual-AUTH-MITRA-001-dashboard.png)
+  - **`AUTH-TAMU-001`**: **LULUS (PASS)** — Berhasil diverifikasi secara manual pada tanggal 03 November 2026. Login akun Tamu (Guest) berhasil login dan langsung diarahkan ke Dashboard Guest (`https://guest.dp7.lab.daegi.dev/`) dengan pesan selamat datang "Hello! Selamat datang di halaman Guest D'Paragon". Bukti: [`manual-AUTH-TAMU-001-dashboard.png`](screenshots/retest-dp7/manual-AUTH-TAMU-001-dashboard.png)
+  - **`AUTH-E2E-002`**: **LULUS (PASS)** — Berhasil diverifikasi secara manual pada tanggal 03 November 2026. Submit login dengan kredensial invalid (`superadmin@dparagon.com`) secara tepat menampilkan pesan validasi error merah *"These credentials do not match our records."* tepat di bawah input username. Bukti: [`manual-AUTH-E2E-002-invalid-credentials.png`](screenshots/retest-dp7/manual-AUTH-E2E-002-invalid-credentials.png)
+- **Bukti Screenshot Otomasi Gagal**: [Log Trace](../.e2e/results/)
 - **Bukti Screenshot Manual Sukses**:
-  - [`manual-AUTH-MGMT-001-dashboard.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-AUTH-MGMT-001-dashboard.png)
-  - [`manual-AUTH-MITRA-001-dashboard.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-AUTH-MITRA-001-dashboard.png)
-  - [`manual-AUTH-TAMU-001-dashboard.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-AUTH-TAMU-001-dashboard.png)
-  - [`manual-AUTH-E2E-002-invalid-credentials.png`](file:///d:/Project/2026/Dparagon/DTA-OTA/reports/screenshots/retest-dp7/manual-AUTH-E2E-002-invalid-credentials.png)
+  - [`manual-AUTH-MGMT-001-dashboard.png`](screenshots/retest-dp7/manual-AUTH-MGMT-001-dashboard.png)
+  - [`manual-AUTH-MITRA-001-dashboard.png`](screenshots/retest-dp7/manual-AUTH-MITRA-001-dashboard.png)
+  - [`manual-AUTH-TAMU-001-dashboard.png`](screenshots/retest-dp7/manual-AUTH-TAMU-001-dashboard.png)
+  - [`manual-AUTH-E2E-002-invalid-credentials.png`](screenshots/retest-dp7/manual-AUTH-E2E-002-invalid-credentials.png)
