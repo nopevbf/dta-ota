@@ -240,4 +240,4 @@ Kolom **Hasil Pengujian Manual** dan **Bukti Screenshot Manual** disediakan khus
 | :--- | :--- | :---: | :---: |
 | **SQA Engineer** | Firman Aji | **APPROVED (PASS 100%)** | 03 November 2026 |
 | **Automation Architect** | Agentic E2E Test Runner | **VERIFIED PASS** | 03 November 2026 |
-| **Release Management** | D'Paragon QA Team | **SIGN-OFF APPROVED** | 03 November 2026 |
+| **Release Management** | D'Paragon QA Team | **-** | - |
