@@ -2,8 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { Browser } from '@e2e-dev/web';
 
-export const TARGET_URL = 'https://dparagon7.persona-it.com/lang_en?ava_min_room_ready=1&ava_pax=2';
-export const AUTH_LOGOUT_URL = 'https://auth.dparagon7.persona-it.com/logout';
+export const TARGET_URL = 'https://dp7.lab.daegi.dev/lang_en?ava_min_room_ready=1&ava_pax=2';
+export const AUTH_LOGOUT_URL = 'https://auth.dp7.lab.daegi.dev/logout';
 
 /**
  * Memasang bridge perantara pada browser.route untuk menormalkan header accept application/json
@@ -165,8 +165,8 @@ export async function logoutSession(browser: Browser): Promise<void> {
       document.cookie.split(";").forEach(c => {
         const name = c.split("=")[0].trim();
         document.cookie = `${name}=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-        document.cookie = `${name}=; path=/; domain=.persona-it.com; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-        document.cookie = `${name}=; path=/; domain=dparagon7.persona-it.com; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+        document.cookie = `${name}=; path=/; domain=.dp7.lab.daegi.dev; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+        document.cookie = `${name}=; path=/; domain=dp7.lab.daegi.dev; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
       });
       try {
         localStorage.clear();

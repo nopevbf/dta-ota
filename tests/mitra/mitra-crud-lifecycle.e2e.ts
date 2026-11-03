@@ -7,8 +7,8 @@ import {
 
 test.describe('Setting Mitra: Full CRUD Lifecycle with Visual Evidence', () => {
   test('MITRA-CRUD-LIFECYCLE: Create Mitra, Verify in Table, and Update Mitra with Visual Evidence', async ({ app, browser }) => {
-    const uniqueId = Date.now().toString().slice(-5);
-    const firstName = `MitraQA${uniqueId}`;
+    const uniqueId = `20261103_${Date.now().toString().slice(-4)}`;
+    const firstName = `Mitra_${uniqueId}`;
     const lastName = 'TestAuto';
     const email = `qa.mitra.${uniqueId}@example.com`;
     const phone = `0812${Date.now().toString().slice(-8)}`;

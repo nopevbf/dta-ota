@@ -1,8 +1,8 @@
 import { test } from '@e2e-dev/web';
 import { expect, credentials } from 'e2e';
 
-const AUTH_BASE_URL = 'https://auth.dparagon7.persona-it.com/login';
-const MITRA_AUTH_URL = 'https://auth.dparagon7.persona-it.com/mitra/login';
+const AUTH_BASE_URL = 'https://auth.dp7.lab.daegi.dev/login';
+const MITRA_AUTH_URL = 'https://auth.dp7.lab.daegi.dev/mitra/login';
 
 /**
  * Test Case ID   : OTA-AVAIL-001

@@ -8,12 +8,13 @@ import {
   navigateToTab4,
   submitWizardForm,
   takeEvidenceScreenshot,
+  getTestDateSeed,
 } from './support.ts';
 
 test.describe('Bank Data BUMD: End-to-End CRUD Lifecycle with Visual Evidence', () => {
   test('BUMD-CRUD-LIFECYCLE: Create, Verify in Table, Update, and Delete BUMD with Visual Evidence', async ({ app, browser }) => {
-    const uniqueId = Date.now().toString().slice(-6);
-    const testCompanyName = `PT BUMD AutoTest ${uniqueId}`;
+    const uniqueId = getTestDateSeed();
+    const testCompanyName = `PT BUMD TEST_${uniqueId}`;
 
     // ==========================================
     // 1. TAHAP CREATE & VERIFY
@@ -123,7 +124,7 @@ test.describe('Bank Data BUMD: End-to-End CRUD Lifecycle with Visual Evidence', 
 
     // Tunggu alert / reload selesai
     await browser.waitForURL(/.*\/partner\/finance\/bumd.*/, { timeout: 15000 }).catch(() => {});
-    await browser.goto('https://management.dparagon7.persona-it.com/partner/finance/bumd');
+    await browser.goto('https://management.dp7.lab.daegi.dev/partner/finance/bumd');
     await expect(feeMgmtHeader).toBeVisible();
 
     // Tangkap Screenshot Bukti 6: Data terverifikasi telah dihapus dari tabel

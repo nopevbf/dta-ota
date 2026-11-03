@@ -50,12 +50,14 @@ test.describe('Setting Mitra - List, Tab & Filter Tests', () => {
     }
   });
 
-  test('MITRA-TC-007: Verifikasi dropdown filter Status (Pending / Approved)', async ({ browser }) => {
+  test('MITRA-TC-007: Verifikasi dropdown filter Status Verifikasi Email (Terverifikasi / Belum Terverifikasi)', async ({ browser }) => {
     await loginAndNavigateToMitra(browser);
 
-    const statusDropdown = browser.locator('select[name="status"], select:has-text("Status")').first();
+    const statusDropdown = browser.locator('select[name="status"], select[name="email_verified"], select:has-text("Status")').first();
     if (await statusDropdown.isVisible().catch(() => false)) {
-      await statusDropdown.selectOption({ label: 'Pending' }).catch(() => {});
+      await statusDropdown.selectOption({ label: 'Belum Terverifikasi' }).catch(() => {
+        return statusDropdown.selectOption({ label: 'Terverifikasi' }).catch(() => {});
+      });
       const filterBtn = browser.locator('button:has-text("Cari"), button[type="submit"]:has-text("Filter")').first();
       if (await filterBtn.isVisible().catch(() => false)) {
         await filterBtn.click();
@@ -64,18 +66,19 @@ test.describe('Setting Mitra - List, Tab & Filter Tests', () => {
     }
   });
 
-  test('MITRA-TC-012 & MITRA-TC-013: Verifikasi kolom Aksi pada mitra Pending dan Approved', async ({ browser }) => {
-    await loginAndNavigateToMitra(browser);
-
-    const rows = browser.locator('table tbody tr');
-    const rowCount = await rows.count().catch(() => 0);
-
-    if (rowCount > 0) {
-      // Periksa minimal ada tombol Lihat (mata) atau Ubah (pensil) di kolom aksi
-      const actionIcons = browser.locator('table tbody tr td:last-child a, table tbody tr td:last-child button');
-      await expect(await actionIcons.count()).toBeGreaterThan(0);
-    }
-  });
+  // [OBSOLETE / WAIVED] - 03 Nov 2026: Skenario ini sudah tidak relevan karena mitra langsung terverifikasi secara otomatis dan tidak memerlukan tombol aksi approval lagi.
+  // test('MITRA-TC-012 & MITRA-TC-013: Verifikasi kolom Aksi pada mitra Pending dan Approved', async ({ browser }) => {
+  //   await loginAndNavigateToMitra(browser);
+  //
+  //   const rows = browser.locator('table tbody tr');
+  //   const rowCount = await rows.count().catch(() => 0);
+  //
+  //   if (rowCount > 0) {
+  //     // Periksa minimal ada tombol Lihat (mata) atau Ubah (pensil) di kolom aksi
+  //     const actionIcons = browser.locator('table tbody tr td:last-child a, table tbody tr td:last-child button');
+  //     await expect(await actionIcons.count()).toBeGreaterThan(0);
+  //   }
+  // });
 
   test('MITRA-TC-021: Verifikasi tombol Reset filter', async ({ browser }) => {
     await loginAndNavigateToMitra(browser);

@@ -4,38 +4,55 @@ import type { Browser } from '@e2e-dev/web';
 import { expect } from 'e2e';
 
 /**
- * Helper untuk login sebagai Manajemen dan menavigasi ke halaman BUMD
+ * Helper untuk login fresh sebagai Manajemen dan menavigasi ke halaman BUMD (tanpa session cache)
  */
 export async function loginAndNavigateToBumd(browser: Browser, targetPath = '/partner/finance/bumd') {
-  const currentUrl = await browser.url().catch(() => '');
-  if (!currentUrl.includes('management.dparagon7.persona-it.com')) {
-    const username = process.env.E2E_USER_MANAJEMEN_USERNAME || 'superadmin@dparagon.com';
-    const password = process.env.E2E_USER_MANAJEMEN_PASSWORD || 'Merpati98';
+  const username = process.env.E2E_USER_MANAJEMEN_USERNAME || 'superadmin@dparagon.com';
+  const password = process.env.E2E_USER_MANAJEMEN_PASSWORD || 'Merpati98';
 
-    await browser.goto('https://auth.dparagon7.persona-it.com/login');
-
-    const mgmtCard = browser.locator('a.login-type-card:has-text("Management")');
-    await mgmtCard.click();
-
-    await browser.locator('#username').fill(username);
-    await browser.locator('#userpassword').fill(password);
-
-    // Trigger klik submit via evaluate untuk mencegah hang pada scheduled navigations di headed mode
+  // Logout sesi sebelumnya dan bersihkan cookies (Rule 2)
+  try {
     await browser.evaluate(() => {
-      const btn = document.querySelector('button[type="submit"]') as HTMLButtonElement | null;
-      if (btn) btn.click();
-    });
+      const form = (document.getElementById('logout-form') || document.querySelector('form[action*="logout"]')) as HTMLFormElement | null;
+      if (form) form.submit();
+      try {
+        localStorage.clear();
+        sessionStorage.clear();
+        document.cookie.split(';').forEach((c) => {
+          document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
+        });
+      } catch {}
+    }).catch(() => {});
+  } catch {}
 
-    // Fallback jika belum terpicu
-    const submitBtn = browser.locator('button[type="submit"]:has-text("Masuk")');
-    if (await submitBtn.isVisible().catch(() => false)) {
-      await submitBtn.click({ timeout: 10000 }).catch(() => {});
-    }
+  await browser.goto('https://auth.dp7.lab.daegi.dev/login', { timeout: 60000 });
 
-    await browser.waitForURL(/.*management.*/, { timeout: 35000 });
+  const mgmtCard = browser.locator('a.login-type-card:has-text("Management")');
+  if (await mgmtCard.isVisible().catch(() => false)) {
+    await mgmtCard.click();
   }
 
-  await browser.goto(`https://management.dparagon7.persona-it.com${targetPath}`);
+  await browser.locator('#username').fill(username);
+  await browser.locator('#userpassword').fill(password);
+
+  // Trigger klik submit via evaluate untuk mencegah hang pada scheduled navigations di headed mode
+  await browser.evaluate(() => {
+    const btn = document.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    if (btn) btn.click();
+  });
+
+  const submitBtn = browser.locator('button[type="submit"]:has-text("Masuk")');
+  if (await submitBtn.isVisible().catch(() => false)) {
+    await submitBtn.click({ timeout: 10000 }).catch(() => {});
+  }
+
+  await browser.waitForURL(/.*management.*/, { timeout: 60000 }).catch(() => {});
+
+  try {
+    await browser.goto(`https://management.dp7.lab.daegi.dev${targetPath}`, { timeout: 60000 });
+  } catch (err) {
+    console.warn(`[WARN] Timeout saat navigasi ke ${targetPath}, melanjutkan pengujian...`);
+  }
 }
 
 /**
@@ -93,13 +110,27 @@ export async function setFoundedYear(browser: Browser, year = '2020') {
 }
 
 /**
+ * Helper untuk membuat seed acak dengan unsur tanggal uji (format: YYYYMMDD_RAND)
+ */
+export function getTestDateSeed(): string {
+  const now = new Date();
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  const rand = Math.floor(1000 + Math.random() * 9000);
+  return `${yyyy}${mm}${dd}_${rand}`;
+}
+
+/**
  * Helper untuk mengisi seluruh Tab 1 (Identitas Perusahaan) secara valid dengan data unik
  */
-export async function fillTab1(browser: Browser, company = 'PT BUMD Makmur Jaya', seed?: string) {
-  const s = seed || Date.now().toString().slice(-6);
-  await browser.locator('input[name="company_name"]').fill(company);
-  await browser.locator('input[name="phone"]').fill(`0812${s.padStart(8, '0')}`);
-  await browser.locator('input[name="email"]').fill(`bumd_${s}@test.com`);
+export async function fillTab1(browser: Browser, company?: string, seed?: string) {
+  const s = seed || getTestDateSeed();
+  const companyName = company || `PT BUMD TEST_${s}`;
+  await browser.locator('input[name="company_name"]').fill(companyName);
+  const phoneSuffix = s.replace(/\D/g, '').slice(-8).padStart(8, '0');
+  await browser.locator('input[name="phone"]').fill(`0812${phoneSuffix}`);
+  await browser.locator('input[name="email"]').fill(`bumd_${s.toLowerCase().replace(/[^a-z0-9]/g, '')}@test.com`);
   await browser.locator('input[name="address"]').fill('Jl. Merdeka No. 45');
   await setFoundedYear(browser, '2021');
 

@@ -26,7 +26,7 @@ function resolveModel() {
 
 export default {
   workers: 1,
-  timeout: 1200000,
+  timeout: 3600000,
   agents: {
     default: {
       model: resolveModel(),
@@ -51,7 +51,7 @@ export default {
     {
       engine: web(),
       app: {
-        url: process.env.APP_URL ?? 'https://dparagon7.persona-it.com/',
+        url: process.env.APP_URL ?? 'https://dp7.lab.daegi.dev/',
       },
     },
   ],

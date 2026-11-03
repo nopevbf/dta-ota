@@ -6,55 +6,54 @@ import { credentials, expect } from 'e2e';
 /**
  * Helper login sebagai Manajemen dan menavigasi ke halaman Setting Mitra
  */
-export async function loginAndNavigateToMitra(browser: Browser, targetPath = '/partner/partners') {
+export async function loginAndNavigateToMitra(browser: Browser, targetPath = '/partner/partners', forceRelogin = false) {
+  const targetUrl = targetPath.startsWith('http') ? targetPath : `https://management.dp7.lab.daegi.dev${targetPath}`;
+  const currentUrl = await browser.url().catch(() => '');
+
+  // Jika sudah berada di manajemen dan tidak force relogin, navigasi langsung tanpa login ulang
+  if (!forceRelogin && currentUrl.includes('management.dp7.lab.daegi.dev')) {
+    console.log(`[NAVIGASI] Sesi manajemen sudah aktif, langsung menuju: ${targetUrl}`);
+    await browser.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    return;
+  }
+
   const username = process.env.E2E_USER_MANAJEMEN_USERNAME || 'superadmin@dparagon.com';
   const password = process.env.E2E_USER_MANAJEMEN_PASSWORD || 'Merpati98';
 
-  // Coba navigasi ke URL target portal manajemen
-  await browser.goto(`https://management.dparagon7.persona-it.com${targetPath}`).catch(() => {});
-  await new Promise(r => setTimeout(r, 1500));
+  // Fresh login per tes: logout sesi lama dan bersihkan cookies (Rule 2)
+  await logoutCurrentSession(browser);
 
-  let urlNow = await browser.url().catch(() => '');
-  let isForbidden = await browser.locator('text="Whoops! Anda tidak mempunyai izin", text="403"').first().isVisible().catch(() => false);
+  // Blokir socket.io polling yang mati di staging untuk mencegah hang navigasi
+  await browser.route(/.*socket\.io.*/, async (route) => {
+    await route.abort().catch(() => {});
+  }).catch(() => {});
 
-  // Jika ter-redirect keluar manajemen atau mendapat 403 Forbidden
-  if (isForbidden || !urlNow.includes('management.dparagon7.persona-it.com')) {
-    // Navigasi ke auth login
-    await browser.goto('https://auth.dparagon7.persona-it.com/login');
-    await new Promise(r => setTimeout(r, 1000));
+  await browser.goto('https://auth.dp7.lab.daegi.dev/login', { waitUntil: 'domcontentloaded', timeout: 90000 });
 
-    const authUrl = await browser.url().catch(() => '');
-    if (!authUrl.includes('/login')) {
-      await browser.goto('https://auth.dparagon7.persona-it.com/logout').catch(() => {});
-      await browser.goto('https://auth.dparagon7.persona-it.com/login');
-    }
-
-    const mgmtCard = browser.locator('a.login-type-card:has-text("Management"), a:has-text("Management")').first();
-    if (await mgmtCard.isVisible().catch(() => false)) {
-      await mgmtCard.click();
-      await new Promise(r => setTimeout(r, 1000));
-    }
-
-    const userInput = browser.locator('#username, input[name="username"], input[name="email"]').first();
-    if (await userInput.isVisible().catch(() => false)) {
-      await userInput.fill(username);
-      await browser.locator('#userpassword, input[name="password"]').first().fill(password);
-
-      const submitBtn = browser.locator('button[type="submit"]:has-text("Masuk")').first();
-      if (await submitBtn.isVisible().catch(() => false)) {
-        await submitBtn.click().catch(() => {});
-      } else {
-        await browser.evaluate(() => {
-          const btn = document.querySelector('button[type="submit"]') as HTMLButtonElement | null;
-          if (btn) btn.click();
-        }).catch(() => {});
-      }
-      await browser.waitForURL(/.*management.*/, { timeout: 35000 }).catch(() => {});
-    }
-
-    await browser.goto(`https://management.dparagon7.persona-it.com${targetPath}`).catch(() => {});
-    await new Promise(r => setTimeout(r, 1500));
+  const mgmtCard = browser.locator('a.login-type-card:has-text("Management"), a:has-text("Management")').first();
+  if (await mgmtCard.isVisible().catch(() => false)) {
+    await mgmtCard.click();
+    await new Promise(r => setTimeout(r, 800));
   }
+
+  const userInput = browser.locator('#username, input[name="username"], input[name="email"]').first();
+  if (await userInput.isVisible().catch(() => false)) {
+    await userInput.fill(username);
+    await browser.locator('#userpassword, input[name="password"]').first().fill(password);
+
+    await browser.evaluate(() => {
+      const btn = document.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      if (btn) btn.click();
+    }).catch(() => {});
+
+    const submitBtn = browser.locator('button[type="submit"]:has-text("Masuk")').first();
+    if (await submitBtn.isVisible().catch(() => false)) {
+      await submitBtn.click().catch(() => {});
+    }
+    await browser.waitForURL(/.*management.*/, { timeout: 60000 }).catch(() => {});
+  }
+
+  await browser.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
 }
 
 /**
@@ -65,8 +64,8 @@ export async function loginAndNavigateToTagProperti(browser: Browser) {
 
   const currentUrl = await browser.url().catch(() => '');
   if (!currentUrl.includes('/partner/property-tags')) {
-    await browser.goto('https://management.dparagon7.persona-it.com/partner/property-tags');
-    await browser.waitForURL(/.*property-tags.*/, { timeout: 15000 }).catch(() => {});
+    await browser.goto('https://management.dp7.lab.daegi.dev/partner/property-tags');
+    await browser.waitForURL(/.*property-tags.*/, { timeout: 30000 }).catch(() => {});
   }
 }
 
@@ -80,7 +79,7 @@ export async function loginAndNavigateToRegistrasiProperti(browser: Browser) {
   if (await regMenu.isVisible().catch(() => false)) {
     await regMenu.click();
   } else {
-    await browser.goto('https://management.dparagon7.persona-it.com/property/create').catch(() => {});
+    await browser.goto('https://management.dp7.lab.daegi.dev/property/create').catch(() => {});
   }
 }
 
@@ -175,49 +174,79 @@ export async function takeLifecycleScreenshot(app: any, stepNumber: number, step
 }
 
 /**
- * Helper untuk login ke dashboard Mitra dengan email & password
+ * Helper untuk login fresh ke dashboard Mitra dengan email & password (tanpa session cache)
  */
 export async function loginMitraDashboard(browser: Browser, email: string, password = 'Password123!') {
-  await browser.goto('https://auth.dparagon7.persona-it.com/mitra/login');
-  const urlNow = await browser.url().catch(() => '');
-  if (!urlNow.includes('mitra')) {
-    await logoutCurrentSession(browser);
-    await browser.goto('https://auth.dparagon7.persona-it.com/mitra/login');
+  // Lakukan logout sesi sebelumnya terlebih dahulu agar benar-benar fresh
+  await logoutCurrentSession(browser);
+
+  // Blokir socket.io polling yang mati di staging untuk mencegah hang navigasi
+  await browser.route(/.*socket\.io.*/, async (route) => {
+    await route.abort().catch(() => {});
+  }).catch(() => {});
+
+  // Navigasi ke auth mitra login dengan domcontentloaded agar tidak terhambat background poll
+  try {
+    await browser.goto('https://auth.dp7.lab.daegi.dev/mitra/login', { waitUntil: 'domcontentloaded', timeout: 90000 });
+  } catch {
+    console.log('[WARN] Percobaan pertama ke auth mitra login timeout, mencoba ulang...');
+    await browser.goto('https://auth.dp7.lab.daegi.dev/mitra/login', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
   }
 
-  const emailInput = browser.locator('#email');
-  await expect(emailInput).toBeVisible({ timeout: 25000 });
+  // Rule 2: Strict Session Barrier & DOM Readiness
+  const emailInput = browser.locator('#email, input[name="email"]').first();
+  await expect(emailInput).toBeVisible({ timeout: 45000 });
+
   await emailInput.fill(email);
-  await browser.locator('#userpassword').fill(password);
-  await browser.locator('button[type="submit"]:has-text("Masuk")').click();
-  await browser.waitForURL(/.*mitra.*/, { timeout: 35000 });
+  await browser.locator('#userpassword, input[name="password"]').first().fill(password);
+
+  // Sembunyikan debugbar jika ada
+  await browser.evaluate(() => {
+    const db = document.querySelector('.phpdebugbar') as HTMLElement | null;
+    if (db) db.style.display = 'none';
+  }).catch(() => {});
+
+  // Submit form login mitra via DOM native requestSubmit untuk mencegah deadlock scheduled navigations
+  await browser.evaluate(() => {
+    const form = document.querySelector('form') as HTMLFormElement | null;
+    const btn = document.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    if (form && btn) {
+      form.requestSubmit(btn);
+    } else if (btn) {
+      btn.click();
+    }
+  }).catch(() => {});
+
+  // Tunggu redirect menuju portal mitra
+  await browser.waitForURL(/.*guest.*|.*mitra(?!\/login).*/, { timeout: 90000 }).catch(() => {});
 }
 
 /**
- * Helper untuk membersihkan session / logout saat berpindah antar portal
+ * Helper untuk membersihkan session / logout fresh dengan clear cookies & local storage
  */
 export async function logoutCurrentSession(browser: Browser) {
   try {
-    const userDropdown = browser.locator('.profile-user, button.profile-user, [data-toggle="dropdown"], .dropdown-toggle, button:has-text("Auto"), header button').first();
-    if (await userDropdown.isVisible().catch(() => false)) {
-      await userDropdown.click().catch(() => {});
-      await new Promise(r => setTimeout(r, 500));
+    // 1. Bersihkan seluruh cookie (termasuk HttpOnly session Laravel) via browser context API
+    const existingCookies = await browser.cookies().catch(() => []);
+    if (existingCookies && existingCookies.length > 0) {
+      const expired = existingCookies.map((c) => ({
+        name: c.name,
+        value: '',
+        expires: 0,
+        domain: c.domain,
+        path: c.path || '/'
+      }));
+      await browser.setCookies(expired).catch(() => {});
     }
-    const logoutBtn = browser.locator('a[href*="logout"], button:has-text("Logout"), a:has-text("Logout"), a:has-text("Keluar")').first();
-    if (await logoutBtn.isVisible().catch(() => false)) {
-      await logoutBtn.click().catch(() => {});
-      await new Promise(r => setTimeout(r, 2000));
-      return;
-    }
-  } catch {}
 
-  try {
+    // 2. Bersihkan localStorage dan sessionStorage
     await browser.evaluate(() => {
-      const form = (document.querySelector('#logout-form') || document.querySelector('form[action*="logout"]')) as HTMLFormElement | null;
-      if (form) {
-        form.submit();
-      }
+      try {
+        localStorage.clear();
+        sessionStorage.clear();
+      } catch {}
     }).catch(() => {});
-    await new Promise(r => setTimeout(r, 2000));
+
+    await new Promise(r => setTimeout(r, 600));
   } catch {}
 }

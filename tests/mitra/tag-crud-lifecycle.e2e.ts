@@ -7,8 +7,8 @@ import {
 
 test.describe('Tag Properti: Full CRUD Lifecycle with Visual Evidence', () => {
   test('TAG-CRUD-LIFECYCLE: Create, Verify, Edit, and Delete Tag Properti with Visual Evidence', async ({ app, browser }) => {
-    const uniqueId = Date.now().toString().slice(-4);
-    const tagName = `TagAuto${uniqueId}`;
+    const uniqueId = `20261103_${Date.now().toString().slice(-4)}`;
+    const tagName = `Tag_${uniqueId}`;
     const tagDesc = `Deskripsi Tag Otomatis QA ${uniqueId}`;
 
     await loginAndNavigateToTagProperti(browser);

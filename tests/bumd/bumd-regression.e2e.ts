@@ -8,6 +8,7 @@ import {
   navigateToTab4,
   submitWizardForm,
   takeEvidenceScreenshot,
+  getTestDateSeed,
 } from './support.ts';
 
 test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', () => {
@@ -29,7 +30,7 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
 
     // Tab 1
-    const company = 'PT Regresi Verifikasi Wizard';
+    const company = `PT Regresi TEST_${getTestDateSeed()}`;
     await fillTab1(browser, company);
     await browser.locator('#tab-perusahaan .next-tab').click();
 
@@ -58,8 +59,8 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
   });
 
   test('BUMD-REG-003: Full Data Lifecycle CRUD (Create -> Verify -> Update -> Verify -> Delete -> Verify Teardown)', async ({ app, browser }) => {
-    const regUnique = Date.now().toString().slice(-6);
-    const regCompanyName = `PT BUMD Regresi ${regUnique}`;
+    const regUnique = getTestDateSeed();
+    const regCompanyName = `PT BUMD TEST_${regUnique}`;
 
     // 1. CREATE
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
@@ -112,7 +113,7 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
 
     // Tunggu refresh dan verifikasi bahwa data telah terhapus
     await browser.waitForURL(/.*\/partner\/finance\/bumd.*/, { timeout: 15000 }).catch(() => {});
-    await browser.goto('https://management.dparagon7.persona-it.com/partner/finance/bumd');
+    await browser.goto('https://management.dp7.lab.daegi.dev/partner/finance/bumd');
     await expect.poll(async () => await browser.locator(rowSelector).count()).toBe(0);
   });
 
