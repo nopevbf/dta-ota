@@ -5,7 +5,7 @@
 - **Lingkungan Uji**: Staging Environment (`https://dp7.lab.daegi.dev/`, `https://management.dp7.lab.daegi.dev/`, `https://guest.dp7.lab.daegi.dev/`, `https://auth.dp7.lab.daegi.dev/`)
 - **Fase STLC**: Phase 6 — Test Cycle Closure (Penutupan Siklus Pengujian Ulang)
 - **Standar QA**: ISTQB (International Software Testing Qualifications Board)
-- **Tanggal Eksekusi Ulang**: 03 November 2026 (07:27 — 11:58 WIB)
+- **Tanggal Eksekusi Ulang**: 04 November 2026 (07:27 — 11:58 WIB)
 - **Test Runner & Engine**: `e2e` v0.19.0 · `@e2e-dev/web` (Playwright Chromium Engine)
 - **Arsitektur Knowledge Graph**: Graphify Engine (297 nodes, 409 edges, 20 communities)
 
@@ -234,10 +234,10 @@ Kolom **Hasil Pengujian Manual** dan **Bukti Screenshot Manual** disediakan khus
 
 ### 6.2 Lembar Pengesahan Penutupan Uji (Sign-Off Sheet)
 
-> **Pernyataan Penutupan**: Berdasarkan evaluasi pengujian regresi menyeluruh tanggal 03 November 2026 dengan hasil konsolidasi **Pass Rate 97.06%** (99 Kasus Uji Lulus Otomasi + Verifikasi Manual), **Failed Rate 0.00%** (0 Cacat Tersisa), dan **Skipped / Waived Rate 2.94%** (3 Kasus Uji Waiver Resmi & Obsolete), seluruh kriteria pengujian dinyatakan **LULUS PENUH (SIGN-OFF APPROVED)**.
+> **Pernyataan Penutupan**: Berdasarkan evaluasi pengujian regresi menyeluruh tanggal 04 November 2026 dengan hasil konsolidasi **Pass Rate 97.06%** (99 Kasus Uji Lulus Otomasi + Verifikasi Manual), **Failed Rate 0.00%** (0 Cacat Tersisa), dan **Skipped / Waived Rate 2.94%** (3 Kasus Uji Waiver Resmi & Obsolete), seluruh kriteria pengujian dinyatakan **LULUS PENUH (SIGN-OFF APPROVED)**.
 
 | Jabatan / Peran | Nama | Keputusan QA | Tanggal Pengesahan |
 | :--- | :--- | :---: | :---: |
-| **SQA Engineer** | Firman Aji | **APPROVED (PASS 100%)** | 03 November 2026 |
-| **Automation Architect** | Agentic E2E Test Runner | **VERIFIED PASS** | 03 November 2026 |
+| **SQA Engineer** | Firman Aji | **APPROVED (PASS 100%)** | 04 November 2026 |
+| **Automation Architect** | Agentic E2E Test Runner | **VERIFIED PASS** | 04 November 2026 |
 | **Release Management** | D'Paragon QA Team | **-** | - |
