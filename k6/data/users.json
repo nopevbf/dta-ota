@@ -1,0 +1,17 @@
+{
+  "manajemen": {
+    "email": "superadmin@dparagon.com",
+    "password": "Merpati98",
+    "role": "manajemen"
+  },
+  "mitra": {
+    "email": "lodod41077@crybio.com",
+    "password": "Qwerty12345",
+    "role": "mitra"
+  },
+  "tamu": {
+    "email": "kzodiek@gmail.com",
+    "password": "qwerty12345",
+    "role": "tamu"
+  }
+}

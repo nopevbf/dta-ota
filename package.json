@@ -26,6 +26,15 @@
     "test:auth:roles": "e2e run tests/auth-new-login-roles.e2e.ts",
     "test:auth:guest": "e2e run tests/auth-new-register-guest.e2e.ts",
     "test:auth:mitra": "e2e run tests/auth-new-register-mitra.e2e.ts",
-    "test:auth:all": "e2e run tests/auth-new-login-roles.e2e.ts tests/auth-new-register-guest.e2e.ts tests/auth-new-register-mitra.e2e.ts"
+    "test:auth:all": "e2e run tests/auth-new-login-roles.e2e.ts tests/auth-new-register-guest.e2e.ts tests/auth-new-register-mitra.e2e.ts",
+    "perf:smoke": "k6 run k6/scenarios/01-smoke.js",
+    "perf:smoke:ui": "k6 run --out web-dashboard k6/scenarios/01-smoke.js",
+    "perf:load": "k6 run k6/scenarios/02-load.js",
+    "perf:load:ui": "k6 run --out \"web-dashboard=export=reports/load-report.html\" k6/scenarios/02-load.js",
+    "perf:stress": "k6 run k6/scenarios/03-stress.js",
+    "perf:stress:ui": "k6 run --out \"web-dashboard=export=reports/stress-report.html\" k6/scenarios/03-stress.js",
+    "perf:spike": "k6 run k6/scenarios/04-spike.js",
+    "perf:spike:ui": "k6 run --out \"web-dashboard=export=reports/spike-report.html\" k6/scenarios/04-spike.js",
+    "perf:calc": "node k6/tools/vu-calculator.js"
   }
 }
