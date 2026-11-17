@@ -1,7 +1,6 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
-
-const AUTH_URL = 'https://auth.dp7.lab.daegi.dev/login';
+import { AUTH_URL } from './support/env-config.ts';
 
 /**
  * Test Case ID   : AUTH-E2E-001

@@ -3,6 +3,11 @@ import path from 'node:path';
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
 import type { Browser } from '@e2e-dev/web';
+import { MANAGEMENT_URL, GUEST_URL } from '../support/env-config.ts';
+
+const baseMgmt = MANAGEMENT_URL.replace(/\/+$/, '');
+const baseGuest = GUEST_URL.replace(/\/+$/, '');
+
 import {
   loginAndNavigateToMitra,
   takeLifecycleScreenshot,
@@ -83,7 +88,7 @@ async function submitAndAdvance(browser: Browser, label: string, nextStepPattern
  *                  manajemen, pembuatan properti di portal mitra, proses verifikasi data properti &
  *                  approval di manajemen, verifikasi akun bank, pendaftaran KSO, penautan ke properti inti,
  *                  hingga self-service mitra (Crisis Policy, Kontrak Hotel, Kontak Properti) menggunakan AI Agent.
- * Preconditions  : Server Auth, Mitra, dan Management aktif di lingkungan dp7.lab.daegi.dev
+ * Preconditions  : Server Auth, Mitra, dan Management aktif di lingkungan target (dp7 / naufalans)
  * Priority       : Critical (Blocker Release Gate)
  * Severity       : High
  * ============================================================================
@@ -181,7 +186,7 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   const is502 = await browser.locator(':has-text("502 Bad Gateway"), :has-text("504 Gateway Time-out")').first().isVisible().catch(() => false);
   if (is502) {
     console.log('[RETRY] Mendeteksi 502 Bad Gateway setelah submit mitra, me-reload halaman...');
-    await browser.goto('https://management.dp7.lab.daegi.dev/partner/partners', { timeout: 60000 }).catch(() => {});
+    await browser.goto(`${baseMgmt}/partner/partners`, { timeout: 60000 }).catch(() => {});
   }
 
   // Verifikasi tabel mitra tampil
@@ -207,10 +212,10 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   // ==========================================================================
   console.log('[STEP 3] Buat properti baru di portal mitra');
   try {
-    await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/properties/register/step/1', { waitUntil: 'domcontentloaded', timeout: 90000 });
+    await browser.goto(`${baseGuest}/mitra/properties/register/step/1`, { waitUntil: 'domcontentloaded', timeout: 90000 });
   } catch {
     console.log('[WARN] Percobaan pertama buka register step 1 timeout, mencoba ulang...');
-    await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/properties/register/step/1', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await browser.goto(`${baseGuest}/mitra/properties/register/step/1`, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
   }
   await expect(browser.locator('body')).toBeVisible();
 
@@ -370,7 +375,7 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   // TAHAP 5: Akses dashboard approval, cari nama properti, pastikan "Menunggu Approval"
   // ==========================================================================
   console.log('[STEP 5] Akses dashboard approval dan cari properti baru');
-  await browser.goto('https://management.dp7.lab.daegi.dev/partner/approval', { waitUntil: 'domcontentloaded', timeout: 90000 });
+  await browser.goto(`${baseMgmt}/partner/approval`, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await expect(browser.locator('table').first()).toBeVisible({ timeout: 25000 });
 
   // Gunakan kotak pencarian jika tersedia di tabel approval
@@ -537,7 +542,7 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   // TAHAP 10: Selanjutnya ke halaman antrian verifikasi rekening bank
   // ==========================================================================
   console.log('[STEP 10] Buka halaman antrian verifikasi rekening bank');
-  await browser.goto('https://management.dp7.lab.daegi.dev/partner/bank-accounts', { waitUntil: 'domcontentloaded', timeout: 90000 });
+  await browser.goto(`${baseMgmt}/partner/bank-accounts`, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await expect(browser.locator('body')).toBeVisible();
 
   // Gunakan filter jika ada
@@ -641,7 +646,7 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   // TAHAP 13: Lanjut ke halaman semua KSO
   // ==========================================================================
   console.log('[STEP 13] Buka halaman semua KSO');
-  await browser.goto('https://management.dp7.lab.daegi.dev/partner/kso', { waitUntil: 'domcontentloaded', timeout: 90000 });
+  await browser.goto(`${baseMgmt}/partner/kso`, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await expect(browser.locator('body')).toBeVisible();
 
   // Bukti Screenshot 13
@@ -764,7 +769,7 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   // TAHAP 22: Kembali ke dashboard approval dan cari properti terkait
   // ==========================================================================
   console.log('[STEP 22] Kembali ke halaman dashboard approval');
-  await browser.goto('https://management.dp7.lab.daegi.dev/partner/approval', { waitUntil: 'domcontentloaded', timeout: 90000 });
+  await browser.goto(`${baseMgmt}/partner/approval`, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await expect(browser.locator('body')).toBeVisible();
   await takeLifecycleScreenshot(app, 22, 'kembali-dashboard-approval');
 
@@ -859,7 +864,7 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   if (crisisHref) {
     await browser.goto(crisisHref, { waitUntil: 'domcontentloaded', timeout: 90000 });
   } else {
-    await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/crysis-policy', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await browser.goto(`${baseGuest}/mitra/crysis-policy`, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
   }
   await expect(browser.locator('body')).toBeVisible();
   await takeLifecycleScreenshot(app, 27, 'menu-crisis-policy');
@@ -878,7 +883,7 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
     await tambahCrisisBtn.click();
     await new Promise(r => setTimeout(r, 2000));
   } else {
-    await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/crysis-policy/create', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await browser.goto(`${baseGuest}/mitra/crysis-policy/create`, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
   }
   await expect(browser.locator('body')).toBeVisible();
 
@@ -996,7 +1001,7 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   // ==========================================================================
   console.log(`[STEP 29] Memastikan nama crisis policy "${policyTitle}" muncul pada tabel`);
   await browser.waitForURL(/.*cr[yi]sis-policy$/, { timeout: 25000 }).catch(async () => {
-    await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/crysis-policy').catch(() => {});
+    await browser.goto(`${baseGuest}/mitra/crysis-policy`).catch(() => {});
   });
   await new Promise(r => setTimeout(r, 2000));
 
@@ -1015,7 +1020,7 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   if (propNavHref) {
     await browser.goto(propNavHref, { waitUntil: 'domcontentloaded', timeout: 90000 });
   } else {
-    await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/properties', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await browser.goto(`${baseGuest}/mitra/properties`, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
   }
   await expect(browser.locator('body')).toBeVisible();
   await takeLifecycleScreenshot(app, 30, 'navbar-menu-properti');
@@ -1072,7 +1077,7 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   // TAHAP 34: Klik tombol kembali, setelah kembali ke daftar properti mitra, pada card properti klik Kontak
   // ==========================================================================
   console.log('[STEP 34] Klik tombol Kembali, lalu pada card properti klik Kontak');
-  await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/properties', { waitUntil: 'domcontentloaded', timeout: 90000 });
+  await browser.goto(`${baseGuest}/mitra/properties`, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await expect(browser.locator('body')).toBeVisible();
   await new Promise(r => setTimeout(r, 1500));
 
@@ -1107,6 +1112,6 @@ test('REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integra
   await takeLifecycleScreenshot(app, 35, 'halaman-kontak-terbuka');
 
   // Klik kembali
-  await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/properties', { waitUntil: 'domcontentloaded', timeout: 90000 });
+  await browser.goto(`${baseGuest}/mitra/properties`, { waitUntil: 'domcontentloaded', timeout: 90000 });
   console.log('[SUCCESS] Seluruh 35 tahapan regresi lifecycle berhasil dieksekusi 100%!');
 });

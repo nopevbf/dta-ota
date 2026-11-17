@@ -1,5 +1,6 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
+import { MANAGEMENT_URL } from '../support/env-config.ts';
 import {
   loginAndNavigateToBumd,
   fillTab1,
@@ -124,7 +125,7 @@ test.describe('Bank Data BUMD: End-to-End CRUD Lifecycle with Visual Evidence', 
 
     // Tunggu alert / reload selesai
     await browser.waitForURL(/.*\/partner\/finance\/bumd.*/, { timeout: 15000 }).catch(() => {});
-    await browser.goto('https://management.dp7.lab.daegi.dev/partner/finance/bumd');
+    await browser.goto(`${MANAGEMENT_URL.replace(/\/+$/, '')}/partner/finance/bumd`);
     await expect(feeMgmtHeader).toBeVisible();
 
     // Tangkap Screenshot Bukti 6: Data terverifikasi telah dihapus dari tabel

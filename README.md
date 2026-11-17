@@ -2,6 +2,7 @@
 
 [![Test Suite Status](https://img.shields.io/badge/Test%20Suite-96.08%25%20PASS%20(98%2F102)-brightgreen?style=flat-square)](reports/MASTER_TEST_SUMMARY_REPORT_DP7.md)
 [![Defect Resolution](https://img.shields.io/badge/Defects%20Resolved-100%25%20(20%2F20)-success?style=flat-square)](reports/DEFECT_LOG_DP7.md)
+[![Unit Tests](https://img.shields.io/badge/Unit%20Tests-14%2F14%20PASS%20(100%25)-brightgreen?style=flat-square)](tests/unit/env-config.test.ts)
 [![Framework](https://img.shields.io/badge/Framework-e2e%20v0.19.0-blue?style=flat-square)](https://github.com/tester-army/e2e)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D22.12.0-green?style=flat-square)](https://nodejs.org/)
 [![Package Manager](https://img.shields.io/badge/pnpm-9.x-orange?style=flat-square)](https://pnpm.io/)
@@ -9,7 +10,7 @@
 [![Knowledge Graph](https://img.shields.io/badge/Knowledge%20Graph-297%20Nodes%20%7C%20Graphify-blueviolet?style=flat-square)](graphify-out/graph.html)
 [![AI Agent Engine](https://img.shields.io/badge/AI%20Engine-Gemini%203.8%20Flash%20%2F%20GPT--4o--mini-informational?style=flat-square)](https://ai.google.dev/)
 
-Repositori pengujian otomatis berbasis **Agentic End-to-End (E2E) Testing** untuk ekosistem portal **D'Paragon Management System & Central Authentication Portal**. Proyek ini mengintegrasikan framework pengujian `e2e` generasi baru yang didukung oleh AI SDK (Google Gemini 3.8 Flash & OpenAI GPT-4o-mini), engine browser Playwright Chromium, arsitektur *Knowledge Graph* Graphify, serta berakar pada metodologi penjaminan mutu perangkat lunak standar internasional **ISTQB (International Software Testing Qualifications Board)**.
+Repositori pengujian otomatis berbasis **Agentic End-to-End (E2E) Testing & Performance Testing** untuk ekosistem portal **D'Paragon Management System, Mitra Portal, Guest Booking, dan Central Authentication Portal**. Proyek ini mengintegrasikan framework pengujian `e2e` generasi baru yang didukung oleh AI SDK (Google Gemini 3.8 Flash & OpenAI GPT-4o-mini), engine browser Playwright Chromium, k6 performance runner, arsitektur *Knowledge Graph* Graphify, modul konfigurasi **Multi-Environment Switcher Fleksibel**, serta berakar pada metodologi penjaminan mutu perangkat lunak standar internasional **ISTQB (International Software Testing Qualifications Board)**.
 
 ---
 
@@ -20,19 +21,26 @@ Repositori pengujian otomatis berbasis **Agentic End-to-End (E2E) Testing** untu
   - [2. Modul Finance BUMD & Fee Management](#2-modul-finance-bumd--fee-management)
   - [3. Modul Setting Mitra OTA & Master Tag Properti](#3-modul-setting-mitra-ota--master-tag-properti)
   - [4. Core Regression 44 Items & 35-Step Full Lifecycle](#4-core-regression-44-items--35-step-full-lifecycle)
+  - [5. Performance Testing (k6 Load & Stress)](#5-performance-testing-k6-load--stress)
 - [Demo & Laporan Hasil Pengujian (QA Reports)](#-demo--laporan-hasil-pengujian-qa-reports)
   - [Matriks Status Eksekusi QA (STLC Phase 6 Closure)](#matriks-status-eksekusi-qa-stlc-phase-6-closure)
   - [Galeri Bukti Visual & Tangkapan Layar](#galeri-bukti-visual--tangkapan-layar)
 - [Arsitektur & Struktur Direktori](#-arsitektur--struktur-direktori)
 - [Prasyarat (Prerequisites)](#-prasyarat-prerequisites)
 - [Instalasi](#-instalasi)
-- [Konfigurasi Lingkungan (.env)](#-konfigurasi-lingkungan-env)
+- [Konfigurasi Multi-Environment (.env)](#-konfigurasi-multi-environment-env)
+  - [Daftar Profil Bawaan (Preset Profiles)](#daftar-profil-bawaan-preset-profiles)
+  - [Opsi 1: Mengatur APP_ENV pada .env](#opsi-1-mengatur-app_env-pada-env)
+  - [Opsi 2: Menggunakan File Profil Terpisah](#opsi-2-menggunakan-file-profil-terpisah)
+  - [Opsi 3: Granular Override di .env atau CLI](#opsi-3-granular-override-di-env-atau-cli)
 - [Cara Penggunaan (Usage)](#-cara-penggunaan-usage)
-  - [1. Eksekusi Menyeluruh Suite](#1-eksekusi-menyeluruh-suite)
-  - [2. Pengujian Central Authentication & Registrasi](#2-pengujian-central-authentication--registrasi)
-  - [3. Pengujian Modul Finance BUMD](#3-pengujian-modul-finance-bumd)
-  - [4. Pengujian Modul Setting Mitra & Tag Properti](#4-pengujian-modul-setting-mitra--tag-properti)
-  - [5. Mode Interaktif (Headed Browser) & Debugging](#5-mode-interaktif-headed-browser--debugging)
+  - [1. Pengujian Unit Konfigurasi (TDD)](#1-pengujian-unit-konfigurasi-tdd)
+  - [2. Eksekusi Menyeluruh E2E Suite](#2-eksekusi-menyeluruh-e2e-suite)
+  - [3. Pengujian Central Authentication & Registrasi](#3-pengujian-central-authentication--registrasi)
+  - [4. Pengujian Modul Finance BUMD](#4-pengujian-modul-finance-bumd)
+  - [5. Pengujian Modul Setting Mitra & Tag Properti](#5-pengujian-modul-setting-mitra--tag-properti)
+  - [6. Pengujian Performa (k6 Benchmarks)](#6-pengujian-performa-k6-benchmarks)
+  - [7. Mode Interaktif (Headed Browser) & Debugging](#7-mode-interaktif-headed-browser--debugging)
 - [Knowledge Graph Arsitektur (Graphify)](#-knowledge-graph-arsitektur-graphify)
 - [Integrasi Model Context Protocol (MCP)](#-integrasi-model-context-protocol-mcp)
 - [Panduan Kontribusi (Contributing)](#-panduan-kontribusi-contributing)
@@ -82,6 +90,13 @@ Proyek otomatisasi ini memvalidasi keandalan fungsionalitas, kestabilan logika b
   6. Penautan Properti ke Properti Inti di panel manajemen.
   7. Login Kembali ke Akun Mitra & Self-Service Portal (Pendaftaran Crisis Policy baru, penelusuran tabel kontrak hotel, dan pemeriksaan kontak properti via bantuan AI Agent).
 
+### 5. Performance Testing (k6 Load & Stress)
+*Direktori Uji: [`k6/`](k6/)*
+- **Smoke Testing ([`01-smoke.js`](k6/scenarios/01-smoke.js))**: Verifikasi beban minimal untuk memvalidasi ketersediaan endpoint API dan waktu respon dasar.
+- **Load Testing ([`02-load.js`](k6/scenarios/02-load.js))**: Simulasi beban kerja normal harian pengguna untuk memvalidasi throughput dan latensi di bawah SLA.
+- **Stress Testing ([`03-stress.js`](k6/scenarios/03-stress.js))**: Menguji batas kapasitas puncak sistem dan stabilitas pemulihan setelah lonjakan trafik.
+- **Spike Testing ([`04-spike.js`](k6/scenarios/04-spike.js))**: Simulasi lonjakan trafik mendadak dalam kurun waktu singkat.
+
 ---
 
 ## 📊 Demo & Laporan Hasil Pengujian (QA Reports)
@@ -94,12 +109,13 @@ Dokumen lengkap tersedia pada: [`reports/MASTER_TEST_SUMMARY_REPORT_DP7.md`](rep
 
 | Modul Pengujian | Test Files | Total Test Cases | Status | Pass Rate | Laporan Khusus |
 | :--- | :---: | :---: | :---: | :---: | :--- |
+| **Unit Configuration (TDD)** | 1 File | 14 Kasus Uji | **PASS** | **100.00%** | [env-config.test.ts](tests/unit/env-config.test.ts) |
 | **Central Auth & Registration** | 5 File | 15 Kasus Uji | **PASS** | **100.00%** | [MASTER_TEST_SUMMARY_REPORT_DP7.md](reports/MASTER_TEST_SUMMARY_REPORT_DP7.md) |
 | **Finance BUMD & Fee** | 5 File | 18 Kasus Uji | **PASS** | **100.00%** | [TEST_EXECUTION_REPORT.md](reports/bumd/TEST_EXECUTION_REPORT.md) |
 | **Setting Mitra & Master Tag** | 8 File | 36 Kasus Uji | **PASS** | **100.00%** | [TEST_EXECUTION_REPORT.md](reports/mitra/TEST_EXECUTION_REPORT.md) |
 | **Core Regression (44 Items)** | 1 File | 44 Kasus Uji | **PASS** | **95.45%** | [MASTER_TEST_SUMMARY_REPORT_DP7.md](reports/MASTER_TEST_SUMMARY_REPORT_DP7.md) |
 | **35-Step Full Lifecycle** | 1 File | 1 Master Uji (35 Steps) | **PASS** | **100.00%** | [TEST_CASES_REGRESSION.md](reports/mitra/TEST_CASES_REGRESSION.md) |
-| **TOTAL KONSOLIDASI** | **17 File** | **102 Kasus Uji** | **PASS** | **96.08% (98/102)** | [MASTER_TEST_SUMMARY_REPORT_DP7.md](reports/MASTER_TEST_SUMMARY_REPORT_DP7.md) |
+| **TOTAL KONSOLIDASI** | **18 File** | **116 Kasus Uji** | **PASS** | **96.55% (112/116)** | [MASTER_TEST_SUMMARY_REPORT_DP7.md](reports/MASTER_TEST_SUMMARY_REPORT_DP7.md) |
 
 ### Galeri Bukti Visual & Tangkapan Layar
 
@@ -139,23 +155,18 @@ DTA-OTA/
 │   ├── graph.html                    # Visualisasi graph interaktif di browser
 │   ├── graph.json                    # Data relasi simpul & busur (nodes & edges)
 │   └── GRAPH_REPORT.md               # Laporan audit relasi & komunitas graph
+├── k6/                               # Suite Pengujian Beban & Performa (k6)
+│   ├── config/environments.js        # Konfigurasi profil lingkungan k6 (dp7 & naufalans)
+│   ├── data/users.json               # Data uji kredensial k6
+│   ├── helpers/auth.js               # Helper otentikasi sesi k6
+│   ├── scenarios/                    # Skenario pengujian (smoke, load, stress, spike)
+│   └── tools/vu-calculator.js        # Kalkulator kebutuhan Virtual Users (VU)
 ├── reports/                          # Laporan pengujian formal (Standar ISTQB)
 │   ├── bumd/                         # Modul Finance BUMD
-│   │   ├── screenshots/              # Bukti visual eksekusi BUMD
-│   │   ├── TEST_CASES_BUMD.md        # Spesifikasi skenario uji BUMD
-│   │   └── TEST_EXECUTION_REPORT.md  # Laporan penutupan uji BUMD
 │   ├── mitra/                        # Modul Setting Mitra & Tag Properti
-│   │   ├── screenshots/              # Bukti visual CRUD Mitra, Tag & Lifecycle
-│   │   ├── TEST_CASES_REGRESSION.md  # Matriks skenario regresi & 35-step lifecycle
-│   │   ├── TEST_CASES_SETTING_MITRA.md # Matriks skenario setting mitra
-│   │   ├── TEST_CASES_TAG_PROPERTI.md  # Matriks skenario tag properti
-│   │   └── TEST_EXECUTION_REPORT.md  # Laporan penutupan eksekusi Mitra
-│   ├── screenshots/                  # Tangkapan layar umum & retest
-│   │   ├── auth/                     # Bukti visual eksekusi login & registrasi
-│   │   └── retest-dp7/               # Bukti visual re-test lingkungan DP7
+│   ├── screenshots/                  # Tangkapan layar bukti eksekusi
 │   ├── DEFECT_LOG_DP7.md             # Registry pelacakan cacat perangkat lunak (Defect Log)
-│   ├── MASTER_TEST_SUMMARY_REPORT.md # Laporan penutupan awal
-│   └── MASTER_TEST_SUMMARY_REPORT_DP7.md # Master Test Summary Report penutupan terkini
+│   └── MASTER_TEST_SUMMARY_REPORT_DP7.md # Master Test Summary Report terkini
 ├── tests/                            # Test suites berbasis TypeScript & e2e
 │   ├── assets/                       # Aset dummy pengujian (image.jpg, doc.pdf)
 │   ├── bumd/                         # Suite Pengujian Finance BUMD
@@ -178,7 +189,10 @@ DTA-OTA/
 │   │   └── tag-properti.e2e.ts                  # Test suite fungsional Tag Properti
 │   ├── support/                      # Utilitas & helper pendukung
 │   │   ├── auth-helpers.ts           # Helper penanganan modal popup & multi-role login
+│   │   ├── env-config.ts             # SINGLE SOURCE OF TRUTH konfigurasi lingkungan & URL
 │   │   └── temp-mail.ts              # Integrasi API kotak pos dinamis (disposable email)
+│   ├── unit/                         # Suite Pengujian Unit TDD (Native Node Runner)
+│   │   └── env-config.test.ts        # Unit test normalisasi URL, cookie & kredensial
 │   ├── auth-flow.e2e.ts              # Suite uji alur autentikasi umum
 │   ├── auth-new-login-roles.e2e.ts   # Suite login multi-peran (Superadmin, Mitra, Tamu)
 │   ├── auth-new-register-guest.e2e.ts# Suite registrasi akun tamu & validasi
@@ -186,8 +200,10 @@ DTA-OTA/
 │   ├── example.e2e.ts                # Contoh dasar test runner
 │   ├── regression-44-items.e2e.ts    # Suite regresi komprehensif 44 kasus uji bisnis kritis
 │   └── roles-auth.e2e.ts             # Suite uji autentikasi multi-role dasar
-├── .env                              # Variabel lingkungan & kredensial rahasia
-├── .env.example                      # Template variabel lingkungan
+├── .env                              # Variabel lingkungan aktif (lokal)
+├── .env.example                      # Template variabel lingkungan umum
+├── .env.dp7.example                  # Template khusus lingkungan DP7 Staging
+├── .env.naufalans.example            # Template khusus lingkungan Naufalans
 ├── .gitignore                        # File & folder yang diabaikan Git
 ├── .mcp.json                         # Definisi konfigurasi MCP server lokal
 ├── e2e.config.ts                     # Konfigurasi e2e runner, target URL & AI Agent
@@ -202,12 +218,10 @@ DTA-OTA/
 
 Sebelum menjalankan pengujian otomatis, pastikan lingkungan sistem Anda telah terpasang:
 
-- **Node.js**: Versi `22.12.0` atau lebih tinggi (disarankan Node.js 22 LTS / 24+).
+- **Node.js**: Versi `22.12.0` atau lebih tinggi (disarankan Node.js 22 LTS / 26+).
 - **pnpm**: Versi `9.x` atau lebih baru (`corepack enable && corepack prepare pnpm@latest --activate`).
 - **Browser Playwright Chromium**: Engine browser otomatis (`pnpm exec playwright install chromium`).
-- **Akses Jaringan**: Akses ke server staging D'Paragon:
-  - Manajemen: `https://management.dp7.lab.daegi.dev/` atau `https://dp7.lab.daegi.dev/`
-  - Central Auth: `https://auth.dp7.lab.daegi.dev/login`
+- **k6** (Opsional untuk pengujian performa): Unduh binary k6 via [k6.io](https://k6.io/docs/get-started/installation/).
 - **AI Provider API Key (Opsional / Recommended)**: `GEMINI_API_KEY` (Google Gemini 3.8 Flash) atau `OPENAI_API_KEY` (GPT-4o-mini) untuk evaluasi dinamis melalui instruksi `agent.act` dan `agent.assert`.
 
 ---
@@ -232,34 +246,50 @@ Sebelum menjalankan pengujian otomatis, pastikan lingkungan sistem Anda telah te
 
 ---
 
-## 🔐 Konfigurasi Lingkungan (.env)
+## 🔐 Konfigurasi Multi-Environment (.env)
 
-Salin berkas template konfigurasi `.env.example` menjadi `.env`:
+Sistem pengujian DTA-OTA dilengkapi dengan **Multi-Environment Switcher Fleksibel**. Seluruh URL dan kredensial dikelola secara sentral oleh [`tests/support/env-config.ts`](tests/support/env-config.ts), sehingga Anda dapat berpindah target pengujian secara instan tanpa mengubah kode pengujian sama sekali.
 
+### Daftar Profil Bawaan (Preset Profiles)
+
+| Profil | Target OTA (`APP_URL`) | Portal Manajemen (`MANAGEMENT_URL`) | Central Auth (`AUTH_URL`) | Portal Mitra/Guest (`GUEST_URL`) | Kredensial Bawaan |
+|---|---|---|---|---|---|
+| **`dp7`** | `https://dp7.lab.daegi.dev/` | `https://management.dp7.lab.daegi.dev/` | `https://auth.dp7.lab.daegi.dev/login` | `https://guest.dp7.lab.daegi.dev/` | **Manajemen:** `superadmin@dparagon.com` / `Merpati98`<br>**Mitra:** `lodod41077@crybio.com` / `Qwerty12345`<br>**Tamu:** `kzodiek@gmail.com` / `qwerty12345` |
+| **`naufalans`** | `https://fe.naufalans.me/` | `https://management.naufalans.me/` | `https://auth.naufalans.me/login` | `https://guest.naufalans.me/` | **Manajemen:** `superadmin@dparagon.com` / `M4li0b0r0_1st1m3w4!`<br>**Mitra:** `mitra@gmail.com` / `P@ssword123`<br>**Tamu:** `kzodiek@gmail.com` / `qwerty12345` |
+
+---
+
+### Opsi 1: Mengatur `APP_ENV` pada `.env`
+Salin template konfigurasi:
 ```bash
 cp .env.example .env
 ```
-
-Sesuaikan parameter di dalam berkas `.env`:
-
+Cukup atur target pada baris `APP_ENV`:
 ```dotenv
-# Target Web Application (Staging DP7)
-APP_URL=https://dp7.lab.daegi.dev/
-AUTH_URL=https://auth.dp7.lab.daegi.dev/login
+# Pilih Lingkungan: 'dp7' atau 'naufalans'
+APP_ENV=naufalans
+```
+Secara otomatis, seluruh URL dan kredensial peran akan mengikuti profil yang dipilih.
 
-# Kredensial Pengujian (Role Akun)
-E2E_USER_MANAJEMEN_USERNAME=superadmin@dparagon.com
-E2E_USER_MANAJEMEN_PASSWORD=RahasiaPasswordManajemen
+### Opsi 2: Menggunakan File Profil Terpisah
+Tersedia berkas template khusus untuk masing-masing lingkungan:
+- `.env.dp7.example`: Template khusus DP7 Staging Daegi.
+- `.env.naufalans.example`: Template khusus Naufalans Staging.
 
-E2E_USER_MITRA_USERNAME=lodod41077@crybio.com
-E2E_USER_MITRA_PASSWORD=RahasiaPasswordMitra
+```bash
+# Contoh menggunakan profil naufalans:
+cp .env.naufalans.example .env.naufalans
+APP_ENV=naufalans pnpm test:e2e
+```
 
-E2E_USER_TAMU_USERNAME=kzodiek@gmail.com
-E2E_USER_TAMU_PASSWORD=RahasiaPasswordTamu
+### Opsi 3: Granular Override di `.env` atau CLI
+Jika Anda ingin mengubah salah satu URL atau kredensial saja, cukup deklarasikan variabel spesifik di berkas `.env` atau inline CLI. Sistem akan otomatis menormalisasikannya (contoh: menambahkan protokol `https://` bila belum disertakan):
+```dotenv
+APP_URL=fe.naufalans.me
+MANAGEMENT_URL=https://management.naufalans.me/
+AUTH_URL=https://auth.naufalans.me/login
 
-# AI Provider API Key (untuk instruksi evaluasi Agentic)
-GEMINI_API_KEY=AIzaSy...
-# OPENAI_API_KEY=sk-...
+E2E_USER_MANAJEMEN_PASSWORD=CustomPassword123!
 ```
 
 ---
@@ -268,13 +298,22 @@ GEMINI_API_KEY=AIzaSy...
 
 Proyek ini telah dilengkapi dengan script runner `pnpm` yang terbagi menurut kebutuhan modul:
 
-### 1. Eksekusi Menyeluruh Suite
+### 1. Pengujian Unit Konfigurasi (TDD)
 ```bash
-# Menjalankan seluruh test suite otomatis (17 file uji)
-pnpm test:e2e
+# Memvalidasi normalisasi URL, pembersihan cookie dinamis, dan resolusi kredensial
+pnpm run test:unit
 ```
 
-### 2. Pengujian Central Authentication & Registrasi
+### 2. Eksekusi Menyeluruh E2E Suite
+```bash
+# Menjalankan seluruh test suite otomatis di lingkungan aktif (default dp7)
+pnpm test:e2e
+
+# Menjalankan seluruh test suite di lingkungan Naufalans
+APP_ENV=naufalans pnpm test:e2e
+```
+
+### 3. Pengujian Central Authentication & Registrasi
 ```bash
 # Menjalankan uji login multi-role (Superadmin, Mitra, Tamu)
 pnpm test:auth:roles
@@ -289,7 +328,7 @@ pnpm test:auth:mitra
 pnpm test:auth:all
 ```
 
-### 3. Pengujian Modul Finance BUMD
+### 4. Pengujian Modul Finance BUMD
 ```bash
 # Menjalankan seluruh tes modul BUMD
 pnpm test:bumd
@@ -304,7 +343,7 @@ pnpm test:bumd:crud
 pnpm test:bumd:regression
 ```
 
-### 4. Pengujian Modul Setting Mitra & Tag Properti
+### 5. Pengujian Modul Setting Mitra & Tag Properti
 ```bash
 # Menjalankan seluruh tes modul Setting Mitra
 pnpm test:mitra
@@ -334,7 +373,25 @@ pnpm test:tag:crud:lifecycle
 pnpm test:mitra:lifecycle
 ```
 
-### 5. Mode Interaktif (Headed Browser) & Debugging
+### 6. Pengujian Performa (k6 Benchmarks)
+```bash
+# Smoke test k6
+pnpm run perf:smoke
+
+# Load test k6 dengan output dashboard web
+pnpm run perf:load:ui
+
+# Stress test k6 dengan ekspor laporan HTML
+pnpm run perf:stress:ui
+
+# Spike test k6
+pnpm run perf:spike:ui
+
+# Menghitung estimasi kebutuhan Virtual Users (VU)
+pnpm run perf:calc
+```
+
+### 7. Mode Interaktif (Headed Browser) & Debugging
 
 - **Tampilkan GUI Browser (Headed Mode)**:
   Tambahkan opsi `--headed` untuk mengamati aksi runner di layar secara visual:
@@ -390,10 +447,15 @@ Kontribusi untuk memperluas cakupan skenario pengujian sangat disambut:
 2. Buat branch fitur baru (`git checkout -b feature/tambah-skenario-baru`).
 3. Tulis skenario pengujian baru di direktori `tests/` dengan konvensi penamaan `*.e2e.ts`.
 4. Terapkan prinsip penulisan pengujian yang tangguh:
+   - Gunakan selalu modul konfigurasi `tests/support/env-config.ts` untuk URL dan kredensial (hindari string hardcoded).
    - Prioritaskan pemilih semantik (`data-testid`, accesible role, atau atribut spesifik).
    - Hindari CSS class styling dinamis yang rentan berubah antar rilis.
    - Gunakan timeout eksplisit dan helper `waitForURL` yang tahan terhadap latensi jaringan.
-5. Jalankan verifikasi lokal: `pnpm test:e2e`.
+5. Jalankan verifikasi lokal:
+   ```bash
+   pnpm run test:unit
+   pnpm test:e2e
+   ```
 6. Buat **Commit** dengan pesan deskriptif sesuai format *Conventional Commits* (misal: `test(mitra): add test case for auto approve notification`).
 7. Ajukan **Pull Request (PR)** dengan melampirkan screenshot atau log eksekusi pengujian.
 

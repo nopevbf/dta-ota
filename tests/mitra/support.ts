@@ -2,23 +2,26 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { Browser } from '@e2e-dev/web';
 import { credentials, expect } from 'e2e';
+import { MANAGEMENT_URL, AUTH_URL, MITRA_AUTH_URL, CREDENTIALS } from '../support/env-config.ts';
+
+const baseMgmt = MANAGEMENT_URL.replace(/\/+$/, '');
 
 /**
  * Helper login sebagai Manajemen dan menavigasi ke halaman Setting Mitra
  */
 export async function loginAndNavigateToMitra(browser: Browser, targetPath = '/partner/partners', forceRelogin = false) {
-  const targetUrl = targetPath.startsWith('http') ? targetPath : `https://management.dp7.lab.daegi.dev${targetPath}`;
+  const targetUrl = targetPath.startsWith('http') ? targetPath : `${baseMgmt}${targetPath}`;
   const currentUrl = await browser.url().catch(() => '');
 
   // Jika sudah berada di manajemen dan tidak force relogin, navigasi langsung tanpa login ulang
-  if (!forceRelogin && currentUrl.includes('management.dp7.lab.daegi.dev')) {
+  if (!forceRelogin && currentUrl.includes(new URL(MANAGEMENT_URL).hostname)) {
     console.log(`[NAVIGASI] Sesi manajemen sudah aktif, langsung menuju: ${targetUrl}`);
     await browser.goto(targetUrl, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
     return;
   }
 
-  const username = process.env.E2E_USER_MANAJEMEN_USERNAME || 'superadmin@dparagon.com';
-  const password = process.env.E2E_USER_MANAJEMEN_PASSWORD || 'Merpati98';
+  const username = CREDENTIALS.manajemen.username;
+  const password = CREDENTIALS.manajemen.password;
 
   // Fresh login per tes: logout sesi lama dan bersihkan cookies (Rule 2)
   await logoutCurrentSession(browser);
@@ -28,7 +31,7 @@ export async function loginAndNavigateToMitra(browser: Browser, targetPath = '/p
     await route.abort().catch(() => {});
   }).catch(() => {});
 
-  await browser.goto('https://auth.dp7.lab.daegi.dev/login', { waitUntil: 'domcontentloaded', timeout: 90000 });
+  await browser.goto(AUTH_URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
 
   const mgmtCard = browser.locator('a.login-type-card:has-text("Management"), a:has-text("Management")').first();
   if (await mgmtCard.isVisible().catch(() => false)) {
@@ -64,7 +67,7 @@ export async function loginAndNavigateToTagProperti(browser: Browser) {
 
   const currentUrl = await browser.url().catch(() => '');
   if (!currentUrl.includes('/partner/property-tags')) {
-    await browser.goto('https://management.dp7.lab.daegi.dev/partner/property-tags');
+    await browser.goto(`${baseMgmt}/partner/property-tags`);
     await browser.waitForURL(/.*property-tags.*/, { timeout: 30000 }).catch(() => {});
   }
 }
@@ -79,7 +82,7 @@ export async function loginAndNavigateToRegistrasiProperti(browser: Browser) {
   if (await regMenu.isVisible().catch(() => false)) {
     await regMenu.click();
   } else {
-    await browser.goto('https://management.dp7.lab.daegi.dev/property/create').catch(() => {});
+    await browser.goto(`${baseMgmt}/property/create`).catch(() => {});
   }
 }
 
@@ -187,10 +190,10 @@ export async function loginMitraDashboard(browser: Browser, email: string, passw
 
   // Navigasi ke auth mitra login dengan domcontentloaded agar tidak terhambat background poll
   try {
-    await browser.goto('https://auth.dp7.lab.daegi.dev/mitra/login', { waitUntil: 'domcontentloaded', timeout: 90000 });
+    await browser.goto(MITRA_AUTH_URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
   } catch {
     console.log('[WARN] Percobaan pertama ke auth mitra login timeout, mencoba ulang...');
-    await browser.goto('https://auth.dp7.lab.daegi.dev/mitra/login', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await browser.goto(MITRA_AUTH_URL, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
   }
 
   // Rule 2: Strict Session Barrier & DOM Readiness

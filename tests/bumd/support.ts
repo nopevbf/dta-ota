@@ -2,13 +2,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { Browser } from '@e2e-dev/web';
 import { expect } from 'e2e';
+import { AUTH_URL, MANAGEMENT_URL, CREDENTIALS } from '../support/env-config.ts';
 
 /**
  * Helper untuk login fresh sebagai Manajemen dan menavigasi ke halaman BUMD (tanpa session cache)
  */
 export async function loginAndNavigateToBumd(browser: Browser, targetPath = '/partner/finance/bumd') {
-  const username = process.env.E2E_USER_MANAJEMEN_USERNAME || 'superadmin@dparagon.com';
-  const password = process.env.E2E_USER_MANAJEMEN_PASSWORD || 'Merpati98';
+  const username = CREDENTIALS.manajemen.username;
+  const password = CREDENTIALS.manajemen.password;
 
   // Logout sesi sebelumnya dan bersihkan cookies (Rule 2)
   try {
@@ -25,7 +26,7 @@ export async function loginAndNavigateToBumd(browser: Browser, targetPath = '/pa
     }).catch(() => {});
   } catch {}
 
-  await browser.goto('https://auth.dp7.lab.daegi.dev/login', { timeout: 60000 });
+  await browser.goto(AUTH_URL, { timeout: 60000 });
 
   const mgmtCard = browser.locator('a.login-type-card:has-text("Management")');
   if (await mgmtCard.isVisible().catch(() => false)) {
@@ -49,7 +50,8 @@ export async function loginAndNavigateToBumd(browser: Browser, targetPath = '/pa
   await browser.waitForURL(/.*management.*/, { timeout: 60000 }).catch(() => {});
 
   try {
-    await browser.goto(`https://management.dp7.lab.daegi.dev${targetPath}`, { timeout: 60000 });
+    const baseMgmt = MANAGEMENT_URL.replace(/\/+$/, '');
+    await browser.goto(`${baseMgmt}${targetPath}`, { timeout: 60000 });
   } catch (err) {
     console.warn(`[WARN] Timeout saat navigasi ke ${targetPath}, melanjutkan pengujian...`);
   }

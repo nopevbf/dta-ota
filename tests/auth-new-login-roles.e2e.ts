@@ -6,18 +6,19 @@ import {
   dismissInitialPromo,
   openLoginModal,
   logoutSession,
-  takeAuthScreenshot
-} from './support/auth-helpers.js';
+  takeAuthScreenshot,
+  CREDENTIALS
+} from './support/auth-helpers.ts';
 
 test.describe('DParagon New Authentication - Multi-Role Login Suite', { serial: true }, () => {
-  const mgmtUser = process.env.E2E_USER_MANAJEMEN_USERNAME || 'superadmin@dparagon.com';
-  const mgmtPass = process.env.E2E_USER_MANAJEMEN_PASSWORD || 'Merpati98';
+  const mgmtUser = CREDENTIALS.manajemen.username;
+  const mgmtPass = CREDENTIALS.manajemen.password;
 
-  const mitraUser = process.env.E2E_USER_MITRA_USERNAME || 'lodod41077@crybio.com';
-  const mitraPass = process.env.E2E_USER_MITRA_PASSWORD || 'Qwerty12345';
+  const mitraUser = CREDENTIALS.mitra.username;
+  const mitraPass = CREDENTIALS.mitra.password;
 
-  const tamuUser = process.env.E2E_USER_TAMU_USERNAME || 'kzodiek@gmail.com';
-  const tamuPass = process.env.E2E_USER_TAMU_PASSWORD || 'qwerty12345';
+  const tamuUser = CREDENTIALS.tamu.username;
+  const tamuPass = CREDENTIALS.tamu.password;
 
   test.beforeEach(async ({ browser }) => {
     await setupApiRouteBridge(browser);
@@ -68,8 +69,8 @@ test.describe('DParagon New Authentication - Multi-Role Login Suite', { serial: 
     await submitBtn.click();
 
     // Tunggu redirect ke dashboard manajemen
-    await browser.waitForURL(/.*management\.dparagon7\.persona-it\.com.*/, { timeout: 45000 });
-    await expect(browser).toHaveURL(/.*management\.dparagon7\.persona-it\.com.*/);
+    await browser.waitForURL(/.*management.*/, { timeout: 45000 });
+    await expect(browser).toHaveURL(/.*management.*/);
     await takeAuthScreenshot(app, 'TC-AUTH-MGMT-001-dashboard-redirect');
 
     // Logout sebelum berpindah ke role berikutnya

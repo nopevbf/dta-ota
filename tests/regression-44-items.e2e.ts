@@ -5,6 +5,9 @@ import { expect } from 'e2e';
 import type { Browser } from '@e2e-dev/web';
 import { loginAndNavigateToBumd } from './bumd/support.ts';
 import { loginAndNavigateToMitra, loginAndNavigateToTagProperti, loginAndNavigateToRegistrasiProperti, loginMitraDashboard } from './mitra/support.ts';
+import { GUEST_URL, CREDENTIALS } from './support/env-config.ts';
+
+const baseGuest = GUEST_URL.replace(/\/+$/, '');
 
 const EVIDENCE_DIR = path.resolve(process.cwd(), 'reports', 'screenshots', 'retest-dp7');
 if (!fs.existsSync(EVIDENCE_DIR)) {
@@ -17,11 +20,11 @@ if (!fs.existsSync(EVIDENCE_DIR)) {
 let cachedDynamicUrls: { contractUrl: string; contactUrl: string; propId: string } | null = null;
 
 async function getOrFetchDynamicUrls(browser: Browser): Promise<{ contractUrl: string; contactUrl: string; propId: string }> {
-  const mitraEmail = process.env.E2E_USER_MITRA_USERNAME || 'lodod41077@crybio.com';
-  const mitraPass = process.env.E2E_USER_MITRA_PASSWORD || 'Qwerty12345';
+  const mitraEmail = CREDENTIALS.mitra.username;
+  const mitraPass = CREDENTIALS.mitra.password;
 
   await loginMitraDashboard(browser, mitraEmail, mitraPass);
-  await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/properties', { timeout: 60000 }).catch(() => {});
+  await browser.goto(`${baseGuest}/mitra/properties`, { timeout: 60000 }).catch(() => {});
 
   // Ekstraksi kartu pertama yang aktif via DOM evaluate murni
   const extracted = await browser.evaluate(() => {
@@ -43,8 +46,8 @@ async function getOrFetchDynamicUrls(browser: Browser): Promise<{ contractUrl: s
     return null;
   });
 
-  const resolvedContractUrl = extracted?.contractUrl || 'https://guest.dp7.lab.daegi.dev/mitra/properties/4/contract';
-  const resolvedContactUrl = extracted?.contactUrl || 'https://guest.dp7.lab.daegi.dev/mitra/properties/4/contact/Customer_n_Hotel_Support/edit';
+  const resolvedContractUrl = extracted?.contractUrl || `${baseGuest}/mitra/properties/4/contract`;
+  const resolvedContactUrl = extracted?.contactUrl || `${baseGuest}/mitra/properties/4/contact/Customer_n_Hotel_Support/edit`;
   const match = (resolvedContactUrl || resolvedContractUrl).match(/\/properties\/(\d+)/);
   const resolvedPropId = match ? match[1] : '4';
 
@@ -476,7 +479,7 @@ test.describe('Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus
 
   test('PORTAL-POL-002: Implementasi Halaman Crisis Policy pada Portal Mitra', async ({ app, browser }) => {
     await getOrFetchDynamicUrls(browser);
-    await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/crysis-policy', { timeout: 60000 });
+    await browser.goto(`${baseGuest}/mitra/crysis-policy`, { timeout: 60000 });
     await expect(browser.locator('body')).toBeVisible();
 
     await captureEvidence(browser, app, 'PORTAL-POL-002');
@@ -491,7 +494,7 @@ test.describe('Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus
   });
 
   test('PORTAL-POL-004: Form Crisis Policy Tidak Stuck Setelah Field Range Tanggal Kosong Disimpan lalu Dilengkapi', async ({ app, browser }) => {
-    await browser.goto('https://guest.dp7.lab.daegi.dev/mitra/crysis-policy', { timeout: 60000 });
+    await browser.goto(`${baseGuest}/mitra/crysis-policy`, { timeout: 60000 });
 
     const submitBtn = browser.locator('button[type="submit"]:has-text("Simpan")').first();
     if (await submitBtn.isVisible().catch(() => false)) {

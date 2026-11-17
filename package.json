@@ -10,6 +10,7 @@
     "zod": "^4.1.8"
   },
   "scripts": {
+    "test:unit": "node --test tests/unit/env-config.test.ts",
     "test:e2e": "e2e run",
     "test:bumd": "e2e run tests/bumd/",
     "test:bumd:crud": "e2e run tests/bumd/bumd-crud.e2e.ts",
@@ -23,6 +24,7 @@
     "test:mitra:crud:lifecycle": "e2e run tests/mitra/mitra-crud-lifecycle.e2e.ts",
     "test:tag:crud:lifecycle": "e2e run tests/mitra/tag-crud-lifecycle.e2e.ts",
     "test:mitra:lifecycle": "e2e run tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+    "test:report:revenue": "e2e run tests/reports/revenue-report.e2e.ts",
     "test:auth:roles": "e2e run tests/auth-new-login-roles.e2e.ts",
     "test:auth:guest": "e2e run tests/auth-new-register-guest.e2e.ts",
     "test:auth:mitra": "e2e run tests/auth-new-register-mitra.e2e.ts",

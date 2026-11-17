@@ -1,5 +1,6 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
+import { MANAGEMENT_URL } from '../support/env-config.ts';
 import {
   loginAndNavigateToBumd,
   fillTab1,
@@ -113,7 +114,7 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
 
     // Tunggu refresh dan verifikasi bahwa data telah terhapus
     await browser.waitForURL(/.*\/partner\/finance\/bumd.*/, { timeout: 15000 }).catch(() => {});
-    await browser.goto('https://management.dp7.lab.daegi.dev/partner/finance/bumd');
+    await browser.goto(`${MANAGEMENT_URL.replace(/\/+$/, '')}/partner/finance/bumd`);
     await expect.poll(async () => await browser.locator(rowSelector).count()).toBe(0);
   });
 

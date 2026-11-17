@@ -1,18 +1,18 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { Browser } from '@e2e-dev/web';
+import { TARGET_URL, AUTH_LOGOUT_URL, COOKIE_DOMAINS, CREDENTIALS } from './env-config.ts';
 
-export const TARGET_URL = 'https://dp7.lab.daegi.dev/lang_en?ava_min_room_ready=1&ava_pax=2';
-export const AUTH_LOGOUT_URL = 'https://auth.dp7.lab.daegi.dev/logout';
+export { TARGET_URL, AUTH_LOGOUT_URL, COOKIE_DOMAINS, CREDENTIALS };
 
 /**
  * Memasang bridge perantara pada browser.route untuk menormalkan header accept application/json
  * dan memastikan password diteruskan dengan benar tanpa terhalang masking e2e.
  */
 export async function setupApiRouteBridge(browser: Browser): Promise<void> {
-  const mgmtPass = process.env.E2E_USER_MANAJEMEN_PASSWORD || 'Merpati98';
-  const mitraPass = process.env.E2E_USER_MITRA_PASSWORD || 'Qwerty12345';
-  const tamuPass = process.env.E2E_USER_TAMU_PASSWORD || 'qwerty12345';
+  const mgmtPass = CREDENTIALS.manajemen.password;
+  const mitraPass = CREDENTIALS.mitra.password;
+  const tamuPass = CREDENTIALS.tamu.password;
 
   await browser.route('**/_nuxt_api/**', async (route: any) => {
     let rawPostData = route.request.postData;
@@ -161,18 +161,22 @@ export async function logoutSession(browser: Browser): Promise<void> {
     await new Promise(r => setTimeout(r, 1500));
 
     // Bersihkan cookie dan storage secara komprehensif
-    await browser.evaluate(() => {
+    const domains = COOKIE_DOMAINS;
+    await browser.evaluate((domainList: string[]) => {
       document.cookie.split(";").forEach(c => {
         const name = c.split("=")[0].trim();
         document.cookie = `${name}=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-        document.cookie = `${name}=; path=/; domain=.dp7.lab.daegi.dev; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-        document.cookie = `${name}=; path=/; domain=dp7.lab.daegi.dev; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+        domainList.forEach(domain => {
+          if (domain) {
+            document.cookie = `${name}=; path=/; domain=${domain}; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+          }
+        });
       });
       try {
         localStorage.clear();
         sessionStorage.clear();
       } catch (e) {}
-    });
+    }, domains);
 
     await browser.reload();
     await new Promise(r => setTimeout(r, 1500));
