@@ -1,6 +1,7 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
 import { AUTH_URL } from './support/env-config.ts';
+import { captureEvidenceScreenshot } from './support/evidence-helper.ts';
 
 /**
  * Test Case ID   : AUTH-E2E-001
@@ -11,7 +12,7 @@ import { AUTH_URL } from './support/env-config.ts';
  * Priority       : Critical
  * Severity       : High
  */
-test('AUTH-E2E-001: user can select Management account type and view login form', async ({ browser }) => {
+test('AUTH-E2E-001: user can select Management account type and view login form', async ({ app, browser }) => {
   // 1. Arrange: Navigasi ke auth portal
   await browser.goto(AUTH_URL);
 
@@ -41,6 +42,7 @@ test('AUTH-E2E-001: user can select Management account type and view login form'
 
   // 6. Assert: Panel pemilihan akun tampil kembali
   await expect(managementCard).toBeVisible();
+  await captureEvidenceScreenshot(app, 'auth', 'AUTH-E2E-001');
 });
 
 /**
@@ -52,7 +54,7 @@ test('AUTH-E2E-001: user can select Management account type and view login form'
  * Priority       : High
  * Severity       : High
  */
-test('AUTH-E2E-002: negative test - submitting invalid credentials fails authentication', async ({ browser }) => {
+test('AUTH-E2E-002: negative test - submitting invalid credentials fails authentication', async ({ app, browser }) => {
   await browser.goto(AUTH_URL);
 
   const managementCard = browser.locator('a.login-type-card:has-text("Management")');
@@ -69,4 +71,5 @@ test('AUTH-E2E-002: negative test - submitting invalid credentials fails authent
 
   // Assert: User should not reach dashboard and remains on auth/login page
   await expect(browser).toHaveURL(/.*login.*/);
+  await captureEvidenceScreenshot(app, 'auth', 'AUTH-E2E-002');
 });

@@ -1,6 +1,7 @@
 import { test } from '@e2e-dev/web';
 import { expect, credentials } from 'e2e';
 import { AUTH_URL as AUTH_BASE_URL, MITRA_AUTH_URL } from './support/env-config.ts';
+import { captureEvidenceScreenshot } from './support/evidence-helper.ts';
 
 /**
  * Test Case ID   : OTA-AVAIL-001
@@ -17,6 +18,7 @@ test('OTA-AVAIL-001: loads OTA target page with availability filters', async ({ 
 
   await expect(browser.locator('body')).toBeVisible();
   await expect(browser).toHaveURL(/.*ava_min_room_ready=1.*ava_pax=2.*/);
+  await captureEvidenceScreenshot(app, 'auth', 'OTA-AVAIL-001');
 });
 
 /**
@@ -28,7 +30,7 @@ test('OTA-AVAIL-001: loads OTA target page with availability filters', async ({ 
  * Priority       : Critical
  * Severity       : High
  */
-test('AUTH-MGMT-001: authenticate role Manajemen with valid credentials', async ({ browser }) => {
+test('AUTH-MGMT-001: authenticate role Manajemen with valid credentials', async ({ app, browser }) => {
   const mgmt = credentials.user('manajemen');
 
   await browser.goto(AUTH_BASE_URL);
@@ -50,6 +52,7 @@ test('AUTH-MGMT-001: authenticate role Manajemen with valid credentials', async 
 
   // Validasi: Pengguna berhasil login (berpindah dari halaman login auth)
   await expect(browser).not.toHaveURL(AUTH_BASE_URL);
+  await captureEvidenceScreenshot(app, 'auth', 'AUTH-MGMT-001');
 });
 
 /**
@@ -61,7 +64,7 @@ test('AUTH-MGMT-001: authenticate role Manajemen with valid credentials', async 
  * Priority       : Critical
  * Severity       : High
  */
-test('AUTH-MITRA-001: authenticate role Mitra with valid credentials', async ({ browser }) => {
+test('AUTH-MITRA-001: authenticate role Mitra with valid credentials', async ({ app, browser }) => {
   const mitra = credentials.user('mitra');
 
   await browser.goto(MITRA_AUTH_URL);
@@ -78,6 +81,7 @@ test('AUTH-MITRA-001: authenticate role Mitra with valid credentials', async ({ 
 
   // Validasi: Pengguna berhasil login (berpindah dari URL /mitra/login)
   await expect(browser).not.toHaveURL(MITRA_AUTH_URL);
+  await captureEvidenceScreenshot(app, 'auth', 'AUTH-MITRA-001');
 });
 
 /**
@@ -89,7 +93,7 @@ test('AUTH-MITRA-001: authenticate role Mitra with valid credentials', async ({ 
  * Priority       : Critical
  * Severity       : High
  */
-test('AUTH-TAMU-001: authenticate role Tamu with valid credentials', async ({ browser }) => {
+test('AUTH-TAMU-001: authenticate role Tamu with valid credentials', async ({ app, browser }) => {
   const tamu = credentials.user('tamu');
 
   await browser.goto(AUTH_BASE_URL);
@@ -111,4 +115,5 @@ test('AUTH-TAMU-001: authenticate role Tamu with valid credentials', async ({ br
 
   // Validasi: Pengguna berhasil login (berpindah dari halaman login auth)
   await expect(browser).not.toHaveURL(AUTH_BASE_URL);
+  await captureEvidenceScreenshot(app, 'auth', 'AUTH-TAMU-001');
 });

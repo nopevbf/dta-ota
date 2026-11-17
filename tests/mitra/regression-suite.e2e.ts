@@ -3,7 +3,8 @@ import { expect } from 'e2e';
 import {
   loginAndNavigateToMitra,
   loginAndNavigateToTagProperti,
-  loginAndNavigateToRegistrasiProperti
+  loginAndNavigateToRegistrasiProperti,
+  takeEvidenceScreenshot
 } from './support.ts';
 
 test.describe('Suite Regresi: Setting Mitra & Detail Mitra', () => {
@@ -11,7 +12,7 @@ test.describe('Suite Regresi: Setting Mitra & Detail Mitra', () => {
    * Ref Item 1: REG-BUG-001
    * Riwayat Aktivitas pada Detail Mitra Tidak Menampilkan Perubahan Data Sebelum dan Sesudah Aksi Dilakukan
    */
-  test('REG-BUG-001: Verifikasi tabel Riwayat Aktivitas memuat kolom diff data Sebelum & Sesudah', async ({ browser }) => {
+  test('REG-BUG-001: Verifikasi tabel Riwayat Aktivitas memuat kolom diff data Sebelum & Sesudah', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     // Buka detail mitra pertama
@@ -32,13 +33,14 @@ test.describe('Suite Regresi: Setting Mitra & Detail Mitra', () => {
         }
       }
     }
+    await takeEvidenceScreenshot(app, 'REG-BUG-001');
   });
 
   /**
    * Ref Item 2: REG-FEAT-002 (Ref: MITRA-TC-021)
    * Tombol Reset pada Filter Menu Daftar Mitra > Setting Mitra
    */
-  test('REG-FEAT-002: Verifikasi tombol Reset membersihkan filter dan merestore data tabel', async ({ browser }) => {
+  test('REG-FEAT-002: Verifikasi tombol Reset membersihkan filter dan merestore data tabel', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const resetBtn = browser.locator('button:has-text("Reset"), a:has-text("Reset")').first();
@@ -46,13 +48,14 @@ test.describe('Suite Regresi: Setting Mitra & Detail Mitra', () => {
       await resetBtn.click();
       await expect(browser.locator('table').first()).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'REG-FEAT-002');
   });
 
   /**
    * Ref Item 8: REG-FEAT-008 (Ref: MITRA-TC-035)
    * Skema Status Pendaftaran Mitra Menjadi Auto Approve
    */
-  test('REG-FEAT-008: Verifikasi aturan bisnis Auto Approve untuk mitra baru', async ({ browser }) => {
+  test('REG-FEAT-008: Verifikasi aturan bisnis Auto Approve untuk mitra baru', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const tambahBtn = browser.locator('button:has-text("Tambah Mitra"), a:has-text("Tambah Mitra")').first();
@@ -63,13 +66,14 @@ test.describe('Suite Regresi: Setting Mitra & Detail Mitra', () => {
       const modal = browser.locator('.modal, [role="dialog"]').first();
       await expect(modal).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'REG-FEAT-008');
   });
 
   /**
    * Ref Item 9: REG-FEAT-009
    * Ubah Kolom dan Filter Status Approval Menjadi Status Verifikasi Email
    */
-  test('REG-FEAT-009: Verifikasi kolom dan filter Status Verifikasi Email', async ({ browser }) => {
+  test('REG-FEAT-009: Verifikasi kolom dan filter Status Verifikasi Email', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     // Cek dropdown filter untuk verifikasi email
@@ -80,13 +84,14 @@ test.describe('Suite Regresi: Setting Mitra & Detail Mitra', () => {
 
     // Pastikan tabel mitra utama terlihat
     await expect(browser.locator('table').first()).toBeVisible();
+    await takeEvidenceScreenshot(app, 'REG-FEAT-009');
   });
 
   /**
    * Ref Item 13: REG-FEAT-013
    * Tambahkan Kolom Kelompok Kerjasama pada Setting Mitra Berdasarkan Tag Properti
    */
-  test('REG-FEAT-013: Verifikasi kolom Kelompok Kerjasama / Tag Properti pada tabel mitra', async ({ browser }) => {
+  test('REG-FEAT-013: Verifikasi kolom Kelompok Kerjasama / Tag Properti pada tabel mitra', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const table = browser.locator('table').first();
@@ -97,13 +102,14 @@ test.describe('Suite Regresi: Setting Mitra & Detail Mitra', () => {
     if (await tagHeader.isVisible().catch(() => false)) {
       await expect(tagHeader).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'REG-FEAT-013');
   });
 
   /**
    * Ref Item 14: REG-BUG-014 (Ref: MITRA-SC-033)
    * Field No. HP pada Modal Tambah Mitra Menerima Huruf
    */
-  test('REG-BUG-014: Verifikasi field No. HP pada modal Tambah Mitra menolak karakter huruf', async ({ browser }) => {
+  test('REG-BUG-014: Verifikasi field No. HP pada modal Tambah Mitra menolak karakter huruf', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const tambahBtn = browser.locator('button:has-text("Tambah Mitra"), a:has-text("Tambah Mitra")').first();
@@ -123,6 +129,7 @@ test.describe('Suite Regresi: Setting Mitra & Detail Mitra', () => {
         await expect(modal).toBeVisible();
       }
     }
+    await takeEvidenceScreenshot(app, 'REG-BUG-014');
   });
 });
 
@@ -131,7 +138,7 @@ test.describe('Suite Regresi: Menu Tag Properti', () => {
    * Ref Item 3 & 4: REG-FEAT-003 & REG-FEAT-004
    * Auto Generate Kode Tag Unik & Color Picker Warna Label pada Form Tambah Tag Properti
    */
-  test('REG-FEAT-003 & REG-FEAT-004: Verifikasi Kode Tag otomatis & Color Picker pada Tambah Tag', async ({ browser }) => {
+  test('REG-FEAT-003 & REG-FEAT-004: Verifikasi Kode Tag otomatis & Color Picker pada Tambah Tag', async ({ app, browser }) => {
     await loginAndNavigateToTagProperti(browser);
 
     const tambahBtn = browser.locator('button:has-text("Tambah"), a:has-text("Tambah"), button:has-text("Tambah Tag")').first();
@@ -154,13 +161,14 @@ test.describe('Suite Regresi: Menu Tag Properti', () => {
         await expect(colorInput).toBeVisible();
       }
     }
+    await takeEvidenceScreenshot(app, 'REG-FEAT-003-004');
   });
 
   /**
    * Ref Item 5 & 7: REG-BUG-005 & REG-BUG-007
    * Error 404 Setelah Simpan Tag & Prefill Jenis Mitra pada Edit Tag Properti
    */
-  test('REG-BUG-005 & REG-BUG-007: Verifikasi edit tag tidak menghasilkan 404 dan Jenis Mitra ter-prefill', async ({ browser }) => {
+  test('REG-BUG-005 & REG-BUG-007: Verifikasi edit tag tidak menghasilkan 404 dan Jenis Mitra ter-prefill', async ({ app, browser }) => {
     await loginAndNavigateToTagProperti(browser);
 
     const editBtn = browser.locator('a[title*="Edit"], button[title*="Edit"], .fa-pencil, .fa-edit').first();
@@ -186,13 +194,14 @@ test.describe('Suite Regresi: Menu Tag Properti', () => {
         expect(currentUrl).not.toContain('404');
       }
     }
+    await takeEvidenceScreenshot(app, 'REG-BUG-005-007');
   });
 
   /**
    * Ref Item 6: REG-BUG-006
    * Validasi Duplikasi Nama Kelompok pada Modal Tambah Tag Properti
    */
-  test('REG-BUG-006: Verifikasi penolakan duplikasi Nama Kelompok pada Tag Properti', async ({ browser }) => {
+  test('REG-BUG-006: Verifikasi penolakan duplikasi Nama Kelompok pada Tag Properti', async ({ app, browser }) => {
     await loginAndNavigateToTagProperti(browser);
 
     const tambahBtn = browser.locator('button:has-text("Tambah"), a:has-text("Tambah")').first();
@@ -213,6 +222,7 @@ test.describe('Suite Regresi: Menu Tag Properti', () => {
         await expect(modal).toBeVisible();
       }
     }
+    await takeEvidenceScreenshot(app, 'REG-BUG-006');
   });
 });
 
@@ -221,7 +231,7 @@ test.describe('Suite Regresi: Modul Registrasi Properti', () => {
    * Ref Item 10: REG-FEAT-010
    * Field URL Maps Menjadi Required pada Form Registrasi Properti
    */
-  test('REG-FEAT-010: Validasi field URL Maps bersifat required pada Registrasi Properti', async ({ browser }) => {
+  test('REG-FEAT-010: Validasi field URL Maps bersifat required pada Registrasi Properti', async ({ app, browser }) => {
     await loginAndNavigateToRegistrasiProperti(browser);
 
     const mapsInput = browser.locator('input[name*="maps"], input[name*="url_maps"], input[placeholder*="Maps"]').first();
@@ -230,13 +240,14 @@ test.describe('Suite Regresi: Modul Registrasi Properti', () => {
       const isRequired = await mapsInput.getAttribute('required').catch(() => null);
       expect(isRequired !== null || true).toBeTruthy();
     }
+    await takeEvidenceScreenshot(app, 'REG-FEAT-010');
   });
 
   /**
    * Ref Item 11: REG-FEAT-011
    * Terapkan Multi Foto per Kategori pada Tab Foto Registrasi Properti
    */
-  test('REG-FEAT-011: Verifikasi upload foto mendukung multi-file per kategori', async ({ browser }) => {
+  test('REG-FEAT-011: Verifikasi upload foto mendukung multi-file per kategori', async ({ app, browser }) => {
     await loginAndNavigateToRegistrasiProperti(browser);
 
     const fotoTab = browser.locator('text=Foto, a:has-text("Foto"), [href*="foto"]').first();
@@ -250,13 +261,14 @@ test.describe('Suite Regresi: Modul Registrasi Properti', () => {
         expect(hasMultiple !== null || true).toBeTruthy();
       }
     }
+    await takeEvidenceScreenshot(app, 'REG-FEAT-011');
   });
 
   /**
    * Ref Item 12: REG-FEAT-012
    * Field Fasilitas Kamar Mendukung Input Fasilitas Tambahan oleh User
    */
-  test('REG-FEAT-012: Verifikasi dukungan input Fasilitas Kamar Tambahan', async ({ browser }) => {
+  test('REG-FEAT-012: Verifikasi dukungan input Fasilitas Kamar Tambahan', async ({ app, browser }) => {
     await loginAndNavigateToRegistrasiProperti(browser);
 
     const fasilitasTab = browser.locator('text=Fasilitas, a:has-text("Fasilitas")').first();
@@ -268,13 +280,14 @@ test.describe('Suite Regresi: Modul Registrasi Properti', () => {
         await expect(customInput).toBeVisible();
       }
     }
+    await takeEvidenceScreenshot(app, 'REG-FEAT-012');
   });
 
   /**
    * Ref Item 15: REG-BUG-015
    * Field Nomor Ponsel Kontak Properti Menolak Huruf
    */
-  test('REG-BUG-015: Verifikasi field Nomor Ponsel pada form kontak properti menolak huruf', async ({ browser }) => {
+  test('REG-BUG-015: Verifikasi field Nomor Ponsel pada form kontak properti menolak huruf', async ({ app, browser }) => {
     await loginAndNavigateToRegistrasiProperti(browser);
 
     const phoneInput = browser.locator('input[name*="phone"], input[name*="ponsel"], input[name*="kontak"]').first();
@@ -283,13 +296,14 @@ test.describe('Suite Regresi: Modul Registrasi Properti', () => {
       const val = await phoneInput.inputValue().catch(() => '');
       expect(val).toBeDefined();
     }
+    await takeEvidenceScreenshot(app, 'REG-BUG-015');
   });
 
   /**
    * Ref Item 16 & 17: REG-FEAT-016 & REG-FEAT-017
    * Validasi Duplikasi Nama & Alamat Properti pada Registrasi Properti
    */
-  test('REG-FEAT-016 & REG-FEAT-017: Verifikasi sistem menolak duplikasi Nama dan Alamat Properti', async ({ browser }) => {
+  test('REG-FEAT-016 & REG-FEAT-017: Verifikasi sistem menolak duplikasi Nama dan Alamat Properti', async ({ app, browser }) => {
     await loginAndNavigateToRegistrasiProperti(browser);
 
     const namaPropertiInput = browser.locator('input[name="name"], input[name="property_name"], input[placeholder*="Nama Properti"]').first();
@@ -301,5 +315,6 @@ test.describe('Suite Regresi: Modul Registrasi Properti', () => {
     if (await alamatPropertiInput.isVisible().catch(() => false)) {
       await expect(alamatPropertiInput).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'REG-FEAT-016-017');
   });
 });

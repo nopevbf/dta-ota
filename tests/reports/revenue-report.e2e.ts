@@ -1,16 +1,14 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
 import { loginAndNavigateToMitra } from '../mitra/support.ts';
+import { MANAGEMENT_URL, getReportScreenshotDir } from '../support/env-config.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const TARGET_URL = 'https://management.dp7.lab.daegi.dev/partner/reports/revenue?page=1';
+const TARGET_URL = `${MANAGEMENT_URL.replace(/\/+$/, '')}/partner/reports/revenue?page=1`;
 
 async function saveEvidenceScreenshot(app: any, label: string) {
-  const reportsDir = path.resolve(process.cwd(), 'reports', 'revenue', 'screenshots');
-  if (!fs.existsSync(reportsDir)) {
-    fs.mkdirSync(reportsDir, { recursive: true });
-  }
+  const reportsDir = getReportScreenshotDir('revenue');
 
   try {
     const relative = await app.screenshot(label);

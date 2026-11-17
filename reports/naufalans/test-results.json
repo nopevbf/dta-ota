@@ -1,0 +1,2876 @@
+{
+  "totalTests": 123,
+  "totalPassed": 108,
+  "totalFailed": 14,
+  "totalSkipped": 1,
+  "durationSeconds": "1564.78",
+  "fileResults": [
+    {
+      "index": 1,
+      "group": "auth",
+      "file": "tests/roles-auth.e2e.ts",
+      "code": 0,
+      "duration": "30.32s",
+      "tests": [
+        {
+          "title": "OTA-AVAIL-001: loads OTA target page with availability filters",
+          "status": "PASSED",
+          "duration": "3.12s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e856-116f-70c6-a7e7-bf55765a1a0d:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e856-116f-70c6-a7e7-bf55765a1a0d:3"
+              },
+              "path": "roles-auth-ota-avail-001-loads-ota-target-41ac0722918012bf/attempt-1/screenshots/001-OTA-AVAIL-001.png",
+              "size": 8980,
+              "sha256": "d3bf99b8332ff5406607b3e7f6d4b20e01499887bead7af9bcc54ac02777eb8d"
+            }
+          ]
+        },
+        {
+          "title": "AUTH-MGMT-001: authenticate role Manajemen with valid credentials",
+          "status": "PASSED",
+          "duration": "5.76s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "AUTH-MITRA-001: authenticate role Mitra with valid credentials",
+          "status": "PASSED",
+          "duration": "5.64s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "AUTH-TAMU-001: authenticate role Tamu with valid credentials",
+          "status": "PASSED",
+          "duration": "5.25s",
+          "error": "",
+          "artifacts": []
+        }
+      ],
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 2,
+      "group": "auth",
+      "file": "tests/auth-flow.e2e.ts",
+      "code": 0,
+      "duration": "21.45s",
+      "tests": [
+        {
+          "title": "AUTH-E2E-001: user can select Management account type and view login form",
+          "status": "PASSED",
+          "duration": "2.40s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e856-99a3-74f7-b3f6-24b0428ad23f:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e856-99a3-74f7-b3f6-24b0428ad23f:10"
+              },
+              "path": "auth-flow-auth-e2e-001-user-can-select-3495968dbe4c7138/attempt-1/screenshots/001-AUTH-E2E-001.png",
+              "size": 79828,
+              "sha256": "bdbb64afc9f0221994f4ad759e21b19abdd934e19c67deef1fd9c839c1528ffa"
+            }
+          ]
+        },
+        {
+          "title": "AUTH-E2E-002: negative test - submitting invalid credentials fails authentication",
+          "status": "PASSED",
+          "duration": "4.32s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e856-a30b-71c4-8d72-360851b35020:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e856-a30b-71c4-8d72-360851b35020:6"
+              },
+              "path": "auth-flow-auth-e2e-002-negative-test-7a08c07a3fe72cb7/attempt-1/screenshots/001-AUTH-E2E-002.png",
+              "size": 86912,
+              "sha256": "732f4017866c29acdbff37960e78e86a197df33f9707ff57b5b34dbc17cd7d44"
+            }
+          ]
+        }
+      ],
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 3,
+      "group": "auth",
+      "file": "tests/auth-new-login-roles.e2e.ts",
+      "code": 0,
+      "duration": "119.69s",
+      "tests": [
+        {
+          "title": "DParagon New Authentication - Multi-Role Login Suite › TC-AUTH-POPUP-001: should dismiss promo popup and open login modal",
+          "status": "PASSED",
+          "duration": "119.69s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "DParagon New Authentication - Multi-Role Login Suite › TC-AUTH-MGMT-001: authenticate Manajemen role and redirect to dashboard",
+          "status": "PASSED",
+          "duration": "119.69s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "DParagon New Authentication - Multi-Role Login Suite › TC-AUTH-MITRA-001: authenticate Mitra role and redirect to dashboard",
+          "status": "PASSED",
+          "duration": "119.69s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "DParagon New Authentication - Multi-Role Login Suite › TC-AUTH-TAMU-001: authenticate Tamu role and verify active session",
+          "status": "PASSED",
+          "duration": "119.69s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "DParagon New Authentication - Multi-Role Login Suite › TC-AUTH-NEG-001: submitting invalid credentials displays error feedback",
+          "status": "PASSED",
+          "duration": "119.69s",
+          "error": "",
+          "artifacts": []
+        }
+      ],
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 4,
+      "group": "auth",
+      "file": "tests/auth-new-register-guest.e2e.ts",
+      "code": 0,
+      "duration": "125.17s",
+      "tests": [
+        {
+          "title": "DParagon New Authentication - Guest Registration Suite › TC-REG-GUEST-001: navigate to Register at D'Paragon form",
+          "status": "PASSED",
+          "duration": "125.17s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "DParagon New Authentication - Guest Registration Suite › TC-REG-GUEST-002: validation error when terms & conditions is unchecked",
+          "status": "PASSED",
+          "duration": "125.17s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "DParagon New Authentication - Guest Registration Suite › TC-REG-GUEST-003: validation error when passwords do not match",
+          "status": "PASSED",
+          "duration": "125.17s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "DParagon New Authentication - Guest Registration Suite › TC-REG-GUEST-004: valid guest registration with temp-mail.io and re-login",
+          "status": "PASSED",
+          "duration": "125.17s",
+          "error": "",
+          "artifacts": []
+        }
+      ],
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 5,
+      "group": "auth",
+      "file": "tests/auth-new-register-mitra.e2e.ts",
+      "code": 0,
+      "duration": "141.61s",
+      "tests": [
+        {
+          "title": "DParagon New Authentication - Partnership Registration Suite › TC-REG-MITRA-001: navigate to Daftar Kemitraan form",
+          "status": "PASSED",
+          "duration": "141.61s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "DParagon New Authentication - Partnership Registration Suite › TC-REG-MITRA-002: validation error when password does not meet complexity",
+          "status": "PASSED",
+          "duration": "141.61s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "DParagon New Authentication - Partnership Registration Suite › TC-REG-MITRA-003: validation error when terms & conditions is unchecked",
+          "status": "PASSED",
+          "duration": "141.61s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "DParagon New Authentication - Partnership Registration Suite › TC-REG-MITRA-004: valid partnership registration with temp-mail.io and re-login",
+          "status": "PASSED",
+          "duration": "141.61s",
+          "error": "",
+          "artifacts": []
+        }
+      ],
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 6,
+      "group": "bumd",
+      "file": "tests/bumd/bumd-list-filter.e2e.ts",
+      "code": 1,
+      "duration": "42.80s",
+      "tests": [
+        {
+          "title": "Bank Data BUMD: List & Filter Tests › BUMD-SC-050: verify BUMD table renders headers and data rows",
+          "status": "PASSED",
+          "duration": "5.53s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e85c-d42a-796a-8b79-63b03e9134d0:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e85c-d42a-796a-8b79-63b03e9134d0:16"
+              },
+              "path": "bumd-list-filter-bank-data-bumd-list-filter-tests-c41020cd270d219c/attempt-1/screenshots/001-BUMD-SC-050.png",
+              "size": 58939,
+              "sha256": "b57b60cad73f3b5321a6926dbee5cbc30ded59a3fcdfe4c3d74d9de328dbcbfc"
+            }
+          ]
+        },
+        {
+          "title": "Bank Data BUMD: List & Filter Tests › BUMD-SC-059: verify filter section toggle/collapse",
+          "status": "PASSED",
+          "duration": "4.73s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e85c-e9c2-7dd8-8569-7f4a1f8078ff:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e85c-e9c2-7dd8-8569-7f4a1f8078ff:9"
+              },
+              "path": "bumd-list-filter-bank-data-bumd-list-filter-tests-00bc76a14fbd0b23/attempt-1/screenshots/001-BUMD-SC-059.png",
+              "size": 58939,
+              "sha256": "b57b60cad73f3b5321a6926dbee5cbc30ded59a3fcdfe4c3d74d9de328dbcbfc"
+            }
+          ]
+        },
+        {
+          "title": "Bank Data BUMD: List & Filter Tests › BUMD-SC-043: verify search by company name filters data",
+          "status": "FAILED",
+          "duration": "4.82s",
+          "error": "locator matched no nodes: locator(\"table tbody tr td:nth-child(3)\").first()",
+          "artifacts": [
+            {
+              "id": "01a1e85c-fc40-7b07-9d43-651e2544bdba:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-list-filter-bank-data-bumd-list-filter-tests-1ff187ee72793dde/attempt-1/screen-at-failure.txt",
+              "size": 5558,
+              "sha256": "eeb20527da1c841676c63af654f6a7c4ce964c8acd51ba9e99d0ef9218499c3b"
+            },
+            {
+              "id": "01a1e85c-fc40-7b07-9d43-651e2544bdba:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-list-filter-bank-data-bumd-list-filter-tests-1ff187ee72793dde/attempt-1/screenshots/001-failure.png",
+              "size": 58939,
+              "sha256": "b57b60cad73f3b5321a6926dbee5cbc30ded59a3fcdfe4c3d74d9de328dbcbfc"
+            }
+          ]
+        },
+        {
+          "title": "Bank Data BUMD: List & Filter Tests › BUMD-SC-053: verify \"+ Tambah\" button navigates to create BUMD page",
+          "status": "PASSED",
+          "duration": "6.33s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e85d-0f1e-7149-beea-a0ebf1129dc7:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e85d-0f1e-7149-beea-a0ebf1129dc7:12"
+              },
+              "path": "bumd-list-filter-bank-data-bumd-list-filter-tests-6ea2c1411962601c/attempt-1/screenshots/001-BUMD-SC-053.png",
+              "size": 63318,
+              "sha256": "280937b009abf7df9077240b93ad3b600279e3870e69888d97a9ea9acf77e2f6"
+            }
+          ]
+        },
+        {
+          "title": "Bank Data BUMD: List & Filter Tests › BUMD-SC-055: verify Excel export button is present and clickable",
+          "status": "PASSED",
+          "duration": "5.94s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e85d-27da-7212-96bb-828c3555eea5:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e85d-27da-7212-96bb-828c3555eea5:9"
+              },
+              "path": "bumd-list-filter-bank-data-bumd-list-filter-tests-9aa190eb6497a4ca/attempt-1/screenshots/001-BUMD-SC-055.png",
+              "size": 58939,
+              "sha256": "b57b60cad73f3b5321a6926dbee5cbc30ded59a3fcdfe4c3d74d9de328dbcbfc"
+            }
+          ]
+        }
+      ],
+      "passed": 4,
+      "failed": 1,
+      "skipped": 0
+    },
+    {
+      "index": 7,
+      "group": "bumd",
+      "file": "tests/bumd/bumd-create-wizard.e2e.ts",
+      "code": 1,
+      "duration": "103.32s",
+      "tests": [
+        {
+          "title": "Form Tambah Data BUMD: Wizard Tabs Tests › BUMD-SC-001: verify validation error when submitting empty fields on Tab 1",
+          "status": "PASSED",
+          "duration": "6.39s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e85d-723c-78fb-b5a5-d953a25c6826:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e85d-723c-78fb-b5a5-d953a25c6826:11"
+              },
+              "path": "bumd-create-wizard-form-tambah-data-bumd-wizard-8b350932762367f2/attempt-1/screenshots/001-BUMD-SC-001.png",
+              "size": 73933,
+              "sha256": "45a541a6b8e9f84e4d49b0eb40f3174e91de39e13bdb34ef9b061612b467bdb1"
+            }
+          ]
+        },
+        {
+          "title": "Form Tambah Data BUMD: Wizard Tabs Tests › BUMD-SC-010: verify Province selection loads Regency/City options",
+          "status": "FAILED",
+          "duration": "36.03s",
+          "error": "selectOption did not become actionable in time: locator.selectOption: Timeout 29739ms exceeded.\nCall log:\n  - waiting for locator('select#input-province, select[name=\"province_id\"]')\n    - locator resolved to <select required=\"\" tabindex=\"-1\" name=\"province_id\" aria-hidden=\"true\" id=\"input-province\" onchange=\"getCities()\" class=\"form-control select2 select2-hidden-accessible\">…</select>\n  - attempting select option action\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n    - waiting 20ms\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n      - waiting 100ms\n    58 × waiting for element to be visible and enabled\n       - did not find some options\n     - retrying select option action\n       - waiting 500ms\n: locator(\"select#input-province, select[name=\\\"province_id\\\"]\")",
+          "artifacts": [
+            {
+              "id": "01a1e85d-8b3e-77e1-ba03-de8b1484b84f:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-create-wizard-form-tambah-data-bumd-wizard-c08019f71b850a57/attempt-1/screen-at-failure.txt",
+              "size": 6033,
+              "sha256": "32e2a4b4ebe589f7939714e52b88230dc6edd22532b01b3b78a2128b6ad724a7"
+            },
+            {
+              "id": "01a1e85d-8b3e-77e1-ba03-de8b1484b84f:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-create-wizard-form-tambah-data-bumd-wizard-c08019f71b850a57/attempt-1/screenshots/001-failure.png",
+              "size": 71353,
+              "sha256": "8393f2d27c2c0eee895b7e17dc11e606e1a11ba0e235ceef7c4545e8a0c45558"
+            }
+          ]
+        },
+        {
+          "title": "Form Tambah Data BUMD: Wizard Tabs Tests › BUMD-SC-011: verify Status Kerjasama dropdown options",
+          "status": "PASSED",
+          "duration": "5.14s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e85e-180c-773b-9bb9-a8ece6d66122:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e85e-180c-773b-9bb9-a8ece6d66122:10"
+              },
+              "path": "bumd-create-wizard-form-tambah-data-bumd-wizard-accbcce646ee74cb/attempt-1/screenshots/001-BUMD-SC-011.png",
+              "size": 71241,
+              "sha256": "ea1f0b668f73ed5a6084a30ee72d266283355aeca442f2a538f61ead957d3f11"
+            }
+          ]
+        },
+        {
+          "title": "Form Tambah Data BUMD: Wizard Tabs Tests › BUMD-SC-013: verify \"Batal\" button returns to BUMD list page",
+          "status": "PASSED",
+          "duration": "7.39s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e85e-2c1f-7d72-89c6-270e31379bca:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e85e-2c1f-7d72-89c6-270e31379bca:12"
+              },
+              "path": "bumd-create-wizard-form-tambah-data-bumd-wizard-f508bd9826e54d6f/attempt-1/screenshots/001-BUMD-SC-013.png",
+              "size": 58939,
+              "sha256": "b57b60cad73f3b5321a6926dbee5cbc30ded59a3fcdfe4c3d74d9de328dbcbfc"
+            }
+          ]
+        },
+        {
+          "title": "Form Tambah Data BUMD: Wizard Tabs Tests › BUMD-SC-012 & BUMD-SC-024: fill Tab 1 validly and advance to Tab 2 and Tab 3",
+          "status": "FAILED",
+          "duration": "35.59s",
+          "error": "selectOption did not become actionable in time: locator.selectOption: Timeout 29740ms exceeded.\nCall log:\n  - waiting for locator('select#input-province')\n    - locator resolved to <select required=\"\" tabindex=\"-1\" name=\"province_id\" aria-hidden=\"true\" id=\"input-province\" onchange=\"getCities()\" class=\"form-control select2 select2-hidden-accessible\">…</select>\n  - attempting select option action\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n    - waiting 20ms\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n      - waiting 100ms\n    58 × waiting for element to be visible and enabled\n       - did not find some options\n     - retrying select option action\n       - waiting 500ms\n: locator(\"select#input-province\")",
+          "artifacts": [
+            {
+              "id": "01a1e85e-48fa-704b-88e3-0233b4ec35db:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-create-wizard-form-tambah-data-bumd-wizard-6556c040ac73c752/attempt-1/screen-at-failure.txt",
+              "size": 6169,
+              "sha256": "715e2450bf4943a81bd2a5ec63bdb12d6e041fcb1f42985432cc1acab272c1ef"
+            },
+            {
+              "id": "01a1e85e-48fa-704b-88e3-0233b4ec35db:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-create-wizard-form-tambah-data-bumd-wizard-6556c040ac73c752/attempt-1/screenshots/001-failure.png",
+              "size": 73341,
+              "sha256": "f60d466266a6efe3591bd0a63e1a49730eb19f8292aa5cc215099066d84e4dc9"
+            }
+          ]
+        }
+      ],
+      "passed": 3,
+      "failed": 2,
+      "skipped": 0
+    },
+    {
+      "index": 8,
+      "group": "bumd",
+      "file": "tests/bumd/bumd-fee.e2e.ts",
+      "code": 1,
+      "duration": "95.87s",
+      "tests": [
+        {
+          "title": "Fitur Tambahan: Fee BUMD Tests › BUMD-FEE-006: verify Fee Management and Fee BUMD columns in table",
+          "status": "FAILED",
+          "duration": "10.29s",
+          "error": "expect.toBeVisible failed\nlocator: locator(\"table tbody tr td:nth-child(11)\").first()\nexpected: visible\nobserved: no node (match count 0)",
+          "artifacts": [
+            {
+              "id": "01a1e85f-0a9e-7d50-9c0b-356c451c5b71:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-fee-fitur-tambahan-fee-bumd-tests-69a2b8489223c124/attempt-1/screen-at-failure.txt",
+              "size": 5558,
+              "sha256": "e6e492c7c2a822034e4e3331a0aacb7ec3a8f7c2f1a6ed3d25bd207b3e48bfa6"
+            },
+            {
+              "id": "01a1e85f-0a9e-7d50-9c0b-356c451c5b71:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-fee-fitur-tambahan-fee-bumd-tests-69a2b8489223c124/attempt-1/screenshots/001-failure.png",
+              "size": 58939,
+              "sha256": "b57b60cad73f3b5321a6926dbee5cbc30ded59a3fcdfe4c3d74d9de328dbcbfc"
+            }
+          ]
+        },
+        {
+          "title": "Fitur Tambahan: Fee BUMD Tests › BUMD-FEE-001 & BUMD-FEE-002: navigate to Fee BUMD tab and validate inputs",
+          "status": "FAILED",
+          "duration": "36.62s",
+          "error": "selectOption did not become actionable in time: locator.selectOption: Timeout 29745ms exceeded.\nCall log:\n  - waiting for locator('select#input-province')\n    - locator resolved to <select required=\"\" tabindex=\"-1\" name=\"province_id\" aria-hidden=\"true\" id=\"input-province\" onchange=\"getCities()\" class=\"form-control select2 select2-hidden-accessible\">…</select>\n  - attempting select option action\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n    - waiting 20ms\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n      - waiting 100ms\n    58 × waiting for element to be visible and enabled\n       - did not find some options\n     - retrying select option action\n       - waiting 500ms\n: locator(\"select#input-province\")",
+          "artifacts": [
+            {
+              "id": "01a1e85f-32e8-7bdc-ba2e-1e3384279fc4:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-fee-fitur-tambahan-fee-bumd-tests-b3853a61791f3669/attempt-1/screen-at-failure.txt",
+              "size": 6167,
+              "sha256": "18277a26969597798dbd60fcd3cef76ae488a3a4b64d7d0a697fdd97591d558b"
+            },
+            {
+              "id": "01a1e85f-32e8-7bdc-ba2e-1e3384279fc4:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-fee-fitur-tambahan-fee-bumd-tests-b3853a61791f3669/attempt-1/screenshots/001-failure.png",
+              "size": 72583,
+              "sha256": "5947c7eb78fc17a44621866923f410ec5638ae519d99f7ec939dc2acd1c225b6"
+            }
+          ]
+        },
+        {
+          "title": "Fitur Tambahan: Fee BUMD Tests › BUMD-FEE-003: Boundary Value Analysis (BVA) for Fee BUMD (0% and 100%)",
+          "status": "FAILED",
+          "duration": "34.91s",
+          "error": "selectOption did not become actionable in time: locator.selectOption: Timeout 29746ms exceeded.\nCall log:\n  - waiting for locator('select#input-province')\n    - locator resolved to <select required=\"\" tabindex=\"-1\" name=\"province_id\" aria-hidden=\"true\" id=\"input-province\" onchange=\"getCities()\" class=\"form-control select2 select2-hidden-accessible\">…</select>\n  - attempting select option action\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n    - waiting 20ms\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n      - waiting 100ms\n    58 × waiting for element to be visible and enabled\n       - did not find some options\n     - retrying select option action\n       - waiting 500ms\n: locator(\"select#input-province\")",
+          "artifacts": [
+            {
+              "id": "01a1e85f-c201-7ceb-bb6b-b4fec8fb4331:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-fee-fitur-tambahan-fee-bumd-tests-da0ce4238822cf23/attempt-1/screen-at-failure.txt",
+              "size": 6164,
+              "sha256": "aa01d852353975ab605691862daa650af840e1fb8447254ce47dbbc590f1c82f"
+            },
+            {
+              "id": "01a1e85f-c201-7ceb-bb6b-b4fec8fb4331:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-fee-fitur-tambahan-fee-bumd-tests-da0ce4238822cf23/attempt-1/screenshots/001-failure.png",
+              "size": 73225,
+              "sha256": "9f90c4f7aac7f4c77fa22378fb42594df72fb906fa9e296ddf02445a92d6a86b"
+            }
+          ]
+        }
+      ],
+      "passed": 0,
+      "failed": 3,
+      "skipped": 0
+    },
+    {
+      "index": 9,
+      "group": "bumd",
+      "file": "tests/bumd/bumd-crud.e2e.ts",
+      "code": 1,
+      "duration": "49.83s",
+      "tests": [
+        {
+          "title": "Bank Data BUMD: End-to-End CRUD Lifecycle with Visual Evidence › BUMD-CRUD-LIFECYCLE: Create, Verify in Table, Update, and Delete BUMD with Visual Evidence",
+          "status": "FAILED",
+          "duration": "36.05s",
+          "error": "selectOption did not become actionable in time: locator.selectOption: Timeout 29743ms exceeded.\nCall log:\n  - waiting for locator('select#input-province')\n    - locator resolved to <select required=\"\" tabindex=\"-1\" name=\"province_id\" aria-hidden=\"true\" id=\"input-province\" onchange=\"getCities()\" class=\"form-control select2 select2-hidden-accessible\">…</select>\n  - attempting select option action\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n    - waiting 20ms\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n      - waiting 100ms\n    58 × waiting for element to be visible and enabled\n       - did not find some options\n     - retrying select option action\n       - waiting 500ms\n: locator(\"select#input-province\")",
+          "artifacts": [
+            {
+              "id": "01a1e860-80ab-72f0-be7f-6cb6a08d8b99:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-crud-bank-data-bumd-end-to-end-crud-3f2cfdb1e4223f27/attempt-1/screen-at-failure.txt",
+              "size": 6174,
+              "sha256": "11cc0778bc676c22b9b9614a026f8f59e20df91bd589660021959b7832e28c5e"
+            },
+            {
+              "id": "01a1e860-80ab-72f0-be7f-6cb6a08d8b99:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-crud-bank-data-bumd-end-to-end-crud-3f2cfdb1e4223f27/attempt-1/screenshots/001-failure.png",
+              "size": 74212,
+              "sha256": "7f240ba871f590b83f08fca966265725d1ebe701e8547ff00587fd14e0ef5b39"
+            }
+          ]
+        }
+      ],
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0
+    },
+    {
+      "index": 10,
+      "group": "bumd",
+      "file": "tests/bumd/bumd-regression.e2e.ts",
+      "code": 1,
+      "duration": "96.58s",
+      "tests": [
+        {
+          "title": "Bank Data BUMD: Regression Test Suite (Automated End-to-End) › BUMD-REG-001: Table Rendering, Fee Columns, and Action Toolbar Integrity",
+          "status": "PASSED",
+          "duration": "6.41s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e861-4736-7ce9-a93b-b3a0698d69c0:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e861-4736-7ce9-a93b-b3a0698d69c0:14"
+              },
+              "path": "bumd-regression-bank-data-bumd-regression-test-2a650d13d26b4375/attempt-1/screenshots/001-BUMD-REG-001.png",
+              "size": 58939,
+              "sha256": "b57b60cad73f3b5321a6926dbee5cbc30ded59a3fcdfe4c3d74d9de328dbcbfc"
+            }
+          ]
+        },
+        {
+          "title": "Bank Data BUMD: Regression Test Suite (Automated End-to-End) › BUMD-REG-002: Wizard Stepper Navigation and Form State Retention (Tab 1 to Tab 4)",
+          "status": "FAILED",
+          "duration": "36.32s",
+          "error": "selectOption did not become actionable in time: locator.selectOption: Timeout 29742ms exceeded.\nCall log:\n  - waiting for locator('select#input-province')\n    - locator resolved to <select required=\"\" tabindex=\"-1\" name=\"province_id\" aria-hidden=\"true\" id=\"input-province\" onchange=\"getCities()\" class=\"form-control select2 select2-hidden-accessible\">…</select>\n  - attempting select option action\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n    - waiting 20ms\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n      - waiting 100ms\n    58 × waiting for element to be visible and enabled\n       - did not find some options\n     - retrying select option action\n       - waiting 500ms\n: locator(\"select#input-province\")",
+          "artifacts": [
+            {
+              "id": "01a1e861-6047-76f6-8af6-701ef6325fdc:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-regression-bank-data-bumd-regression-test-bc5e02ad56806c08/attempt-1/screen-at-failure.txt",
+              "size": 6177,
+              "sha256": "9e50ed472b874e415994b5875165c52e23a0dae7a3997384c23bc35b387edc40"
+            },
+            {
+              "id": "01a1e861-6047-76f6-8af6-701ef6325fdc:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-regression-bank-data-bumd-regression-test-bc5e02ad56806c08/attempt-1/screenshots/001-failure.png",
+              "size": 74036,
+              "sha256": "c084a838538195a747ec1ca8f4a1d230a9b1726d788ecf18799fa55e04c422d3"
+            }
+          ]
+        },
+        {
+          "title": "Bank Data BUMD: Regression Test Suite (Automated End-to-End) › BUMD-REG-003: Full Data Lifecycle CRUD (Create -> Verify -> Update -> Verify -> Delete -> Verify Teardown)",
+          "status": "FAILED",
+          "duration": "34.98s",
+          "error": "selectOption did not become actionable in time: locator.selectOption: Timeout 29744ms exceeded.\nCall log:\n  - waiting for locator('select#input-province')\n    - locator resolved to <select required=\"\" tabindex=\"-1\" name=\"province_id\" aria-hidden=\"true\" id=\"input-province\" onchange=\"getCities()\" class=\"form-control select2 select2-hidden-accessible\">…</select>\n  - attempting select option action\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n    - waiting 20ms\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n      - waiting 100ms\n    58 × waiting for element to be visible and enabled\n       - did not find some options\n     - retrying select option action\n       - waiting 500ms\n: locator(\"select#input-province\")",
+          "artifacts": [
+            {
+              "id": "01a1e861-ee3f-72f8-b239-de161833ff93:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-regression-bank-data-bumd-regression-test-2e2419a6d75564a4/attempt-1/screen-at-failure.txt",
+              "size": 6174,
+              "sha256": "7bd61844b0d22025647863f4ce947917479324078ea8de527732efa1777ae8c3"
+            },
+            {
+              "id": "01a1e861-ee3f-72f8-b239-de161833ff93:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "bumd-regression-bank-data-bumd-regression-test-2e2419a6d75564a4/attempt-1/screenshots/001-failure.png",
+              "size": 73872,
+              "sha256": "39a39d30407d14926c39c18602d748c71e62115bfb959773705bc2be705f24fa"
+            }
+          ]
+        },
+        {
+          "title": "Bank Data BUMD: Regression Test Suite (Automated End-to-End) › BUMD-REG-004: Filter Functionality and Excel Export Response",
+          "status": "PASSED",
+          "duration": "3.68s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e862-76fb-79b1-ac5e-412e505b728c:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e862-76fb-79b1-ac5e-412e505b728c:9"
+              },
+              "path": "bumd-regression-bank-data-bumd-regression-test-c73f4bbf5629f246/attempt-1/screenshots/001-BUMD-REG-004.png",
+              "size": 58939,
+              "sha256": "b57b60cad73f3b5321a6926dbee5cbc30ded59a3fcdfe4c3d74d9de328dbcbfc"
+            }
+          ]
+        }
+      ],
+      "passed": 2,
+      "failed": 2,
+      "skipped": 0
+    },
+    {
+      "index": 11,
+      "group": "mitra",
+      "file": "tests/mitra/mitra-list-filter.e2e.ts",
+      "code": 0,
+      "duration": "49.86s",
+      "tests": [
+        {
+          "title": "Setting Mitra - List, Tab & Filter Tests › MITRA-TC-001: Verifikasi tabel mitra dan badge counter \"Daftar Seluruh Mitra\"",
+          "status": "PASSED",
+          "duration": "6.17s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e862-b83a-76c2-b0f8-0ec5770edb52:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e862-b83a-76c2-b0f8-0ec5770edb52:12"
+              },
+              "path": "mitra-list-filter-setting-mitra-list-tab-filter-8a27095ae79e15ba/attempt-1/screenshots/001-MITRA-TC-001.png",
+              "size": 99309,
+              "sha256": "680f29f82d95081ddb9bfc16068cfea2e16cf9d726b1c79777e3762984a6bfb4"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - List, Tab & Filter Tests › MITRA-TC-002: Verifikasi tab \"Memiliki Minimal 1 Properti\"",
+          "status": "PASSED",
+          "duration": "5.05s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e862-d056-7f56-897f-afa381cdc833:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e862-d056-7f56-897f-afa381cdc833:11"
+              },
+              "path": "mitra-list-filter-setting-mitra-list-tab-filter-8d21634956194a97/attempt-1/screenshots/001-MITRA-TC-002.png",
+              "size": 99309,
+              "sha256": "680f29f82d95081ddb9bfc16068cfea2e16cf9d726b1c79777e3762984a6bfb4"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - List, Tab & Filter Tests › MITRA-TC-005 & MITRA-TC-006: Verifikasi filter pencarian Nama / Email dan Empty State",
+          "status": "PASSED",
+          "duration": "6.68s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e862-e410-7d84-a585-bd36ba8d3f10:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e862-e410-7d84-a585-bd36ba8d3f10:15"
+              },
+              "path": "mitra-list-filter-setting-mitra-list-tab-filter-156871c12950d90c/attempt-1/screenshots/001-MITRA-TC-005-006.png",
+              "size": 67114,
+              "sha256": "01af78f62e879430666926dd481f6d169a6290144b57e006844675304bae5af8"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - List, Tab & Filter Tests › MITRA-TC-007: Verifikasi dropdown filter Status Verifikasi Email (Terverifikasi / Belum Terverifikasi)",
+          "status": "PASSED",
+          "duration": "6.45s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e862-fe2c-7fb1-9b7a-c9ffe53b4b95:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e862-fe2c-7fb1-9b7a-c9ffe53b4b95:14"
+              },
+              "path": "mitra-list-filter-setting-mitra-list-tab-filter-c132873582378b51/attempt-1/screenshots/001-MITRA-TC-007.png",
+              "size": 95621,
+              "sha256": "507bcb368903554f02ee2fe44713306c2b5fb12fb0b76e7420dbef79971b3351"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - List, Tab & Filter Tests › MITRA-TC-012 & MITRA-TC-013: Verifikasi kolom Aksi pada mitra Pending dan Approved",
+          "status": "PASSED",
+          "duration": "5.66s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e863-1760-7ece-86cd-717185270723:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e863-1760-7ece-86cd-717185270723:11"
+              },
+              "path": "mitra-list-filter-setting-mitra-list-tab-filter-ca1f955d0facc4d4/attempt-1/screenshots/001-MITRA-TC-012-013.png",
+              "size": 99309,
+              "sha256": "680f29f82d95081ddb9bfc16068cfea2e16cf9d726b1c79777e3762984a6bfb4"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - List, Tab & Filter Tests › MITRA-TC-021: Verifikasi tombol Reset filter",
+          "status": "PASSED",
+          "duration": "7.19s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e863-2d7b-7c57-83ed-53ad5ee8ca84:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e863-2d7b-7c57-83ed-53ad5ee8ca84:13"
+              },
+              "path": "mitra-list-filter-setting-mitra-list-tab-filter-c10e721acbf2105a/attempt-1/screenshots/001-MITRA-TC-021.png",
+              "size": 99309,
+              "sha256": "680f29f82d95081ddb9bfc16068cfea2e16cf9d726b1c79777e3762984a6bfb4"
+            }
+          ]
+        }
+      ],
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 12,
+      "group": "mitra",
+      "file": "tests/mitra/mitra-detail.e2e.ts",
+      "code": 0,
+      "duration": "54.48s",
+      "tests": [
+        {
+          "title": "Setting Mitra - Detail Mitra Page Tests › MITRA-TC-014 & MITRA-TC-041: Akses halaman Detail Mitra dan validasi atribut panel",
+          "status": "PASSED",
+          "duration": "16.21s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e863-8a6a-7a18-ae52-f2deb9acebc1:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e863-8a6a-7a18-ae52-f2deb9acebc1:15"
+              },
+              "path": "mitra-detail-setting-mitra-detail-mitra-page-f75f56c045d178eb/attempt-1/screenshots/001-MITRA-TC-014-041.png",
+              "size": 88017,
+              "sha256": "5835729f356d333dc5f804db960fed9a324fa0b6a09e3453333fc28df2d36300"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - Detail Mitra Page Tests › MITRA-TC-047 & MITRA-TC-048: Verifikasi bagian Daftar Properti pada Detail Mitra",
+          "status": "PASSED",
+          "duration": "7.21s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e863-c9cc-7bdc-b43f-9b364776e30f:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e863-c9cc-7bdc-b43f-9b364776e30f:11"
+              },
+              "path": "mitra-detail-setting-mitra-detail-mitra-page-314abe77f1630ba2/attempt-1/screenshots/001-MITRA-TC-047-048.png",
+              "size": 99309,
+              "sha256": "680f29f82d95081ddb9bfc16068cfea2e16cf9d726b1c79777e3762984a6bfb4"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - Detail Mitra Page Tests › MITRA-TC-051 & MITRA-TC-052: Verifikasi bagian Riwayat Aktivitas pada Detail Mitra",
+          "status": "PASSED",
+          "duration": "6.73s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e863-e600-7a18-baf9-e82e1343cf9d:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e863-e600-7a18-baf9-e82e1343cf9d:11"
+              },
+              "path": "mitra-detail-setting-mitra-detail-mitra-page-d40cb5dd17317424/attempt-1/screenshots/001-MITRA-TC-051-052.png",
+              "size": 99309,
+              "sha256": "680f29f82d95081ddb9bfc16068cfea2e16cf9d726b1c79777e3762984a6bfb4"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - Detail Mitra Page Tests › MITRA-TC-054: Verifikasi breadcrumb navigasi kembali ke halaman list",
+          "status": "PASSED",
+          "duration": "6.24s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e864-0047-7232-a868-861011af8e42:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e864-0047-7232-a868-861011af8e42:11"
+              },
+              "path": "mitra-detail-setting-mitra-detail-mitra-page-a8524fe0a32f3ed7/attempt-1/screenshots/001-MITRA-TC-054.png",
+              "size": 99309,
+              "sha256": "680f29f82d95081ddb9bfc16068cfea2e16cf9d726b1c79777e3762984a6bfb4"
+            }
+          ]
+        }
+      ],
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 13,
+      "group": "mitra",
+      "file": "tests/mitra/mitra-modal-crud.e2e.ts",
+      "code": 0,
+      "duration": "47.77s",
+      "tests": [
+        {
+          "title": "Setting Mitra - Modal Tambah & Ubah Mitra Tests › MITRA-TC-017: Verifikasi tombol \"+ Tambah Mitra\" membuka modal form kosong",
+          "status": "PASSED",
+          "duration": "10.76s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e864-50e5-7ea5-8b8e-16532d015d2a:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e864-50e5-7ea5-8b8e-16532d015d2a:18"
+              },
+              "path": "mitra-modal-crud-setting-mitra-modal-tambah-ubah-4dda6b4c1cebce24/attempt-1/screenshots/001-MITRA-TC-017.png",
+              "size": 81881,
+              "sha256": "7bed7e1b4fe370ad22558d481465f9ae9a1354daecf967cb33e7aecc1d29f365"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - Modal Tambah & Ubah Mitra Tests › MITRA-TC-022 & MITRA-TC-023: Validasi pencegahan submit saat field mandatory kosong",
+          "status": "PASSED",
+          "duration": "8.97s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e864-7aee-7179-ba5c-d8cd6013940c:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e864-7aee-7179-ba5c-d8cd6013940c:14"
+              },
+              "path": "mitra-modal-crud-setting-mitra-modal-tambah-ubah-258037922167d381/attempt-1/screenshots/001-MITRA-TC-022-023.png",
+              "size": 87207,
+              "sha256": "7ba13a00ae61bac61bbc93898cc58856a657c98ec22d086040dbcd3b9dff573d"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - Modal Tambah & Ubah Mitra Tests › MITRA-TC-029 & MITRA-TC-032: Validasi BVA password (< 7 karakter) dan mismatch password",
+          "status": "PASSED",
+          "duration": "9.31s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e864-9dfc-7fe4-8e6f-54807b8406e9:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e864-9dfc-7fe4-8e6f-54807b8406e9:19"
+              },
+              "path": "mitra-modal-crud-setting-mitra-modal-tambah-ubah-19df91e7014b8309/attempt-1/screenshots/001-MITRA-TC-029-032.png",
+              "size": 86812,
+              "sha256": "fa874a711d4e73ec5164f9a5962e3d74299920b67277fb5def271cf16741fe0a"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - Modal Tambah & Ubah Mitra Tests › MITRA-TC-015 & MITRA-TC-055: Verifikasi modal \"Ubah Data Mitra\" membuka form ter-prefill",
+          "status": "PASSED",
+          "duration": "6.23s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e864-c25b-797e-b4d3-1834db9c9c88:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e864-c25b-797e-b4d3-1834db9c9c88:11"
+              },
+              "path": "mitra-modal-crud-setting-mitra-modal-tambah-ubah-208f922ee5a062df/attempt-1/screenshots/001-MITRA-TC-015-055.png",
+              "size": 99309,
+              "sha256": "680f29f82d95081ddb9bfc16068cfea2e16cf9d726b1c79777e3762984a6bfb4"
+            }
+          ]
+        }
+      ],
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 14,
+      "group": "mitra",
+      "file": "tests/mitra/mitra-onprogress.e2e.ts",
+      "code": 0,
+      "duration": "31.89s",
+      "tests": [
+        {
+          "title": "Setting Mitra - Active / On-Progress QA Test Cases › MITRA-TC-008: Validasi dropdown filter Tag Kelompok dan hasil penyaringan data",
+          "status": "PASSED",
+          "duration": "7.65s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e865-0157-7e9c-9806-46a3dd403258:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e865-0157-7e9c-9806-46a3dd403258:14"
+              },
+              "path": "mitra-onprogress-setting-mitra-active-on-progress-96b9cf6c08b62106/attempt-1/screenshots/001-MITRA-TC-008.png",
+              "size": 64493,
+              "sha256": "1d758ef9d388b61706cb20cdea2c68610f8bb9b35919acf3c5b9606cd3e217f2"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - Active / On-Progress QA Test Cases › MITRA-TC-033: Validasi penolakan No. HP berisi huruf/simbol pada Modal Tambah Mitra",
+          "status": "PASSED",
+          "duration": "8.13s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e865-1f3a-7eff-bce1-8af204ed61b4:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e865-1f3a-7eff-bce1-8af204ed61b4:12"
+              },
+              "path": "mitra-onprogress-setting-mitra-active-on-progress-6188a3240a900d4b/attempt-1/screenshots/001-MITRA-TC-033.png",
+              "size": 88296,
+              "sha256": "ee3b2972df33348a321602154e87301a230ce788390a22a658a4d3a9e588ba72"
+            }
+          ]
+        },
+        {
+          "title": "Setting Mitra - Active / On-Progress QA Test Cases › MITRA-TC-058: Validasi penolakan No. HP berisi huruf/simbol pada Modal Ubah Data Mitra",
+          "status": "PASSED",
+          "duration": "5.94s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e865-3efb-7251-8630-f24f005fde77:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e865-3efb-7251-8630-f24f005fde77:11"
+              },
+              "path": "mitra-onprogress-setting-mitra-active-on-progress-32384e58fd49ff51/attempt-1/screenshots/001-MITRA-TC-058.png",
+              "size": 99309,
+              "sha256": "680f29f82d95081ddb9bfc16068cfea2e16cf9d726b1c79777e3762984a6bfb4"
+            }
+          ]
+        }
+      ],
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 15,
+      "group": "mitra",
+      "file": "tests/mitra/tag-properti.e2e.ts",
+      "code": 0,
+      "duration": "35.11s",
+      "tests": [
+        {
+          "title": "E2E Framework Suite: Menu Tag Properti › TAG-LIST-FILTER: Verifikasi rendering tabel tag, kolom utama, dan fungsionalitas filter",
+          "status": "PASSED",
+          "duration": "12.39s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e865-776f-72d2-be42-bd7b417732df:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e865-776f-72d2-be42-bd7b417732df:24"
+              },
+              "path": "tag-properti-e2e-framework-suite-menu-tag-159b5c7cb1e9142d/attempt-1/screenshots/001-tag-properti-table-verified.png",
+              "size": 61576,
+              "sha256": "50cc67044e7ea82ff2c9e5fd8b2b0399bd67845fd743b81b7a35810f48346a4e"
+            }
+          ]
+        },
+        {
+          "title": "E2E Framework Suite: Menu Tag Properti › TAG-MODAL-TAMBAH: Verifikasi modal tambah, validasi mandatory field, dan input opsi",
+          "status": "PASSED",
+          "duration": "8.04s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e865-a7d8-7714-9f1c-954fd378d376:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e865-a7d8-7714-9f1c-954fd378d376:20"
+              },
+              "path": "tag-properti-e2e-framework-suite-menu-tag-df99e2ea545630f7/attempt-1/screenshots/001-tag-properti-modal-tambah-filled.png",
+              "size": 77678,
+              "sha256": "310ff19194d83ba6cc6e9b284af73c88ece69ee5cfdeb125f5efbdc6fda610bb"
+            }
+          ]
+        },
+        {
+          "title": "E2E Framework Suite: Menu Tag Properti › TAG-MODAL-EDIT: Verifikasi pembukaan modal edit dengan prefill data dan validasi update",
+          "status": "PASSED",
+          "duration": "6.09s",
+          "error": "",
+          "artifacts": []
+        }
+      ],
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 16,
+      "group": "mitra",
+      "file": "tests/mitra/tag-crud-lifecycle.e2e.ts",
+      "code": 0,
+      "duration": "23.86s",
+      "tests": [
+        {
+          "title": "Tag Properti: Full CRUD Lifecycle with Visual Evidence › TAG-CRUD-LIFECYCLE: Create, Verify, Edit, and Delete Tag Properti with Visual Evidence",
+          "status": "PASSED",
+          "duration": "16.21s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e865-fef9-71a4-8143-043b894500d6:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e865-fef9-71a4-8143-043b894500d6:19"
+              },
+              "path": "tag-crud-lifecycle-tag-properti-full-crud-lifecycle-4e9a5a6686ed63a4/attempt-1/screenshots/001-01-tag-create-form.png",
+              "size": 78297,
+              "sha256": "761eee544785e931186cb2401a5f762569bccade47ecca943dc904831f805a54"
+            },
+            {
+              "id": "01a1e865-fef9-71a4-8143-043b894500d6:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e865-fef9-71a4-8143-043b894500d6:24"
+              },
+              "path": "tag-crud-lifecycle-tag-properti-full-crud-lifecycle-4e9a5a6686ed63a4/attempt-1/screenshots/002-02-tag-verified-in-table.png",
+              "size": 64249,
+              "sha256": "cadca51834495bd9fbb13e9b878c1d680d2178c61ccf37c43038d0ffddf0d5f8"
+            },
+            {
+              "id": "01a1e865-fef9-71a4-8143-043b894500d6:artifact:2",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e865-fef9-71a4-8143-043b894500d6:27"
+              },
+              "path": "tag-crud-lifecycle-tag-properti-full-crud-lifecycle-4e9a5a6686ed63a4/attempt-1/screenshots/003-03-tag-edit-modal-opened.png",
+              "size": 86012,
+              "sha256": "9a5d5bc291c07301021219510e412a6533e7cad9753375b1e823f976b2526001"
+            },
+            {
+              "id": "01a1e865-fef9-71a4-8143-043b894500d6:artifact:3",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e865-fef9-71a4-8143-043b894500d6:34"
+              },
+              "path": "tag-crud-lifecycle-tag-properti-full-crud-lifecycle-4e9a5a6686ed63a4/attempt-1/screenshots/004-04-tag-deleted-verified.png",
+              "size": 61508,
+              "sha256": "b978123ba87b805d9e5db262a3e51fe99c911b52712ea5047f4b2e5e6d677bd5"
+            }
+          ]
+        }
+      ],
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 17,
+      "group": "mitra",
+      "file": "tests/mitra/mitra-crud-lifecycle.e2e.ts",
+      "code": 0,
+      "duration": "27.56s",
+      "tests": [
+        {
+          "title": "Setting Mitra: Full CRUD Lifecycle with Visual Evidence › MITRA-CRUD-LIFECYCLE: Create Mitra, Verify in Table, and Update Mitra with Visual Evidence",
+          "status": "PASSED",
+          "duration": "16.62s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e866-64d5-70f7-917d-c355ead9801b:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e866-64d5-70f7-917d-c355ead9801b:20"
+              },
+              "path": "mitra-crud-lifecycle-setting-mitra-full-crud-185fb5167b1a5520/attempt-1/screenshots/001-01-mitra-create-form.png",
+              "size": 90684,
+              "sha256": "cca7f1abd50612b65572e80ddbe4f3ddd869d04a717f0451bdf8b56cb413d12e"
+            },
+            {
+              "id": "01a1e866-64d5-70f7-917d-c355ead9801b:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e866-64d5-70f7-917d-c355ead9801b:24"
+              },
+              "path": "mitra-crud-lifecycle-setting-mitra-full-crud-185fb5167b1a5520/attempt-1/screenshots/002-02-mitra-verified-in-table.png",
+              "size": 100738,
+              "sha256": "c5fad0400085f1c9ecd682de4075f4b34933427a09771e731574ad7910bc1257"
+            },
+            {
+              "id": "01a1e866-64d5-70f7-917d-c355ead9801b:artifact:2",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e866-64d5-70f7-917d-c355ead9801b:28"
+              },
+              "path": "mitra-crud-lifecycle-setting-mitra-full-crud-185fb5167b1a5520/attempt-1/screenshots/003-03-mitra-edit-modal-opened.png",
+              "size": 89624,
+              "sha256": "281b3512f0d99486ecab14da6934f193751a06650a5973415a278b240c1ddd93"
+            },
+            {
+              "id": "01a1e866-64d5-70f7-917d-c355ead9801b:artifact:3",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e866-64d5-70f7-917d-c355ead9801b:32"
+              },
+              "path": "mitra-crud-lifecycle-setting-mitra-full-crud-185fb5167b1a5520/attempt-1/screenshots/004-04-mitra-updated-verified.png",
+              "size": 101872,
+              "sha256": "1bf9f94464f4f5cbdfcf104b8d69565b00ead14b57483c37a7519bc67b15d6d1"
+            }
+          ]
+        }
+      ],
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 18,
+      "group": "mitra",
+      "file": "tests/mitra/regression-suite.e2e.ts",
+      "code": 1,
+      "duration": "116.55s",
+      "tests": [
+        {
+          "title": "Suite Regresi: Setting Mitra & Detail Mitra › REG-BUG-001: Verifikasi tabel Riwayat Aktivitas memuat kolom diff data Sebelum & Sesudah",
+          "status": "PASSED",
+          "duration": "6.39s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e866-d19b-7b57-8c60-3fbeb4e2b674:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e866-d19b-7b57-8c60-3fbeb4e2b674:11"
+              },
+              "path": "regression-suite-suite-regresi-setting-mitra-485c2d3800c24669/attempt-1/screenshots/001-REG-BUG-001.png",
+              "size": 103521,
+              "sha256": "3c2a6efade7210ea8a5bafef2c2ae14009605c2228ec52999c5c41d063295aaf"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Setting Mitra & Detail Mitra › REG-FEAT-002: Verifikasi tombol Reset membersihkan filter dan merestore data tabel",
+          "status": "PASSED",
+          "duration": "6.72s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e866-ea95-7cab-8393-9b88c9eb1668:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e866-ea95-7cab-8393-9b88c9eb1668:13"
+              },
+              "path": "regression-suite-suite-regresi-setting-mitra-10c65c178dd943cd/attempt-1/screenshots/001-REG-FEAT-002.png",
+              "size": 103521,
+              "sha256": "6257c774db91430f75cf14f5070fa6186225567ecf0d7e377267e4dd7fb2ef95"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Setting Mitra & Detail Mitra › REG-FEAT-008: Verifikasi aturan bisnis Auto Approve untuk mitra baru",
+          "status": "PASSED",
+          "duration": "6.44s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e867-04d2-7f61-bc26-2c67a656dc28:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e867-04d2-7f61-bc26-2c67a656dc28:13"
+              },
+              "path": "regression-suite-suite-regresi-setting-mitra-0d4f01cb61446f93/attempt-1/screenshots/001-REG-FEAT-008.png",
+              "size": 110244,
+              "sha256": "7306be4d96ebcbff6985d92ea751c2b59e590c52a6a4a57db80776124fa4b68c"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Setting Mitra & Detail Mitra › REG-FEAT-009: Verifikasi kolom dan filter Status Verifikasi Email",
+          "status": "PASSED",
+          "duration": "5.31s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e867-1dfd-7e5f-b167-5689ec506442:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e867-1dfd-7e5f-b167-5689ec506442:13"
+              },
+              "path": "regression-suite-suite-regresi-setting-mitra-96b728230a3b40e9/attempt-1/screenshots/001-REG-FEAT-009.png",
+              "size": 103521,
+              "sha256": "3c2a6efade7210ea8a5bafef2c2ae14009605c2228ec52999c5c41d063295aaf"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Setting Mitra & Detail Mitra › REG-FEAT-013: Verifikasi kolom Kelompok Kerjasama / Tag Properti pada tabel mitra",
+          "status": "PASSED",
+          "duration": "5.90s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e867-32bc-76f7-ad85-b841bfd27a75:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e867-32bc-76f7-ad85-b841bfd27a75:13"
+              },
+              "path": "regression-suite-suite-regresi-setting-mitra-b05dfa56ebe98f1e/attempt-1/screenshots/001-REG-FEAT-013.png",
+              "size": 103521,
+              "sha256": "3c2a6efade7210ea8a5bafef2c2ae14009605c2228ec52999c5c41d063295aaf"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Setting Mitra & Detail Mitra › REG-BUG-014: Verifikasi field No. HP pada modal Tambah Mitra menolak karakter huruf",
+          "status": "PASSED",
+          "duration": "5.89s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e867-49cc-71ae-8b67-0dbb5c0b69f5:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e867-49cc-71ae-8b67-0dbb5c0b69f5:12"
+              },
+              "path": "regression-suite-suite-regresi-setting-mitra-399ac620c3a31298/attempt-1/screenshots/001-REG-BUG-014.png",
+              "size": 111811,
+              "sha256": "0f9a9dc5b366e4125455a2b30485959fd2933e8d0f545e5f02061f31ea8e906b"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Menu Tag Properti › REG-FEAT-003 & REG-FEAT-004: Verifikasi Kode Tag otomatis & Color Picker pada Tambah Tag",
+          "status": "PASSED",
+          "duration": "10.58s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e867-60cb-761c-890e-5619db37a08c:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e867-60cb-761c-890e-5619db37a08c:16"
+              },
+              "path": "regression-suite-suite-regresi-menu-tag-properti-40ac106faed93a68/attempt-1/screenshots/001-REG-FEAT-003-004.png",
+              "size": 85896,
+              "sha256": "ee48f8686f8594303a7586d7c75b05917442e478a83307ba9f248c64996b1e89"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Menu Tag Properti › REG-BUG-005 & REG-BUG-007: Verifikasi edit tag tidak menghasilkan 404 dan Jenis Mitra ter-prefill",
+          "status": "PASSED",
+          "duration": "8.49s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e867-8a22-7fdf-9f50-6f5cd5fa37b3:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e867-8a22-7fdf-9f50-6f5cd5fa37b3:14"
+              },
+              "path": "regression-suite-suite-regresi-menu-tag-properti-2745ec2f39afae86/attempt-1/screenshots/001-REG-BUG-005-007.png",
+              "size": 71008,
+              "sha256": "459d8ddb622a1b8561d0aba3cbdd892d09fd57dbb17f15bf62104baab3fc4018"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Menu Tag Properti › REG-BUG-006: Verifikasi penolakan duplikasi Nama Kelompok pada Tag Properti",
+          "status": "FAILED",
+          "duration": "15.08s",
+          "error": "expect.toBeVisible failed\nlocator: locator(\".modal, [role=\\\"dialog\\\"]\").first()\nexpected: visible\nobserved: states: hidden (match count 1)",
+          "artifacts": [
+            {
+              "id": "01a1e867-ab49-710c-bc1a-d441eae1461f:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "regression-suite-suite-regresi-menu-tag-properti-727fbdca9e1f12c4/attempt-1/screen-at-failure.txt",
+              "size": 6937,
+              "sha256": "c44d53eaa38179f7b9af69aee997cfde9befad2aa2a3b1fdf290f0db2cde8f2a"
+            },
+            {
+              "id": "01a1e867-ab49-710c-bc1a-d441eae1461f:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "regression-suite-suite-regresi-menu-tag-properti-727fbdca9e1f12c4/attempt-1/screenshots/001-failure.png",
+              "size": 80514,
+              "sha256": "17764ca91cc19f1ffc76105b80781416d329c53ca6505beaa6f885c9cc042630"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Modul Registrasi Properti › REG-FEAT-010: Validasi field URL Maps bersifat required pada Registrasi Properti",
+          "status": "PASSED",
+          "duration": "6.81s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e867-e63f-73f1-b8a4-0e8dea184da5:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e867-e63f-73f1-b8a4-0e8dea184da5:12"
+              },
+              "path": "regression-suite-suite-regresi-modul-registrasi-d3ed9bee7d5afd0e/attempt-1/screenshots/001-REG-FEAT-010.png",
+              "size": 54944,
+              "sha256": "35ca6404d1707ba639e594e38ba6d3ac079abad3e9d640588b0b4d4bab949187"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Modul Registrasi Properti › REG-FEAT-011: Verifikasi upload foto mendukung multi-file per kategori",
+          "status": "PASSED",
+          "duration": "6.77s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e868-00dc-799d-91d4-4ac9b330e16b:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e868-00dc-799d-91d4-4ac9b330e16b:12"
+              },
+              "path": "regression-suite-suite-regresi-modul-registrasi-311c7c9ce0b91314/attempt-1/screenshots/001-REG-FEAT-011.png",
+              "size": 54931,
+              "sha256": "075979fb466456a6a9cf676dbb84c9ba79d6d9dc56cb1dfceb686c1ef1298e43"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Modul Registrasi Properti › REG-FEAT-012: Verifikasi dukungan input Fasilitas Kamar Tambahan",
+          "status": "PASSED",
+          "duration": "7.01s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e868-1b51-7a8e-bc97-6525bb454061:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e868-1b51-7a8e-bc97-6525bb454061:12"
+              },
+              "path": "regression-suite-suite-regresi-modul-registrasi-ff17ae3fc6497b95/attempt-1/screenshots/001-REG-FEAT-012.png",
+              "size": 54932,
+              "sha256": "8ded784192ba17b4e703ac6f9349650ce9cbe3be1fb24314dc8f177288575693"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Modul Registrasi Properti › REG-BUG-015: Verifikasi field Nomor Ponsel pada form kontak properti menolak huruf",
+          "status": "PASSED",
+          "duration": "6.63s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e868-36b5-7d03-889e-36aa3e13a1d7:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e868-36b5-7d03-889e-36aa3e13a1d7:12"
+              },
+              "path": "regression-suite-suite-regresi-modul-registrasi-3509ecb113b4f8d4/attempt-1/screenshots/001-REG-BUG-015.png",
+              "size": 54932,
+              "sha256": "8ded784192ba17b4e703ac6f9349650ce9cbe3be1fb24314dc8f177288575693"
+            }
+          ]
+        },
+        {
+          "title": "Suite Regresi: Modul Registrasi Properti › REG-FEAT-016 & REG-FEAT-017: Verifikasi sistem menolak duplikasi Nama dan Alamat Properti",
+          "status": "PASSED",
+          "duration": "7.87s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e868-509b-72c8-a6dc-c26122689acd:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e868-509b-72c8-a6dc-c26122689acd:12"
+              },
+              "path": "regression-suite-suite-regresi-modul-registrasi-9c9a64bf320d69e8/attempt-1/screenshots/001-REG-FEAT-016-017.png",
+              "size": 54944,
+              "sha256": "35ca6404d1707ba639e594e38ba6d3ac079abad3e9d640588b0b4d4bab949187"
+            }
+          ]
+        }
+      ],
+      "passed": 13,
+      "failed": 1,
+      "skipped": 0
+    },
+    {
+      "index": 19,
+      "group": "revenue",
+      "file": "tests/reports/revenue-report.e2e.ts",
+      "code": 0,
+      "duration": "57.79s",
+      "tests": [
+        {
+          "title": "Laporan Pendapatan Mitra (Partner Revenue Report) › REV-TC-001 s.d REV-TC-005: Verifikasi Header, Breadcrumbs & 4 Kartu Ringkasan Finansial",
+          "status": "PASSED",
+          "duration": "8.78s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e868-91a0-74fe-a38e-523e501b84fd:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e868-91a0-74fe-a38e-523e501b84fd:18"
+              },
+              "path": "revenue-report-laporan-pendapatan-mitra-partner-cae6e42e51851f2d/attempt-1/screenshots/001-01-header-summary-cards.png",
+              "size": 94195,
+              "sha256": "be8ec789945a1d1f15af8c12e1355ae914d08d55cc8b9fd2079f756d96b0aabd"
+            }
+          ]
+        },
+        {
+          "title": "Laporan Pendapatan Mitra (Partner Revenue Report) › REV-TC-006 s.d REV-TC-014: Verifikasi Interaktivitas Form Filter, Search & Reset",
+          "status": "PASSED",
+          "duration": "15.22s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e868-b3ec-76d3-8201-0451d3315fb3:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e868-b3ec-76d3-8201-0451d3315fb3:21"
+              },
+              "path": "revenue-report-laporan-pendapatan-mitra-partner-ff2c1b78d4010d24/attempt-1/screenshots/001-02-filter-operations.png",
+              "size": 94195,
+              "sha256": "be8ec789945a1d1f15af8c12e1355ae914d08d55cc8b9fd2079f756d96b0aabd"
+            }
+          ]
+        },
+        {
+          "title": "Laporan Pendapatan Mitra (Partner Revenue Report) › REV-TC-015 s.d REV-TC-018: Verifikasi Struktur 10 Kolom Tabel & Integritas Perhitungan Finansial",
+          "status": "PASSED",
+          "duration": "7.41s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e868-ef64-7dfb-9a91-946692060e99:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e868-ef64-7dfb-9a91-946692060e99:11"
+              },
+              "path": "revenue-report-laporan-pendapatan-mitra-partner-6369b545b4100f68/attempt-1/screenshots/001-03-table-and-badges.png",
+              "size": 94195,
+              "sha256": "be8ec789945a1d1f15af8c12e1355ae914d08d55cc8b9fd2079f756d96b0aabd"
+            }
+          ]
+        },
+        {
+          "title": "Laporan Pendapatan Mitra (Partner Revenue Report) › REV-TC-019 & REV-TC-020: Verifikasi Tombol Aksi & Navigasi ke Halaman Rincian Pendapatan Mitra",
+          "status": "PASSED",
+          "duration": "11.39s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e869-0c5b-7317-b5dd-8ece487ab65f:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e869-0c5b-7317-b5dd-8ece487ab65f:16"
+              },
+              "path": "revenue-report-laporan-pendapatan-mitra-partner-43eea8028f27a0da/attempt-1/screenshots/001-04-revenue-detail-page.png",
+              "size": 102510,
+              "sha256": "edd1d91205ae12fc18b1e16195d7ee8f8e3a3d75562e721f3e695213bccd6da3"
+            }
+          ]
+        },
+        {
+          "title": "Laporan Pendapatan Mitra (Partner Revenue Report) › REV-TC-021 s.d REV-TC-024: Verifikasi Tombol Ekspor Dokumen (Excel & PDF) dan Navigasi Pagination",
+          "status": "PASSED",
+          "duration": "6.37s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e869-38de-76a6-a698-92cdddcfc3cf:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e869-38de-76a6-a698-92cdddcfc3cf:13"
+              },
+              "path": "revenue-report-laporan-pendapatan-mitra-partner-f1a2729630290620/attempt-1/screenshots/001-05-export-and-pagination.png",
+              "size": 94195,
+              "sha256": "be8ec789945a1d1f15af8c12e1355ae914d08d55cc8b9fd2079f756d96b0aabd"
+            }
+          ]
+        }
+      ],
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "index": 20,
+      "group": "regression-44",
+      "file": "tests/regression-44-items.e2e.ts",
+      "code": 1,
+      "duration": "232.41s",
+      "tests": [
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-VAL-001: Validasi Wajib Isi pada Form Tambah Data BUMD Muncul untuk Seluruh Field Saat Submit Data Kosong",
+          "status": "PASSED",
+          "duration": "4.58s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e869-6dc0-71f1-92af-4cee495f39c3:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e869-6dc0-71f1-92af-4cee495f39c3:10"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-10624183ed787a49/attempt-1/screenshots/001-BUMD-VAL-001.png",
+              "size": 73806,
+              "sha256": "d37b229578b2c9c7a9688d14f9d4cc0ce04f02f90ac4deda6f2f804768151312"
+            }
+          ]
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-VAL-002: Validasi Format Email Perusahaan Muncul Langsung Saat User Mengisi Format Invalid",
+          "status": "PASSED",
+          "duration": "4.91s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e869-7fa7-7d2b-b773-29ece53d4a43:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e869-7fa7-7d2b-b773-29ece53d4a43:8"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-4deb64c671071acd/attempt-1/screenshots/001-BUMD-VAL-002.png",
+              "size": 71353,
+              "sha256": "8393f2d27c2c0eee895b7e17dc11e606e1a11ba0e235ceef7c4545e8a0c45558"
+            }
+          ]
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-VAL-003: Field Nomor Telepon Menolak Huruf Saat User Klik Selanjutnya di Setiap Tab Identitas",
+          "status": "PASSED",
+          "duration": "4.25s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e869-92d6-784d-acb9-6e4bbf510a8d:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e869-92d6-784d-acb9-6e4bbf510a8d:8"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-d31a7d7a9b9b7a0d/attempt-1/screenshots/001-BUMD-VAL-003.png",
+              "size": 71353,
+              "sha256": "8393f2d27c2c0eee895b7e17dc11e606e1a11ba0e235ceef7c4545e8a0c45558"
+            }
+          ]
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-VAL-004: Validasi Tahun Berdiri Muncul Saat User Mengisi Tahun Masa Depan",
+          "status": "PASSED",
+          "duration": "3.94s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e869-a36d-7aff-9c6a-bf72960bab48:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e869-a36d-7aff-9c6a-bf72960bab48:9"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-8b4e7e286f72b8ec/attempt-1/screenshots/001-BUMD-VAL-004.png",
+              "size": 71361,
+              "sha256": "3abe7750865675afc2211eb81fa8ea1bac9f542ce73c7ecf367001c89766a211"
+            }
+          ]
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-UI-005: Placeholder Dropdown Provinsi Menampilkan \"Pilih Provinsi\" (Bukan \"Pilih Kota/Kabupaten\")",
+          "status": "PASSED",
+          "duration": "6.15s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e869-b2d2-746f-92b5-98ee947f3e0b:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e869-b2d2-746f-92b5-98ee947f3e0b:9"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-421965613b0c4048/attempt-1/screenshots/001-BUMD-UI-005.png",
+              "size": 71353,
+              "sha256": "8393f2d27c2c0eee895b7e17dc11e606e1a11ba0e235ceef7c4545e8a0c45558"
+            }
+          ]
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-UI-006: Hilangkan Tanda (*) pada Seluruh Label Field Form Tambah Data BUMD",
+          "status": "PASSED",
+          "duration": "7.18s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e869-cad7-70e2-9918-0c8f3d840bf6:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e869-cad7-70e2-9918-0c8f3d840bf6:8"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-4d9acd27f3617614/attempt-1/screenshots/001-BUMD-UI-006.png",
+              "size": 71353,
+              "sha256": "8393f2d27c2c0eee895b7e17dc11e606e1a11ba0e235ceef7c4545e8a0c45558"
+            }
+          ]
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-VAL-007: Field No KTP Penanggungjawab dan No KTP Pimpinan Menolak Format Tidak Valid",
+          "status": "PASSED",
+          "duration": "4.35s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e869-e6e2-73bd-9702-7e69b72639d5:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e869-e6e2-73bd-9702-7e69b72639d5:9"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-596de8f9957ebf1e/attempt-1/screenshots/001-BUMD-VAL-007.png",
+              "size": 45994,
+              "sha256": "64745727a944e93f3bff93b4a7173b70bd13966c74e4f33bb03bd7d33baf8f62"
+            }
+          ]
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-EXP-008: [SKIPPED - PENGUJIAN MANUAL] File Excel Berisi Seluruh Data BUMD Setelah Filter Provinsi",
+          "status": "SKIPPED",
+          "duration": "0.01s",
+          "error": "",
+          "artifacts": []
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-UI-009: Konsistensi Label \"Nama Pimpinan\" (Bukan \"Nama CEO\") pada Halaman Bank Data BUMD",
+          "status": "PASSED",
+          "duration": "4.11s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e869-f7ef-7ff3-836d-f0efe9435642:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e869-f7ef-7ff3-836d-f0efe9435642:8"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-c6f7e00534fd8e3a/attempt-1/screenshots/001-BUMD-UI-009.png",
+              "size": 58939,
+              "sha256": "b57b60cad73f3b5321a6926dbee5cbc30ded59a3fcdfe4c3d74d9de328dbcbfc"
+            }
+          ]
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-FLT-010: Hapus Filter \"Jabatan PJ\" pada Halaman Bank Data BUMD",
+          "status": "PASSED",
+          "duration": "4.80s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86a-0800-7bc1-8b24-048d6d49419d:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86a-0800-7bc1-8b24-048d6d49419d:8"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-9a9a249875c19d31/attempt-1/screenshots/001-BUMD-FLT-010.png",
+              "size": 58939,
+              "sha256": "b57b60cad73f3b5321a6926dbee5cbc30ded59a3fcdfe4c3d74d9de328dbcbfc"
+            }
+          ]
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-UI-011: Placeholder No. Telepon dan Email pada Tab PJ Menggunakan Teks Spesifik PJ",
+          "status": "PASSED",
+          "duration": "5.05s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86a-1ac3-7f4e-9bd0-6b94acbcdda3:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86a-1ac3-7f4e-9bd0-6b94acbcdda3:8"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-ffe0cf118225954b/attempt-1/screenshots/001-BUMD-UI-011.png",
+              "size": 71353,
+              "sha256": "8393f2d27c2c0eee895b7e17dc11e606e1a11ba0e235ceef7c4545e8a0c45558"
+            }
+          ]
+        },
+        {
+          "title": "Modul 1: Bank Data BUMD (12 Kasus Uji) › BUMD-UI-012: Placeholder No. Telepon dan Email pada Tab Pimpinan Menggunakan Teks Spesifik Pimpinan",
+          "status": "PASSED",
+          "duration": "4.39s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86a-2e83-787b-a872-8808432dca18:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86a-2e83-787b-a872-8808432dca18:8"
+              },
+              "path": "regression-44-items-modul-1-bank-data-bumd-12-kasus-17815425af7df259/attempt-1/screenshots/001-BUMD-UI-012.png",
+              "size": 71353,
+              "sha256": "8393f2d27c2c0eee895b7e17dc11e606e1a11ba0e235ceef7c4545e8a0c45558"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › MITRA-LOG-001: Riwayat Aktivitas pada Detail Mitra Menampilkan Perubahan Data Sebelum dan Sesudah",
+          "status": "PASSED",
+          "duration": "5.70s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86a-3fad-738c-aa9d-d691caba2e69:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86a-3fad-738c-aa9d-d691caba2e69:11"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-693c073e2c1d68ed/attempt-1/screenshots/001-MITRA-LOG-001.png",
+              "size": 103521,
+              "sha256": "3c2a6efade7210ea8a5bafef2c2ae14009605c2228ec52999c5c41d063295aaf"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › MITRA-FLT-002: Tombol Reset pada Filter Menu Daftar Mitra > Setting Mitra Berfungsi",
+          "status": "PASSED",
+          "duration": "7.04s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86a-55f4-73b7-9586-38e9ba61d4ce:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86a-55f4-73b7-9586-38e9ba61d4ce:12"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-acf66bd87bcde711/attempt-1/screenshots/001-MITRA-FLT-002.png",
+              "size": 103521,
+              "sha256": "6257c774db91430f75cf14f5070fa6186225567ecf0d7e377267e4dd7fb2ef95"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › TAG-GEN-001: Auto Generate Kode Tag Unik pada Form Tambah Tag Properti",
+          "status": "PASSED",
+          "duration": "7.59s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86a-7171-7fbd-ae29-7586bfd5adfa:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86a-7171-7fbd-ae29-7586bfd5adfa:15"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-13f17e7babd99241/attempt-1/screenshots/001-TAG-GEN-001.png",
+              "size": 91798,
+              "sha256": "cfb191eb741a54290d4a481572a02a8a18297dce02ef34d7fae6b44bf3a1eee6"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › TAG-UI-002: Ubah Input Warna Label Menjadi Color Picker pada Form Tambah Tag Properti",
+          "status": "FAILED",
+          "duration": "12.83s",
+          "error": "expect.toBeVisible failed\nlocator: locator(\"input[type=\\\"color\\\"]\").first()\nexpected: visible\nobserved: no node (match count 0)",
+          "artifacts": [
+            {
+              "id": "01a1e86a-8f1d-7db3-998c-3825b6c8be30:artifact:0",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-f0a36427c97cfb0e/attempt-1/screen-at-failure.txt",
+              "size": 7011,
+              "sha256": "06cb25b94b09bba0cb4fd211f791f5aac7756309c82caf0967e59cb996f63b36"
+            },
+            {
+              "id": "01a1e86a-8f1d-7db3-998c-3825b6c8be30:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-f0a36427c97cfb0e/attempt-1/screenshots/001-failure.png",
+              "size": 77035,
+              "sha256": "d7c7ec701415ee5801dcfe26e88f4e08be49cc40a607fb161f736002a1b20d92"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › TAG-ERR-003: Error 404 Tidak Muncul pada Halaman Tag Properti Setelah User Menyimpan Perubahan Data",
+          "status": "PASSED",
+          "duration": "6.27s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86a-c15a-708a-b4a7-c9039d44b575:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86a-c15a-708a-b4a7-c9039d44b575:14"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-16109b1eca54cd37/attempt-1/screenshots/001-TAG-ERR-003.png",
+              "size": 76772,
+              "sha256": "ca8a8516e26d18ba78de5419349b46ef86664dd23243557544347b1d12f9bf69"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › TAG-DUP-004: Validasi Penolakan Nama Kelompok Duplikat pada Modal Tambah Tag Properti",
+          "status": "PASSED",
+          "duration": "6.87s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86a-d9d8-7f58-bf93-54f208c8b27a:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86a-d9d8-7f58-bf93-54f208c8b27a:16"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-a33dcf906916aac8/attempt-1/screenshots/001-TAG-DUP-004.png",
+              "size": 82781,
+              "sha256": "ff86be4b91c7a299827f6593ba05de1d1dec5b40d3a1311089b53ce1ef9113e4"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › TAG-PRE-005: Dropdown Jenis Mitra Ter-prefill Sesuai Data Tersimpan Saat Modal Edit Tag Properti Dibuka",
+          "status": "PASSED",
+          "duration": "7.28s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86a-f4b0-7acb-98b7-a8d55755eb67:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86a-f4b0-7acb-98b7-a8d55755eb67:14"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-2b38b30d28dd9545/attempt-1/screenshots/001-TAG-PRE-005.png",
+              "size": 76772,
+              "sha256": "ca8a8516e26d18ba78de5419349b46ef86664dd23243557544347b1d12f9bf69"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › TRANSIT-EXP-001: Slot Transit Kedaluwarsa Ditolak / Tidak Bisa Dilanjutkan",
+          "status": "FAILED",
+          "duration": "5.82s",
+          "error": "expect.toBeVisible failed\nlocator: locator(\":has-text(\\\"kedaluwarsa\\\"), :has-text(\\\"tidak tersedia\\\"), :has-text(\\\"expired\\\")\").first()\nexpected: visible\nobserved: no node (match count 0)",
+          "artifacts": [
+            {
+              "id": "01a1e86b-111c-7820-b289-b7eff1830610:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-111c-7820-b289-b7eff1830610:1"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-dbde9165504bdb4f/attempt-1/screenshots/001-TRANSIT-EXP-001.png",
+              "size": 52830,
+              "sha256": "8c7f06c3680586ec0ea34c2524f897f753f94418f5af926d692e5f40eb9dec0f"
+            },
+            {
+              "id": "01a1e86b-111c-7820-b289-b7eff1830610:artifact:1",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-dbde9165504bdb4f/attempt-1/screen-at-failure.txt",
+              "size": 385,
+              "sha256": "7844cb7ccfdb963169298e77952b937dab871eef961fa47eb872edfb617780a5"
+            },
+            {
+              "id": "01a1e86b-111c-7820-b289-b7eff1830610:artifact:2",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-dbde9165504bdb4f/attempt-1/screenshots/002-failure.png",
+              "size": 52715,
+              "sha256": "2b107f66ffc0b1ca52cf533ed13169d2c318a77a9e288ab90eb38ce6ed2eb83c"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › MITRA-STS-003: Skema Status Pendaftaran Mitra Menjadi Auto Approve pada Setting Mitra",
+          "status": "PASSED",
+          "duration": "4.94s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-27e5-7b90-bef8-14f6adf1cece:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-27e5-7b90-bef8-14f6adf1cece:13"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-84c8f1a2c2c7b8bd/attempt-1/screenshots/001-MITRA-STS-003.png",
+              "size": 112148,
+              "sha256": "7a132766dd5b06b878f903a9c0a71f3083a164477aa97d9383c591987a7f0c2a"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › MITRA-COL-004: Kolom dan Filter Status Approval Diubah Menjadi Status Verifikasi Email",
+          "status": "PASSED",
+          "duration": "4.74s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-3b33-7565-a1ca-b2048fef9b04:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-3b33-7565-a1ca-b2048fef9b04:12"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-ee93c8b13be67c3d/attempt-1/screenshots/001-MITRA-COL-004.png",
+              "size": 103567,
+              "sha256": "cfb677b0dd5b9f416bfd735e02cbbc1c9c29713d63958440334d8a18f36dbe30"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › MITRA-COL-005: Kolom Kelompok Kerjasama pada Setting Mitra Berdasarkan Tag Properti",
+          "status": "PASSED",
+          "duration": "5.47s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-4db8-76ed-979c-30818dcdf875:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-4db8-76ed-979c-30818dcdf875:12"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-099842f9876394dc/attempt-1/screenshots/001-MITRA-COL-005.png",
+              "size": 103521,
+              "sha256": "3c2a6efade7210ea8a5bafef2c2ae14009605c2228ec52999c5c41d063295aaf"
+            }
+          ]
+        },
+        {
+          "title": "Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji) › MITRA-VAL-006: Field No. HP pada Modal Tambah Mitra Menolak Input Huruf",
+          "status": "PASSED",
+          "duration": "6.69s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-6318-7c7a-9064-614f2da314d1:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-6318-7c7a-9064-614f2da314d1:13"
+              },
+              "path": "regression-44-items-modul-2-setting-mitra-master-tag-759d9cd5c9d49a5a/attempt-1/screenshots/001-MITRA-VAL-006.png",
+              "size": 85155,
+              "sha256": "b8ffb18cde1e7ab6d7ca3104cf1b71bba70e2a5c56fd5ab509fe4dc556349caf"
+            }
+          ]
+        },
+        {
+          "title": "Modul 3: Registrasi Properti Mitra (7 Kasus Uji) › PROP-VAL-001: Field URL Maps Menjadi Required pada Form Registrasi Properti",
+          "status": "PASSED",
+          "duration": "5.84s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-7d3d-75f4-965c-03ab84816950:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-7d3d-75f4-965c-03ab84816950:12"
+              },
+              "path": "regression-44-items-modul-3-registrasi-properti-8bee907b332156cd/attempt-1/screenshots/001-PROP-VAL-001.png",
+              "size": 54927,
+              "sha256": "23e2a15d25aa891bd86256b81649b71af360e8b818efbdd824d6a3a9c038ce57"
+            }
+          ]
+        },
+        {
+          "title": "Modul 3: Registrasi Properti Mitra (7 Kasus Uji) › PROP-MED-002: Terapkan Multi Foto per Kategori pada Tab Foto Registrasi Properti",
+          "status": "PASSED",
+          "duration": "4.79s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-9413-7c12-a0ee-05d5f4e442e1:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-9413-7c12-a0ee-05d5f4e442e1:12"
+              },
+              "path": "regression-44-items-modul-3-registrasi-properti-2554c20857987a69/attempt-1/screenshots/001-PROP-MED-002.png",
+              "size": 54944,
+              "sha256": "35ca6404d1707ba639e594e38ba6d3ac079abad3e9d640588b0b4d4bab949187"
+            }
+          ]
+        },
+        {
+          "title": "Modul 3: Registrasi Properti Mitra (7 Kasus Uji) › PROP-FAC-003: Field Fasilitas Kamar Mendukung Input Fasilitas Tambahan oleh User",
+          "status": "PASSED",
+          "duration": "5.35s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-a6cf-73d5-b1fc-e96c58919cde:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-a6cf-73d5-b1fc-e96c58919cde:12"
+              },
+              "path": "regression-44-items-modul-3-registrasi-properti-1f249ba8ba8c4b5e/attempt-1/screenshots/001-PROP-FAC-003.png",
+              "size": 54927,
+              "sha256": "23e2a15d25aa891bd86256b81649b71af360e8b818efbdd824d6a3a9c038ce57"
+            }
+          ]
+        },
+        {
+          "title": "Modul 3: Registrasi Properti Mitra (7 Kasus Uji) › PROP-VAL-004: Field Nomor Ponsel pada Form Kontak Registrasi Properti Menolak Huruf",
+          "status": "PASSED",
+          "duration": "5.60s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-bbb9-73bf-957c-0e44fa885442:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-bbb9-73bf-957c-0e44fa885442:12"
+              },
+              "path": "regression-44-items-modul-3-registrasi-properti-6a4d24474af14452/attempt-1/screenshots/001-PROP-VAL-004.png",
+              "size": 54932,
+              "sha256": "8ded784192ba17b4e703ac6f9349650ce9cbe3be1fb24314dc8f177288575693"
+            }
+          ]
+        },
+        {
+          "title": "Modul 3: Registrasi Properti Mitra (7 Kasus Uji) › PROP-DUP-005: Validasi Duplikasi Nama Properti pada Registrasi Properti",
+          "status": "PASSED",
+          "duration": "5.65s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-d19a-7b62-889f-c8802c73ddc6:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-d19a-7b62-889f-c8802c73ddc6:12"
+              },
+              "path": "regression-44-items-modul-3-registrasi-properti-bbecc8c1e1fd3edb/attempt-1/screenshots/001-PROP-DUP-005.png",
+              "size": 54944,
+              "sha256": "35ca6404d1707ba639e594e38ba6d3ac079abad3e9d640588b0b4d4bab949187"
+            }
+          ]
+        },
+        {
+          "title": "Modul 3: Registrasi Properti Mitra (7 Kasus Uji) › PROP-DUP-006: Validasi Duplikasi Alamat Properti pada Registrasi Properti",
+          "status": "PASSED",
+          "duration": "5.62s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-e7af-7fde-9da3-6648dd48e25b:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-e7af-7fde-9da3-6648dd48e25b:12"
+              },
+              "path": "regression-44-items-modul-3-registrasi-properti-37dda43483b60999/attempt-1/screenshots/001-PROP-DUP-006.png",
+              "size": 54944,
+              "sha256": "35ca6404d1707ba639e594e38ba6d3ac079abad3e9d640588b0b4d4bab949187"
+            }
+          ]
+        },
+        {
+          "title": "Modul 3: Registrasi Properti Mitra (7 Kasus Uji) › PROP-FLW-007: Form Info Registrasi Properti Mitra Tidak Stuck Setelah Validasi Duplikasi Diperbaiki",
+          "status": "PASSED",
+          "duration": "6.86s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86b-fda1-7ff6-b95a-4015441aac7d:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86b-fda1-7ff6-b95a-4015441aac7d:12"
+              },
+              "path": "regression-44-items-modul-3-registrasi-properti-872c4c3872dce5b6/attempt-1/screenshots/001-PROP-FLW-007.png",
+              "size": 54944,
+              "sha256": "35ca6404d1707ba639e594e38ba6d3ac079abad3e9d640588b0b4d4bab949187"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-CTR-001: Implementasi Halaman Kontrak Hotel pada Portal Mitra (Dinamis Card Pertama)",
+          "status": "PASSED",
+          "duration": "3.57s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-1870-77ce-a9b0-83bc9ad74e8c:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-1870-77ce-a9b0-83bc9ad74e8c:14"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-5a45388e4cf9a85a/attempt-1/screenshots/001-PORTAL-CTR-001.png",
+              "size": 54309,
+              "sha256": "20915159d152250ec4d37a96b9c878eff1a337bbb06f74c34e600c196ef7366f"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-POL-002: Implementasi Halaman Crisis Policy pada Portal Mitra",
+          "status": "PASSED",
+          "duration": "3.82s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-2665-7405-9148-7684577ba540:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-2665-7405-9148-7684577ba540:14"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-cc4f96790d20c63a/attempt-1/screenshots/001-PORTAL-POL-002.png",
+              "size": 99182,
+              "sha256": "55df4d237f41d6109a4d583dec70f4adcde615dbb1f591c8c44c66c852a052cf"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-CON-003: Implementasi Halaman Contact pada Portal Mitra (Dinamis Card Pertama)",
+          "status": "PASSED",
+          "duration": "3.75s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-3550-7791-9c97-21b96a1d3db3:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-3550-7791-9c97-21b96a1d3db3:14"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-c447373e1932ffb5/attempt-1/screenshots/001-PORTAL-CON-003.png",
+              "size": 54299,
+              "sha256": "de7a48c40759b9ec7ac8c843796e702d8ba104fecc4a28e9f380dfd4a040b03b"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-POL-004: Form Crisis Policy Tidak Stuck Setelah Field Range Tanggal Kosong Disimpan lalu Dilengkapi",
+          "status": "PASSED",
+          "duration": "1.86s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-43f5-7664-a32c-0136a1489220:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-43f5-7664-a32c-0136a1489220:1"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-1f27999be4160165/attempt-1/screenshots/001-PORTAL-POL-004.png",
+              "size": 79828,
+              "sha256": "bdbb64afc9f0221994f4ad759e21b19abdd934e19c67deef1fd9c839c1528ffa"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › AUTH-REV-001: Integrasi Pendaftaran Mitra OTA dengan Halaman Revamp & Modal Login Baru",
+          "status": "FAILED",
+          "duration": "5.89s",
+          "error": "expect.toBeVisible failed\nlocator: locator(\"a[href*=\\\"mitra/register\\\"], a:has-text(\\\"Daftar Mitra\\\"), button:has-text(\\\"Daftar Mitra\\\")\").first()\nexpected: visible\nobserved: no node (match count 0)",
+          "artifacts": [
+            {
+              "id": "01a1e86c-4b39-7e4d-b912-6015b5785b40:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-4b39-7e4d-b912-6015b5785b40:1"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-75ce5839c59f0841/attempt-1/screenshots/001-AUTH-REV-001.png",
+              "size": 52684,
+              "sha256": "9b8abc277d90fcb975e14137a75e78cafdf98a7ffb125c889e48e886d50c37eb"
+            },
+            {
+              "id": "01a1e86c-4b39-7e4d-b912-6015b5785b40:artifact:1",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-75ce5839c59f0841/attempt-1/screen-at-failure.txt",
+              "size": 381,
+              "sha256": "bb43169298fd44f893bf6a2562823a3fd7f186a8b1de7094e77ee59a24ec3a0c"
+            },
+            {
+              "id": "01a1e86c-4b39-7e4d-b912-6015b5785b40:artifact:2",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-75ce5839c59f0841/attempt-1/screenshots/002-failure.png",
+              "size": 52615,
+              "sha256": "e830f6fb4bb00da2ae9a6e63fb2ffdade4a8ce90d0ff73934aa73fb2821e0537"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-VER-005: Verifikasi Email pada Kontak Hotel (Modal Notifikasi Dikirimkan)",
+          "status": "PASSED",
+          "duration": "4.42s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-624f-7669-892c-46e4adee422a:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-624f-7669-892c-46e4adee422a:13"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-84b4fb2496043da8/attempt-1/screenshots/001-PORTAL-VER-005.png",
+              "size": 54299,
+              "sha256": "de7a48c40759b9ec7ac8c843796e702d8ba104fecc4a28e9f380dfd4a040b03b"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-UI-006: Sembunyikan Pilihan Kode Negara pada Field Nomor Telepon dan Fax di Form Tambah Kontak",
+          "status": "PASSED",
+          "duration": "3.67s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-7398-7abf-896b-6a416ff2487a:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-7398-7abf-896b-6a416ff2487a:13"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-190645971b33540e/attempt-1/screenshots/001-PORTAL-UI-006.png",
+              "size": 54299,
+              "sha256": "de7a48c40759b9ec7ac8c843796e702d8ba104fecc4a28e9f380dfd4a040b03b"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-POS-007: Penyesuaian Fitur Kontak per Properti dan Posisi Kontak per Seksi pada Dashboard Mitra",
+          "status": "PASSED",
+          "duration": "3.32s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-81eb-7553-a816-93353db5bcb4:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-81eb-7553-a816-93353db5bcb4:13"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-8fb83f70a189fc4e/attempt-1/screenshots/001-PORTAL-POS-007.png",
+              "size": 54309,
+              "sha256": "20915159d152250ec4d37a96b9c878eff1a337bbb06f74c34e600c196ef7366f"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-EDT-008: Fitur Edit Kontak Belum Tersedia / Tersedia pada Halaman Kontak Properti Mitra",
+          "status": "PASSED",
+          "duration": "3.74s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-8ee4-7159-ab2e-5ec58f034b64:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-8ee4-7159-ab2e-5ec58f034b64:13"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-425a35c8f410ad26/attempt-1/screenshots/001-PORTAL-EDT-008.png",
+              "size": 54309,
+              "sha256": "2537f1439939e323b4a8a1b9a06cbb0d951680531612fda633c75ac70f43cf27"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-OPR-009: Field Jam Operasional Tersedia pada Form Tambah dan Edit Kontak",
+          "status": "PASSED",
+          "duration": "3.69s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-9d81-719a-8e0f-4ee42494dbcd:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-9d81-719a-8e0f-4ee42494dbcd:13"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-d6a12c9619c40c21/attempt-1/screenshots/001-PORTAL-OPR-009.png",
+              "size": 54296,
+              "sha256": "9208ee08f8f71ed10d7fb22055e372b160b641f3e2c1888f13774a18271010bc"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-POS-010: Posisi Kontak pada Seksi Lain Tidak Ikut Berubah Saat Posisi Diperbarui di Salah Satu Seksi",
+          "status": "PASSED",
+          "duration": "3.77s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-abf0-7ede-809a-dca77fbb8e77:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-abf0-7ede-809a-dca77fbb8e77:13"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-7b551e806f8e9926/attempt-1/screenshots/001-PORTAL-POS-010.png",
+              "size": 54299,
+              "sha256": "de7a48c40759b9ec7ac8c843796e702d8ba104fecc4a28e9f380dfd4a040b03b"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-UI-011: Judul Form Edit Kontak Menampilkan \"Edit Kontak\" (Bukan \"Tambah Kontak\")",
+          "status": "PASSED",
+          "duration": "4.29s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-baa8-7c7b-900c-e8c2f752b57c:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-baa8-7c7b-900c-e8c2f752b57c:14"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-b47f1b355949597d/attempt-1/screenshots/001-PORTAL-UI-011.png",
+              "size": 54309,
+              "sha256": "20915159d152250ec4d37a96b9c878eff1a337bbb06f74c34e600c196ef7366f"
+            }
+          ]
+        },
+        {
+          "title": "Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus Uji) › PORTAL-VER-012: Status Verifikasi Email Tetap Terverifikasi Saat User Mengedit Kontak Tanpa Mengubah Email",
+          "status": "PASSED",
+          "duration": "4.55s",
+          "error": "",
+          "artifacts": [
+            {
+              "id": "01a1e86c-cb66-7a6a-9261-b5773d32ee8a:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-cb66-7a6a-9261-b5773d32ee8a:13"
+              },
+              "path": "regression-44-items-modul-4-portal-mitra-kontak-c771b12e2d74cd43/attempt-1/screenshots/001-PORTAL-VER-012.png",
+              "size": 54296,
+              "sha256": "9208ee08f8f71ed10d7fb22055e372b160b641f3e2c1888f13774a18271010bc"
+            }
+          ]
+        }
+      ],
+      "passed": 40,
+      "failed": 3,
+      "skipped": 1
+    },
+    {
+      "index": 21,
+      "group": "lifecycle",
+      "file": "tests/mitra/property-approval-kso-lifecycle.e2e.ts",
+      "code": 1,
+      "duration": "60.38s",
+      "tests": [
+        {
+          "title": "REG-LIFECYCLE-002: 35-Step Full Regression Lifecycle with AI Agent Integration",
+          "status": "FAILED",
+          "duration": "53.22s",
+          "error": "selectOption did not become actionable in time: locator.selectOption: Timeout 29715ms exceeded.\nCall log:\n  - waiting for locator('select#province_id')\n    - locator resolved to <select required=\"\" tabindex=\"-1\" id=\"province_id\" name=\"province_id\" aria-hidden=\"true\" class=\"mp-form-control select2 select2-hidden-accessible\">…</select>\n  - attempting select option action\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n    - waiting 20ms\n    2 × waiting for element to be visible and enabled\n      - did not find some options\n    - retrying select option action\n      - waiting 100ms\n    58 × waiting for element to be visible and enabled\n       - did not find some options\n     - retrying select option action\n       - waiting 500ms\n: locator(\"select#province_id\")",
+          "artifacts": [
+            {
+              "id": "01a1e86c-f9f3-7dcd-a0e3-ae18f673a45b:artifact:0",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-f9f3-7dcd-a0e3-ae18f673a45b:21"
+              },
+              "path": "property-approval-kso-lifecycle-reg-lifecycle-002-35-step-full-f7e42b1c324eb02f/attempt-1/screenshots/001-step-01-buat-mitra-manajemen.png",
+              "size": 91091,
+              "sha256": "a5fc61a5a0da99dce72e0786d31e2f556b94dc98da752a5ad9eae1f5832e22d9"
+            },
+            {
+              "id": "01a1e86c-f9f3-7dcd-a0e3-ae18f673a45b:artifact:1",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "step",
+                "stepId": "01a1e86c-f9f3-7dcd-a0e3-ae18f673a45b:40"
+              },
+              "path": "property-approval-kso-lifecycle-reg-lifecycle-002-35-step-full-f7e42b1c324eb02f/attempt-1/screenshots/002-step-02-login-dashboard-mitra.png",
+              "size": 38691,
+              "sha256": "ac7acc7d1c6d06ab3b0e27e7eeaffb179ccb991f16b3318852bd546487696b8f"
+            },
+            {
+              "id": "01a1e86c-f9f3-7dcd-a0e3-ae18f673a45b:artifact:2",
+              "kind": "log",
+              "mediaType": "text/plain",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "property-approval-kso-lifecycle-reg-lifecycle-002-35-step-full-f7e42b1c324eb02f/attempt-1/screen-at-failure.txt",
+              "size": 3982,
+              "sha256": "87002741f73d50735f9ec35f762cfe8351efa5dcc1fccb14c12f3c092a5eff72"
+            },
+            {
+              "id": "01a1e86c-f9f3-7dcd-a0e3-ae18f673a45b:artifact:3",
+              "kind": "screenshot",
+              "mediaType": "image/png",
+              "redaction": "complete",
+              "producer": {
+                "kind": "attempt"
+              },
+              "path": "property-approval-kso-lifecycle-reg-lifecycle-002-35-step-full-f7e42b1c324eb02f/attempt-1/screenshots/003-failure.png",
+              "size": 83454,
+              "sha256": "3247cc642b90bde24c09c341039f90dcf47cc6fbbc32ba7c43282a59afe227e2"
+            }
+          ]
+        }
+      ],
+      "passed": 0,
+      "failed": 1,
+      "skipped": 0
+    }
+  ]
+}

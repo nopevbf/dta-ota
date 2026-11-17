@@ -1,13 +1,13 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
-import { loginAndNavigateToMitra } from './support.ts';
+import { loginAndNavigateToMitra, takeEvidenceScreenshot } from './support.ts';
 
 test.describe('Setting Mitra - Active / On-Progress QA Test Cases', () => {
   /**
    * Ref Scenario : MITRA-SC-008
    * Test Case IDs: MITRA-TC-008-01 s/d MITRA-TC-008-04
    */
-  test('MITRA-TC-008: Validasi dropdown filter Tag Kelompok dan hasil penyaringan data', async ({ browser }) => {
+  test('MITRA-TC-008: Validasi dropdown filter Tag Kelompok dan hasil penyaringan data', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const tagDropdown = browser.locator('select[name="tag_kelompok"], select[name="tag"], select:has-text("Kelompok")').first();
@@ -22,13 +22,14 @@ test.describe('Setting Mitra - Active / On-Progress QA Test Cases', () => {
       // Pastikan tabel merespons filter
       await expect(browser.locator('table, .empty-state').first()).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-008');
   });
 
   /**
    * Ref Scenario : MITRA-SC-033
    * Test Case IDs: MITRA-TC-033-01 s/d MITRA-TC-033-04
    */
-  test('MITRA-TC-033: Validasi penolakan No. HP berisi huruf/simbol pada Modal Tambah Mitra', async ({ browser }) => {
+  test('MITRA-TC-033: Validasi penolakan No. HP berisi huruf/simbol pada Modal Tambah Mitra', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const tambahBtn = browser.locator('button:has-text("Tambah Mitra"), a:has-text("Tambah Mitra")').first();
@@ -55,13 +56,14 @@ test.describe('Setting Mitra - Active / On-Progress QA Test Cases', () => {
         expect(inputVal).toBeDefined();
       }
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-033');
   });
 
   /**
    * Ref Scenario : MITRA-SC-058
    * Test Case IDs: MITRA-TC-058-01 s/d MITRA-TC-058-04
    */
-  test('MITRA-TC-058: Validasi penolakan No. HP berisi huruf/simbol pada Modal Ubah Data Mitra', async ({ browser }) => {
+  test('MITRA-TC-058: Validasi penolakan No. HP berisi huruf/simbol pada Modal Ubah Data Mitra', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const editBtn = browser.locator('a[title*="Ubah"], button[title*="Ubah"], .fa-pencil, .fa-edit').first();
@@ -85,5 +87,6 @@ test.describe('Setting Mitra - Active / On-Progress QA Test Cases', () => {
         await expect(modalEdit).toBeVisible();
       }
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-058');
   });
 });

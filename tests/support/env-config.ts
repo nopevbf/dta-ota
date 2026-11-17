@@ -225,3 +225,16 @@ export const APP_QUERY = resolved.appQuery;
 export const TARGET_URL = resolved.targetUrl;
 export const COOKIE_DOMAINS = resolved.cookieDomains;
 export const CREDENTIALS = resolved.credentials;
+
+/**
+ * Mendapatkan direktori penyimpanan bukti screenshot dinamis berbasis lingkungan aktif (default: naufalans)
+ */
+export function getReportScreenshotDir(submodule?: string): string {
+  const envName = (process.env.APP_ENV || resolved.activeEnv || 'naufalans').toLowerCase();
+  const base = path.resolve(process.cwd(), 'reports', envName, 'screenshots');
+  const target = submodule ? path.join(base, submodule) : base;
+  if (!fs.existsSync(target)) {
+    fs.mkdirSync(target, { recursive: true });
+  }
+  return target;
+}

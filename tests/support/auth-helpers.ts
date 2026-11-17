@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { Browser } from '@e2e-dev/web';
-import { TARGET_URL, AUTH_LOGOUT_URL, COOKIE_DOMAINS, CREDENTIALS } from './env-config.ts';
+import { TARGET_URL, AUTH_LOGOUT_URL, COOKIE_DOMAINS, CREDENTIALS, getReportScreenshotDir } from './env-config.ts';
 
 export { TARGET_URL, AUTH_LOGOUT_URL, COOKIE_DOMAINS, CREDENTIALS };
 
@@ -56,10 +56,7 @@ export async function setupApiRouteBridge(browser: Browser): Promise<void> {
  * Menyimpan screenshot pengujian ke direktori reports/screenshots/auth/
  */
 export async function takeAuthScreenshot(app: any, filename: string): Promise<string> {
-  const reportsDir = path.resolve(process.cwd(), 'reports', 'screenshots', 'auth');
-  if (!fs.existsSync(reportsDir)) {
-    fs.mkdirSync(reportsDir, { recursive: true });
-  }
+  const reportsDir = getReportScreenshotDir('auth');
 
   const cleanName = filename.endsWith('.png') ? filename : `${filename}.png`;
   const destPath = path.join(reportsDir, cleanName);

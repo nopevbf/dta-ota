@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { Browser } from '@e2e-dev/web';
 import { credentials, expect } from 'e2e';
-import { MANAGEMENT_URL, AUTH_URL, MITRA_AUTH_URL, CREDENTIALS } from '../support/env-config.ts';
+import { MANAGEMENT_URL, AUTH_URL, MITRA_AUTH_URL, CREDENTIALS, getReportScreenshotDir } from '../support/env-config.ts';
 
 const baseMgmt = MANAGEMENT_URL.replace(/\/+$/, '');
 
@@ -90,10 +90,7 @@ export async function loginAndNavigateToRegistrasiProperti(browser: Browser) {
  * Helper untuk menyimpan bukti tangkapan layar pengujian ke reports/mitra/screenshots/
  */
 export async function takeEvidenceScreenshot(app: any, label: string, saveFilename?: string): Promise<string> {
-  const reportsDir = path.resolve(process.cwd(), 'reports', 'mitra', 'screenshots');
-  if (!fs.existsSync(reportsDir)) {
-    fs.mkdirSync(reportsDir, { recursive: true });
-  }
+  const reportsDir = getReportScreenshotDir('mitra');
 
   try {
     const relative = await app.screenshot(label);
@@ -133,10 +130,7 @@ export async function takeEvidenceScreenshot(app: any, label: string, saveFilena
  * Helper untuk menyimpan bukti tangkapan layar pengujian siklus 25 tahapan ke reports/mitra/screenshots/lifecycle/
  */
 export async function takeLifecycleScreenshot(app: any, stepNumber: number, stepName: string): Promise<string> {
-  const reportsDir = path.resolve(process.cwd(), 'reports', 'mitra', 'screenshots', 'lifecycle');
-  if (!fs.existsSync(reportsDir)) {
-    fs.mkdirSync(reportsDir, { recursive: true });
-  }
+  const reportsDir = getReportScreenshotDir('lifecycle');
 
   const prefix = String(stepNumber).padStart(2, '0');
   const filename = `${prefix}-${stepName}.png`;

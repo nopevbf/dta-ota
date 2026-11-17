@@ -1,9 +1,9 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
-import { loginAndNavigateToMitra } from './support.ts';
+import { loginAndNavigateToMitra, takeEvidenceScreenshot } from './support.ts';
 
 test.describe('Setting Mitra - Modal Tambah & Ubah Mitra Tests', () => {
-  test('MITRA-TC-017: Verifikasi tombol "+ Tambah Mitra" membuka modal form kosong', async ({ browser }) => {
+  test('MITRA-TC-017: Verifikasi tombol "+ Tambah Mitra" membuka modal form kosong', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const tambahBtn = browser.locator('button:has-text("Tambah Mitra"), a:has-text("Tambah Mitra"), button:has-text("Tambah")').first();
@@ -19,9 +19,10 @@ test.describe('Setting Mitra - Modal Tambah & Ubah Mitra Tests', () => {
     await expect(browser.locator('input[name="email"], #email').first()).toBeVisible();
     await expect(browser.locator('input[name="password"], #password').first()).toBeVisible();
     await expect(browser.locator('input[name="password_confirmation"], #password_confirmation').first()).toBeVisible();
+    await takeEvidenceScreenshot(app, 'MITRA-TC-017');
   });
 
-  test('MITRA-TC-022 & MITRA-TC-023: Validasi pencegahan submit saat field mandatory kosong', async ({ browser }) => {
+  test('MITRA-TC-022 & MITRA-TC-023: Validasi pencegahan submit saat field mandatory kosong', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const tambahBtn = browser.locator('button:has-text("Tambah Mitra"), a:has-text("Tambah Mitra")').first();
@@ -36,9 +37,10 @@ test.describe('Setting Mitra - Modal Tambah & Ubah Mitra Tests', () => {
       const modal = browser.locator('.modal, [role="dialog"]').first();
       await expect(modal).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-022-023');
   });
 
-  test('MITRA-TC-029 & MITRA-TC-032: Validasi BVA password (< 7 karakter) dan mismatch password', async ({ browser }) => {
+  test('MITRA-TC-029 & MITRA-TC-032: Validasi BVA password (< 7 karakter) dan mismatch password', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const tambahBtn = browser.locator('button:has-text("Tambah Mitra"), a:has-text("Tambah Mitra")').first();
@@ -64,9 +66,10 @@ test.describe('Setting Mitra - Modal Tambah & Ubah Mitra Tests', () => {
       const modal = browser.locator('.modal, [role="dialog"]').first();
       await expect(modal).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-029-032');
   });
 
-  test('MITRA-TC-015 & MITRA-TC-055: Verifikasi modal "Ubah Data Mitra" membuka form ter-prefill', async ({ browser }) => {
+  test('MITRA-TC-015 & MITRA-TC-055: Verifikasi modal "Ubah Data Mitra" membuka form ter-prefill', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const editBtn = browser.locator('a[title*="Ubah"], button[title*="Ubah"], .fa-pencil, .fa-edit').first();
@@ -83,5 +86,6 @@ test.describe('Setting Mitra - Modal Tambah & Ubah Mitra Tests', () => {
         expect(val.length).toBeGreaterThan(0);
       }
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-015-055');
   });
 });

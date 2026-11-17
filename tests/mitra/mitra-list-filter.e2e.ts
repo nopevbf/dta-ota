@@ -1,9 +1,9 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
-import { loginAndNavigateToMitra } from './support.ts';
+import { loginAndNavigateToMitra, takeEvidenceScreenshot } from './support.ts';
 
 test.describe('Setting Mitra - List, Tab & Filter Tests', () => {
-  test('MITRA-TC-001: Verifikasi tabel mitra dan badge counter "Daftar Seluruh Mitra"', async ({ browser }) => {
+  test('MITRA-TC-001: Verifikasi tabel mitra dan badge counter "Daftar Seluruh Mitra"', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     // Verifikasi keberadaan tabel mitra
@@ -19,9 +19,10 @@ test.describe('Setting Mitra - List, Tab & Filter Tests', () => {
     // Verifikasi minimal terdapat kolom tabel
     const thElements = browser.locator('table th');
     await expect(await thElements.count()).toBeGreaterThan(0);
+    await takeEvidenceScreenshot(app, 'MITRA-TC-001');
   });
 
-  test('MITRA-TC-002: Verifikasi tab "Memiliki Minimal 1 Properti"', async ({ browser }) => {
+  test('MITRA-TC-002: Verifikasi tab "Memiliki Minimal 1 Properti"', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const tabMin1 = browser.locator('text=Memiliki Minimal 1 Properti, a:has-text("Minimal 1 Properti")').first();
@@ -29,9 +30,10 @@ test.describe('Setting Mitra - List, Tab & Filter Tests', () => {
       await tabMin1.click();
       await expect(browser.locator('body')).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-002');
   });
 
-  test('MITRA-TC-005 & MITRA-TC-006: Verifikasi filter pencarian Nama / Email dan Empty State', async ({ browser }) => {
+  test('MITRA-TC-005 & MITRA-TC-006: Verifikasi filter pencarian Nama / Email dan Empty State', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const searchInput = browser.locator('input[placeholder*="Nama"], input[placeholder*="Email"], input[name="search"], input[type="search"]').first();
@@ -48,9 +50,10 @@ test.describe('Setting Mitra - List, Tab & Filter Tests', () => {
       // Reset / Hapus input
       await searchInput.fill('');
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-005-006');
   });
 
-  test('MITRA-TC-007: Verifikasi dropdown filter Status Verifikasi Email (Terverifikasi / Belum Terverifikasi)', async ({ browser }) => {
+  test('MITRA-TC-007: Verifikasi dropdown filter Status Verifikasi Email (Terverifikasi / Belum Terverifikasi)', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const statusDropdown = browser.locator('select[name="status"], select[name="email_verified"], select:has-text("Status")').first();
@@ -64,23 +67,24 @@ test.describe('Setting Mitra - List, Tab & Filter Tests', () => {
       }
       await expect(browser.locator('table tbody').first()).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-007');
   });
 
-  // [OBSOLETE / WAIVED] - 03 Nov 2026: Skenario ini sudah tidak relevan karena mitra langsung terverifikasi secara otomatis dan tidak memerlukan tombol aksi approval lagi.
-  // test('MITRA-TC-012 & MITRA-TC-013: Verifikasi kolom Aksi pada mitra Pending dan Approved', async ({ browser }) => {
-  //   await loginAndNavigateToMitra(browser);
-  //
-  //   const rows = browser.locator('table tbody tr');
-  //   const rowCount = await rows.count().catch(() => 0);
-  //
-  //   if (rowCount > 0) {
-  //     // Periksa minimal ada tombol Lihat (mata) atau Ubah (pensil) di kolom aksi
-  //     const actionIcons = browser.locator('table tbody tr td:last-child a, table tbody tr td:last-child button');
-  //     await expect(await actionIcons.count()).toBeGreaterThan(0);
-  //   }
-  // });
+  test('MITRA-TC-012 & MITRA-TC-013: Verifikasi kolom Aksi pada mitra Pending dan Approved', async ({ app, browser }) => {
+    await loginAndNavigateToMitra(browser);
 
-  test('MITRA-TC-021: Verifikasi tombol Reset filter', async ({ browser }) => {
+    const rows = browser.locator('table tbody tr');
+    const rowCount = await rows.count().catch(() => 0);
+
+    if (rowCount > 0) {
+      // Periksa minimal ada tombol Lihat (mata) atau Ubah (pensil) di kolom aksi
+      const actionIcons = browser.locator('table tbody tr td:last-child a, table tbody tr td:last-child button');
+      await expect(await actionIcons.count()).toBeGreaterThan(0);
+    }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-012-013');
+  });
+
+  test('MITRA-TC-021: Verifikasi tombol Reset filter', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const resetBtn = browser.locator('button:has-text("Reset"), a:has-text("Reset")').first();
@@ -88,5 +92,6 @@ test.describe('Setting Mitra - List, Tab & Filter Tests', () => {
       await resetBtn.click();
       await expect(browser.locator('table').first()).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-021');
   });
 });

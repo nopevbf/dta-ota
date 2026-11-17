@@ -1,9 +1,9 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
-import { loginAndNavigateToBumd, fillTab1, fillTab2, fillTab3 } from './support.ts';
+import { loginAndNavigateToBumd, fillTab1, fillTab2, fillTab3, takeEvidenceScreenshot } from './support.ts';
 
 test.describe('Fitur Tambahan: Fee BUMD Tests', () => {
-  test('BUMD-FEE-006: verify Fee Management and Fee BUMD columns in table', async ({ browser }) => {
+  test('BUMD-FEE-006: verify Fee Management and Fee BUMD columns in table', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd');
 
     const feeMgmtHeader = browser.locator('th:has-text("Fee Management")');
@@ -20,9 +20,10 @@ test.describe('Fitur Tambahan: Fee BUMD Tests', () => {
     await expect(firstRowBumdFee).toBeVisible();
     await expect(firstRowMgmtFee).toContainText('%');
     await expect(firstRowBumdFee).toContainText('%');
+    await takeEvidenceScreenshot(app, 'BUMD-FEE-006');
   });
 
-  test('BUMD-FEE-001 & BUMD-FEE-002: navigate to Fee BUMD tab and validate inputs', async ({ browser }) => {
+  test('BUMD-FEE-001 & BUMD-FEE-002: navigate to Fee BUMD tab and validate inputs', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
 
     // 1. Isi Tab 1
@@ -61,9 +62,10 @@ test.describe('Fitur Tambahan: Fee BUMD Tests', () => {
 
     // Verifikasi kembali di Tab 3
     await expect(browser.locator('input[name="leader_name"]')).toBeVisible();
+    await takeEvidenceScreenshot(app, 'BUMD-FEE-001-002');
   });
 
-  test('BUMD-FEE-003: Boundary Value Analysis (BVA) for Fee BUMD (0% and 100%)', async ({ browser }) => {
+  test('BUMD-FEE-003: Boundary Value Analysis (BVA) for Fee BUMD (0% and 100%)', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
 
     // Isi Tab 1
@@ -96,5 +98,6 @@ test.describe('Fitur Tambahan: Fee BUMD Tests', () => {
     await feeBumdInput.fill('0');
     expect(await feeMgmtInput.inputValue()).toBe('100');
     expect(await feeBumdInput.inputValue()).toBe('0');
+    await takeEvidenceScreenshot(app, 'BUMD-FEE-003');
   });
 });

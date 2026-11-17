@@ -1,9 +1,9 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
-import { loginAndNavigateToMitra } from './support.ts';
+import { loginAndNavigateToMitra, takeEvidenceScreenshot } from './support.ts';
 
 test.describe('Setting Mitra - Detail Mitra Page Tests', () => {
-  test('MITRA-TC-014 & MITRA-TC-041: Akses halaman Detail Mitra dan validasi atribut panel', async ({ browser }) => {
+  test('MITRA-TC-014 & MITRA-TC-041: Akses halaman Detail Mitra dan validasi atribut panel', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     // Klik tombol aksi Lihat (mata) baris pertama
@@ -21,9 +21,10 @@ test.describe('Setting Mitra - Detail Mitra Page Tests', () => {
       const detailPanel = browser.locator('body');
       await expect(detailPanel).toContainText(/Kode Mitra|PIC|Email|Properti|Status/);
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-014-041');
   });
 
-  test('MITRA-TC-047 & MITRA-TC-048: Verifikasi bagian Daftar Properti pada Detail Mitra', async ({ browser }) => {
+  test('MITRA-TC-047 & MITRA-TC-048: Verifikasi bagian Daftar Properti pada Detail Mitra', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const viewBtn = browser.locator('a[title*="Lihat"], button[title*="Lihat"], .fa-eye').first();
@@ -33,9 +34,10 @@ test.describe('Setting Mitra - Detail Mitra Page Tests', () => {
       const propertiSection = browser.locator('text=Daftar Properti, text=Properti').first();
       await expect(propertiSection).toBeVisible();
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-047-048');
   });
 
-  test('MITRA-TC-051 & MITRA-TC-052: Verifikasi bagian Riwayat Aktivitas pada Detail Mitra', async ({ browser }) => {
+  test('MITRA-TC-051 & MITRA-TC-052: Verifikasi bagian Riwayat Aktivitas pada Detail Mitra', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const viewBtn = browser.locator('a[title*="Lihat"], button[title*="Lihat"], .fa-eye').first();
@@ -47,9 +49,10 @@ test.describe('Setting Mitra - Detail Mitra Page Tests', () => {
         await expect(aktivitasSection).toBeVisible();
       }
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-051-052');
   });
 
-  test('MITRA-TC-054: Verifikasi breadcrumb navigasi kembali ke halaman list', async ({ browser }) => {
+  test('MITRA-TC-054: Verifikasi breadcrumb navigasi kembali ke halaman list', async ({ app, browser }) => {
     await loginAndNavigateToMitra(browser);
 
     const viewBtn = browser.locator('a[title*="Lihat"], button[title*="Lihat"], .fa-eye').first();
@@ -62,5 +65,6 @@ test.describe('Setting Mitra - Detail Mitra Page Tests', () => {
         await expect(browser.locator('table')).toBeVisible();
       }
     }
+    await takeEvidenceScreenshot(app, 'MITRA-TC-054');
   });
 });

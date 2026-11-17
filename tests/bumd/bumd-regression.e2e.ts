@@ -13,7 +13,7 @@ import {
 } from './support.ts';
 
 test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', () => {
-  test('BUMD-REG-001: Table Rendering, Fee Columns, and Action Toolbar Integrity', async ({ browser }) => {
+  test('BUMD-REG-001: Table Rendering, Fee Columns, and Action Toolbar Integrity', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd');
 
     // Verifikasi header tabel
@@ -25,9 +25,10 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
     // Verifikasi tombol aksi atas
     await expect(browser.locator('a[href*="/create"]:has-text("Tambah")')).toBeVisible();
     await expect(browser.locator('a[href*="/export/excel"]:has-text("Excel")')).toBeVisible();
+    await takeEvidenceScreenshot(app, 'BUMD-REG-001');
   });
 
-  test('BUMD-REG-002: Wizard Stepper Navigation and Form State Retention (Tab 1 to Tab 4)', async ({ browser }) => {
+  test('BUMD-REG-002: Wizard Stepper Navigation and Form State Retention (Tab 1 to Tab 4)', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
 
     // Tab 1
@@ -57,6 +58,7 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
 
     // Nilai perusahaan di Tab 1 tetap tersimpan
     await expect(browser.locator('input[name="company_name"]')).toHaveValue(company);
+    await takeEvidenceScreenshot(app, 'BUMD-REG-002');
   });
 
   test('BUMD-REG-003: Full Data Lifecycle CRUD (Create -> Verify -> Update -> Verify -> Delete -> Verify Teardown)', async ({ app, browser }) => {
@@ -116,9 +118,10 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
     await browser.waitForURL(/.*\/partner\/finance\/bumd.*/, { timeout: 15000 }).catch(() => {});
     await browser.goto(`${MANAGEMENT_URL.replace(/\/+$/, '')}/partner/finance/bumd`);
     await expect.poll(async () => await browser.locator(rowSelector).count()).toBe(0);
+    await takeEvidenceScreenshot(app, 'BUMD-REG-003');
   });
 
-  test('BUMD-REG-004: Filter Functionality and Excel Export Response', async ({ browser }) => {
+  test('BUMD-REG-004: Filter Functionality and Excel Export Response', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd');
 
     // Buka filter jika tersembunyi
@@ -140,5 +143,6 @@ test.describe('Bank Data BUMD: Regression Test Suite (Automated End-to-End)', ()
     // Verifikasi tombol Excel dapat diklik
     const excelBtn = browser.locator('a[href*="/export/excel"]');
     await expect(excelBtn).toBeVisible();
+    await takeEvidenceScreenshot(app, 'BUMD-REG-004');
   });
 });

@@ -5,14 +5,11 @@ import { expect } from 'e2e';
 import type { Browser } from '@e2e-dev/web';
 import { loginAndNavigateToBumd } from './bumd/support.ts';
 import { loginAndNavigateToMitra, loginAndNavigateToTagProperti, loginAndNavigateToRegistrasiProperti, loginMitraDashboard } from './mitra/support.ts';
-import { GUEST_URL, CREDENTIALS } from './support/env-config.ts';
+import { GUEST_URL, CREDENTIALS, getReportScreenshotDir } from './support/env-config.ts';
 
 const baseGuest = GUEST_URL.replace(/\/+$/, '');
 
-const EVIDENCE_DIR = path.resolve(process.cwd(), 'reports', 'screenshots', 'retest-dp7');
-if (!fs.existsSync(EVIDENCE_DIR)) {
-  fs.mkdirSync(EVIDENCE_DIR, { recursive: true });
-}
+const EVIDENCE_DIR = getReportScreenshotDir('regression-44');
 
 /**
  * Cache memori untuk URL dinamis properti aktif pertama
@@ -331,8 +328,11 @@ test.describe('Modul 2: Setting Mitra & Master Tag Properti (11 Kasus Uji)', () 
     await captureEvidence(browser, app, 'TAG-PRE-005');
   });
 
-  test('TRANSIT-EXP-001: [SKIPPED - PENGUJIAN MANUAL] Slot Transit Kedaluwarsa Ditolak / Tidak Bisa Dilanjutkan', async () => {
-    test.skip(true, 'Pengujian otomatis diskip dan dialihkan ke prosedur Pengujian Manual (Manual Verification) dikarenakan dependensi slot dinamis');
+  test('TRANSIT-EXP-001: Slot Transit Kedaluwarsa Ditolak / Tidak Bisa Dilanjutkan', async ({ app, browser }) => {
+    await browser.goto(`${baseGuest}/booking?type=transit&expired=1`, { timeout: 60000 }).catch(() => {});
+    const errorNotice = browser.locator(':has-text("kedaluwarsa"), :has-text("tidak tersedia"), :has-text("expired")').first();
+    await captureEvidence(browser, app, 'TRANSIT-EXP-001');
+    await expect(errorNotice).toBeVisible();
   });
 
   test('MITRA-STS-003: Skema Status Pendaftaran Mitra Menjadi Auto Approve pada Setting Mitra', async ({ app, browser }) => {
@@ -504,8 +504,11 @@ test.describe('Modul 4: Portal Mitra: Kontak, Kontrak, & Crisis Policy (12 Kasus
     await captureEvidence(browser, app, 'PORTAL-POL-004');
   });
 
-  test('AUTH-REV-001: [SKIPPED - HEAD 1 APPROVAL] Integrasi Pendaftaran Mitra OTA dengan Halaman Revamp & Modal Login Baru', async () => {
-    test.skip(true, 'Ditunda test env stagging untuk form login baru karena kendala peforma pada server, sudah di approve head 1, 02 November 2026.');
+  test('AUTH-REV-001: Integrasi Pendaftaran Mitra OTA dengan Halaman Revamp & Modal Login Baru', async ({ app, browser }) => {
+    await browser.goto(`${baseGuest}/login`, { timeout: 60000 }).catch(() => {});
+    const registerMitraLink = browser.locator('a[href*="mitra/register"], a:has-text("Daftar Mitra"), button:has-text("Daftar Mitra")').first();
+    await captureEvidence(browser, app, 'AUTH-REV-001');
+    await expect(registerMitraLink).toBeVisible();
   });
 
   test('PORTAL-VER-005: Verifikasi Email pada Kontak Hotel (Modal Notifikasi Dikirimkan)', async ({ app, browser }) => {

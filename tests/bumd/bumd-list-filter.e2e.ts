@@ -1,9 +1,9 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
-import { loginAndNavigateToBumd } from './support.ts';
+import { loginAndNavigateToBumd, takeEvidenceScreenshot } from './support.ts';
 
 test.describe('Bank Data BUMD: List & Filter Tests', () => {
-  test('BUMD-SC-050: verify BUMD table renders headers and data rows', async ({ browser }) => {
+  test('BUMD-SC-050: verify BUMD table renders headers and data rows', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser);
 
     // Verifikasi judul halaman
@@ -18,9 +18,10 @@ test.describe('Bank Data BUMD: List & Filter Tests', () => {
     // Verifikasi data baris ada
     const rows = browser.locator('table tbody tr');
     await expect(await rows.count()).toBeGreaterThan(0);
+    await takeEvidenceScreenshot(app, 'BUMD-SC-050');
   });
 
-  test('BUMD-SC-059: verify filter section toggle/collapse', async ({ browser }) => {
+  test('BUMD-SC-059: verify filter section toggle/collapse', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser);
 
     const filterHeading = browser.locator('text=Filter');
@@ -29,9 +30,10 @@ test.describe('Bank Data BUMD: List & Filter Tests', () => {
     // Verifikasi form filter dapat diakses
     const searchInputs = browser.locator('input[type="text"], select');
     await expect(await searchInputs.count()).toBeGreaterThan(0);
+    await takeEvidenceScreenshot(app, 'BUMD-SC-059');
   });
 
-  test('BUMD-SC-043: verify search by company name filters data', async ({ browser }) => {
+  test('BUMD-SC-043: verify search by company name filters data', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser);
 
     // Ambil nama perusahaan dari baris pertama untuk dicari
@@ -47,9 +49,10 @@ test.describe('Bank Data BUMD: List & Filter Tests', () => {
       }
       await expect(browser.locator('table tbody')).toContainText(keyword);
     }
+    await takeEvidenceScreenshot(app, 'BUMD-SC-043');
   });
 
-  test('BUMD-SC-053: verify "+ Tambah" button navigates to create BUMD page', async ({ browser }) => {
+  test('BUMD-SC-053: verify "+ Tambah" button navigates to create BUMD page', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser);
 
     const tambahBtn = browser.locator('a:has-text("Tambah"), button:has-text("Tambah")').first();
@@ -58,12 +61,14 @@ test.describe('Bank Data BUMD: List & Filter Tests', () => {
 
     await browser.waitForURL(/.*partner\/finance\/bumd\/create.*/);
     await expect(browser.locator('body')).toContainText('Tambah Data BUMD');
+    await takeEvidenceScreenshot(app, 'BUMD-SC-053');
   });
 
-  test('BUMD-SC-055: verify Excel export button is present and clickable', async ({ browser }) => {
+  test('BUMD-SC-055: verify Excel export button is present and clickable', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser);
 
     const excelBtn = browser.locator('a:has-text("Excel"), button:has-text("Excel")').first();
     await expect(excelBtn).toBeVisible();
+    await takeEvidenceScreenshot(app, 'BUMD-SC-055');
   });
 });

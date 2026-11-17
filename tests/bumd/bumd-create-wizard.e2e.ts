@@ -1,9 +1,9 @@
 import { test } from '@e2e-dev/web';
 import { expect } from 'e2e';
-import { loginAndNavigateToBumd, fillTab1, fillTab2 } from './support.ts';
+import { loginAndNavigateToBumd, fillTab1, fillTab2, takeEvidenceScreenshot } from './support.ts';
 
 test.describe('Form Tambah Data BUMD: Wizard Tabs Tests', () => {
-  test('BUMD-SC-001: verify validation error when submitting empty fields on Tab 1', async ({ browser }) => {
+  test('BUMD-SC-001: verify validation error when submitting empty fields on Tab 1', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
 
     // Klik tombol Selanjutnya tanpa mengisi field wajib
@@ -14,9 +14,10 @@ test.describe('Form Tambah Data BUMD: Wizard Tabs Tests', () => {
     // Verifikasi tetap di tab pertama
     const companyInput = browser.locator('input[name="company_name"]');
     await expect(companyInput).toBeVisible();
+    await takeEvidenceScreenshot(app, 'BUMD-SC-001');
   });
 
-  test('BUMD-SC-010: verify Province selection loads Regency/City options', async ({ browser }) => {
+  test('BUMD-SC-010: verify Province selection loads Regency/City options', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
 
     const provinceSelect = browser.locator('select#input-province, select[name="province_id"]');
@@ -38,9 +39,10 @@ test.describe('Form Tambah Data BUMD: Wizard Tabs Tests', () => {
       async () => await browser.locator('select#input-city option').count(),
       { timeout: 20000, interval: 500 }
     ).toBeGreaterThan(1);
+    await takeEvidenceScreenshot(app, 'BUMD-SC-010');
   });
 
-  test('BUMD-SC-011: verify Status Kerjasama dropdown options', async ({ browser }) => {
+  test('BUMD-SC-011: verify Status Kerjasama dropdown options', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
 
     const statusSelect = browser.locator('select[name="status"]');
@@ -49,9 +51,10 @@ test.describe('Form Tambah Data BUMD: Wizard Tabs Tests', () => {
     await statusSelect.selectOption({ label: 'Aktif' });
     const selectedVal = await statusSelect.inputValue();
     expect(selectedVal).toBeTruthy();
+    await takeEvidenceScreenshot(app, 'BUMD-SC-011');
   });
 
-  test('BUMD-SC-013: verify "Batal" button returns to BUMD list page', async ({ browser }) => {
+  test('BUMD-SC-013: verify "Batal" button returns to BUMD list page', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
 
     const batalBtn = browser.locator('a.btn-danger:has-text("Batal"), button.btn-danger:has-text("Batal")').first();
@@ -60,9 +63,10 @@ test.describe('Form Tambah Data BUMD: Wizard Tabs Tests', () => {
 
     await browser.waitForURL(/.*partner\/finance\/bumd$/);
     await expect(browser.locator('body')).toContainText('Bank Data BUMD');
+    await takeEvidenceScreenshot(app, 'BUMD-SC-013');
   });
 
-  test('BUMD-SC-012 & BUMD-SC-024: fill Tab 1 validly and advance to Tab 2 and Tab 3', async ({ browser }) => {
+  test('BUMD-SC-012 & BUMD-SC-024: fill Tab 1 validly and advance to Tab 2 and Tab 3', async ({ app, browser }) => {
     await loginAndNavigateToBumd(browser, '/partner/finance/bumd/create');
 
     // 1. Isi Tab 1: Identitas Perusahaan
@@ -93,5 +97,6 @@ test.describe('Form Tambah Data BUMD: Wizard Tabs Tests', () => {
     // Pastikan data Tab 2 tidak hilang
     await expect(picNameInput).toBeVisible();
     expect(await picNameInput.inputValue()).toBe('Budi Santoso PJ');
+    await takeEvidenceScreenshot(app, 'BUMD-SC-012-024');
   });
 });

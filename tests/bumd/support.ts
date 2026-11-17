@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { Browser } from '@e2e-dev/web';
 import { expect } from 'e2e';
-import { AUTH_URL, MANAGEMENT_URL, CREDENTIALS } from '../support/env-config.ts';
+import { AUTH_URL, MANAGEMENT_URL, CREDENTIALS, getReportScreenshotDir } from '../support/env-config.ts';
 
 /**
  * Helper untuk login fresh sebagai Manajemen dan menavigasi ke halaman BUMD (tanpa session cache)
@@ -61,10 +61,7 @@ export async function loginAndNavigateToBumd(browser: Browser, targetPath = '/pa
  * Helper untuk menangkap screenshot bukti uji dan menyalinnya ke reports/bumd/screenshots/
  */
 export async function takeEvidenceScreenshot(app: any, label: string, saveFilename?: string): Promise<string> {
-  const reportsDir = path.resolve(process.cwd(), 'reports', 'bumd', 'screenshots');
-  if (!fs.existsSync(reportsDir)) {
-    fs.mkdirSync(reportsDir, { recursive: true });
-  }
+  const reportsDir = getReportScreenshotDir('bumd');
 
   const relative = await app.screenshot(label);
   const targetName = saveFilename || `${label}.png`;
